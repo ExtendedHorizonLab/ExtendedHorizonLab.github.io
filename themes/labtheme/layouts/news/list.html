@@ -1,0 +1,39 @@
+{{ define "main" }}
+  <div class="container">
+    <h1 class="page-title">Latest News</h1>
+
+    {{ $paginator := .Paginate .Pages 12 }}
+    <div class="news-grid">
+      {{ range $paginator.Pages }}
+        <article class="news-card">
+          <a href="{{ .RelPermalink }}" class="news-card-image">
+            {{ with .Params.image }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ else }}
+            <div class="news-card-placeholder"></div>
+            {{ end }}
+          </a>
+          <h2 class="news-card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          <div class="news-card-meta">
+            {{ with .Params.author }}BY {{ . | upper }}{{ end }} • {{ .Date.Format "Jan 02, 2006" | upper }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+      {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="pagination-link">← Previous</a>
+      {{ end }}
+      <span class="pagination-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+      {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="pagination-link">Next →</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </div>
+{{ end }}

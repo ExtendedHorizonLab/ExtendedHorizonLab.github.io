@@ -1,0 +1,115 @@
+{{ define "main" }}
+  <div class="container">
+    <h1 class="page-title">People</h1>
+
+    {{/* Filter out alumni and graduated */}}
+    {{ $current := where .Pages "Params.status" "!=" "alumni" }}
+    {{ $current = where $current "Params.status" "!=" "graduated" }}
+
+    {{/* NCSU members */}}
+    {{ $ncsu := where $current "Params.affiliation" "NCSU CS" }}
+    {{ $ncsuFaculty := where $ncsu "Params.role" "faculty" }}
+    {{ $ncsuPostdoc := where $ncsu "Params.role" "postdoc" }}
+    {{ $ncsuStaff := where $ncsu "Params.role" "staff" }}
+    {{ $ncsuPhd := where $ncsu "Params.role" "phd" }}
+    {{ $ncsuRa := where $ncsu "Params.role" "ra" }}
+    {{ $ncsuMasters := where $ncsu "Params.role" "masters" }}
+    {{ $ncsuUndergrad := where $ncsu "Params.role" "undergrad" }}
+
+    {{/* External members (non-NCSU) */}}
+    {{ $ext := where $current "Params.affiliation" "!=" "NCSU CS" }}
+    {{ $ext = where $ext "Params.affiliation" "!=" nil }}
+    {{ $extPhd := where $ext "Params.role" "phd" }}
+    {{ $extMasters := where $ext "Params.role" "masters" }}
+    {{ $extUndergrad := where $ext "Params.role" "undergrad" }}
+    {{ $extHighschool := where $ext "Params.role" "highschool" }}
+
+    {{/* Build ordered list */}}
+    {{ $ordered := slice }}
+    {{ range $ncsuFaculty }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $ncsuPostdoc }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $ncsuPhd }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $ncsuStaff }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $ncsuRa }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $ncsuMasters }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $ncsuUndergrad }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $extPhd }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $extMasters }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $extUndergrad }}{{ $ordered = $ordered | append . }}{{ end }}
+    {{ range $extHighschool }}{{ $ordered = $ordered | append . }}{{ end }}
+
+    {{ with $ordered }}
+    <div class="people-grid-5">
+      {{ range . }}
+        <div class="person-card">
+          <div class="person-photo">
+            {{ with .Params.photo }}
+              <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ end }}
+            <div class="person-glass"></div>
+          </div>
+          <h3 class="person-name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <div class="person-role">{{ .Params.position }}</div>
+          <div class="person-affiliation">{{ .Params.affiliation }}</div>
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Graduated PhD Students -->
+    {{ $graduated := where .Pages "Params.status" "graduated" }}
+    {{ with $graduated }}
+    <section class="people-section">
+      <h2 class="people-section-title">Graduated PhD Students</h2>
+      <div class="graduated-grid">
+        {{ range . }}
+          <div class="graduated-card">
+            <h3 class="graduated-name">{{ with .Params.title_prefix }}{{ . }} {{ end }}{{ .Title }}</h3>
+            <div class="graduated-degree">{{ .Params.degree }}</div>
+            {{ with .Params.dissertation }}
+            <div class="graduated-dissertation">
+              <span class="graduated-label">Dissertation:</span> {{ . }}
+            </div>
+            {{ end }}
+            {{ with .Params.first_position }}
+            <div class="graduated-position">
+              <span class="graduated-label">First Position:</span> {{ . }}
+            </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- Past Members / Alumni -->
+    {{ $alumni := where .Pages "Params.status" "alumni" }}
+    {{ with $alumni }}
+    <section class="people-section">
+      <h2 class="people-section-title">Past Members</h2>
+
+      <!-- Graduate Students -->
+      {{ $gradStudents := where $alumni "Params.alumni_type" "graduate" }}
+      {{ with $gradStudents }}
+      <h3 class="alumni-group-title">Graduate Students</h3>
+      <div class="alumni-grid">
+        {{ range . }}
+        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Params.affiliation }}, {{ .Params.years }}</div>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <!-- Undergrads -->
+      {{ $undergrads := where $alumni "Params.alumni_type" "undergrad" }}
+      {{ with $undergrads }}
+      <h3 class="alumni-group-title">Undergrads</h3>
+      <div class="alumni-grid">
+        {{ range . }}
+        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Params.affiliation }}, {{ .Params.years }}</div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+  </div>
+{{ end }}

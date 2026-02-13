@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}?v=11">
+  <link rel="icon" href="{{ "favicon.png" | relURL }}?v=2" type="image/png">
+  {{ partial "head.html" . }}
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+  <script>
+    (function(){
+      var btn=document.getElementById('theme-toggle');
+      function updateIcon(){
+        var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+        btn.textContent=isDark?'\u2600':'\u263E';
+      }
+      updateIcon();
+      btn.addEventListener('click',function(){
+        var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+        if(isDark){
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme','light');
+        }else{
+          document.documentElement.setAttribute('data-theme','dark');
+          localStorage.setItem('theme','dark');
+        }
+        updateIcon();
+      });
+    })();
+  </script>
+  <!-- Liquid Glass: SVG displacement map refraction (ref: childrentime/liquid-glass) -->
+  <script>
+    (function(){
+      function smoothStep(a,b,t){t=Math.max(0,Math.min(1,(t-a)/(b-a)));return t*t*(3-2*t)}
+      function len(x,y){return Math.sqrt(x*x+y*y)}
+      function rrSDF(x,y,w,h,r){var qx=Math.abs(x)-w+r,qy=Math.abs(y)-h+r;return Math.min(Math.max(qx,qy),0)+len(Math.max(qx,0),Math.max(qy,0))-r}
+
+      /* Fragment shader: takes uv {x,y} in [0,1], returns sample coords {x,y} */
+      function defaultFragment(uv,o){
+        var ix=uv.x-0.5, iy=uv.y-0.5;
+        var d=rrSDF(ix,iy, o.hw||0.3, o.hh||0.2, o.r||0.6);
+        var disp=smoothStep(o.edge||0.8, 0, d-(o.feather||0.15));
+        var scaled=smoothStep(0,1,disp);
+        return{x: ix*scaled+0.5, y: iy*scaled+0.5};
+      }
+
+      function createLiquidGlass(el,opts){
+        var id='lg-'+Math.random().toString(36).substr(2,6);
+        var svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+        svg.setAttribute('width','0');svg.setAttribute('height','0');
+        svg.style.cssText='position:absolute;top:0;left:0;pointer-events:none;';
+        var defs=document.createElementNS('http://www.w3.org/2000/svg','defs');
+        var flt=document.createElementNS('http://www.w3.org/2000/svg','filter');
+        flt.setAttribute('id',id);flt.setAttribute('filterUnits','userSpaceOnUse');
+        flt.setAttribute('color-interpolation-filters','sRGB');
+        var feImg=document.createElementNS('http://www.w3.org/2000/svg','feImage');
+        feImg.setAttribute('result',id+'_m');
+        var feDisp=document.createElementNS('http://www.w3.org/2000/svg','feDisplacementMap');
+        feDisp.setAttribute('in','SourceGraphic');feDisp.setAttribute('in2',id+'_m');
+        feDisp.setAttribute('xChannelSelector','R');feDisp.setAttribute('yChannelSelector','G');
+        flt.appendChild(feImg);flt.appendChild(feDisp);defs.appendChild(flt);svg.appendChild(defs);
+        el.appendChild(svg);
+
+        var canvas=document.createElement('canvas');
+        var ctx=canvas.getContext('2d');
+        var frag=opts.fragment||function(uv){return defaultFragment(uv,opts)};
+
+        function update(){
+          var rect=el.getBoundingClientRect();
+          var dpi=opts.dpi||1;
+          var w=Math.round(rect.width*dpi),h=Math.round(rect.height*dpi);
+          if(w<1||h<1)return;
+          canvas.width=w;canvas.height=h;
+          flt.setAttribute('x','0');flt.setAttribute('y','0');
+          flt.setAttribute('width',rect.width);flt.setAttribute('height',rect.height);
+          feImg.setAttribute('width',rect.width);feImg.setAttribute('height',rect.height);
+
+          var data=new Uint8ClampedArray(w*h*4);
+          var maxS=0,raw=[];
+          for(var i=0;i<data.length;i+=4){
+            var px=(i/4)%w, py=Math.floor(i/4/w);
+            var pos=frag({x:px/w, y:py/h});
+            var dx=pos.x*w-px, dy=pos.y*h-py;
+            maxS=Math.max(maxS,Math.abs(dx),Math.abs(dy));
+            raw.push(dx,dy);
+          }
+          if(maxS===0)maxS=1; maxS*=0.5;
+          var idx=0;
+          for(var i=0;i<data.length;i+=4){
+            data[i]=(raw[idx++]/maxS+0.5)*255;
+            data[i+1]=(raw[idx++]/maxS+0.5)*255;
+            data[i+2]=0;data[i+3]=255;
+          }
+          ctx.putImageData(new ImageData(data,w,h),0,0);
+          feImg.setAttributeNS('http://www.w3.org/1999/xlink','href',canvas.toDataURL());
+          feDisp.setAttribute('scale',(maxS/dpi).toString());
+
+          var bf='url(#'+id+') blur('+(opts.blur!=null?opts.blur:0.25)+'px) contrast('+(opts.contrast||1.2)+') brightness('+(opts.brightness||1.05)+') saturate('+(opts.saturate||1.1)+')';
+          el.style.backdropFilter=bf;el.style.webkitBackdropFilter=bf;
+        }
+
+        update();
+        var resizeTimer;
+        window.addEventListener('resize',function(){clearTimeout(resizeTimer);resizeTimer=setTimeout(update,150)});
+        return{update:update,id:id};
+      }
+
+      /* Header — wide glass bar */
+      var header=document.querySelector('header');
+      if(header){
+        createLiquidGlass(header,{
+          hw:0.45,hh:0.35,r:0.6,edge:0.8,feather:0.15
+        });
+      }
+
+      /* Nav links — pill glass */
+      document.querySelectorAll('nav ul li a').forEach(function(link){
+        createLiquidGlass(link,{
+          hw:0.3,hh:0.2,r:0.6,edge:0.8,feather:0.15
+        });
+      });
+
+      /* Hero news panel */
+      var heroNews=document.querySelector('.hero-news');
+      if(heroNews){
+        createLiquidGlass(heroNews,{
+          hw:0.3,hh:0.25,r:0.6,edge:0.8,feather:0.15
+        });
+      }
+
+      /* Hero slide content */
+      var heroContent=document.querySelector('.hero-slide-content');
+      if(heroContent){
+        createLiquidGlass(heroContent,{
+          hw:0.35,hh:0.25,r:0.6,edge:0.8,feather:0.15
+        });
+      }
+
+      /* Person photos — circular glass overlay on top of photo */
+      document.querySelectorAll('.person-glass').forEach(function(glass){
+        createLiquidGlass(glass,{
+          hw:0.4,hh:0.4,r:0.6,edge:0.6,feather:0.12,
+          blur:0,contrast:1.1,brightness:1.03,saturate:1.05
+        });
+      });
+
+      /* Cards */
+      document.querySelectorAll('.news-card, .project-card, .home-project-card, .home-paper-card').forEach(function(card){
+        createLiquidGlass(card,{
+          hw:0.3,hh:0.25,r:0.6,edge:0.8,feather:0.15
+        });
+      });
+
+      /* Footer */
+      var footer=document.querySelector('footer');
+      if(footer){
+        createLiquidGlass(footer,{
+          hw:0.45,hh:0.35,r:0.6,edge:0.8,feather:0.15
+        });
+      }
+
+      /* Sidebar panels */
+      var sidebarOpts={
+        hw:0.3,hh:0.3,r:0.6,edge:0.8,feather:0.15
+      };
+      document.querySelectorAll('.filter-list, .year-nav').forEach(function(el){
+        createLiquidGlass(el,sidebarOpts);
+      });
+    })();
+  </script>
+
+  <!-- Adaptive header contrast: auto-switch nav text color based on content behind -->
+  <script>
+    (function(){
+      var header=document.querySelector('header');
+      if(!header)return;
+
+      /* WCAG relative luminance */
+      function ch(c){c/=255;return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4)}
+      function relLum(r,g,b){return 0.2126*ch(r)+0.7152*ch(g)+0.0722*ch(b)}
+
+      /* Refraction displacement — mirrors the liquid-glass fragment shader */
+      function _ss(a,b,t){t=Math.max(0,Math.min(1,(t-a)/(b-a)));return t*t*(3-2*t)}
+      function _len(x,y){return Math.sqrt(x*x+y*y)}
+      function _sdf(x,y,w,h,r){var qx=Math.abs(x)-w+r,qy=Math.abs(y)-h+r;return Math.min(Math.max(qx,qy),0)+_len(Math.max(qx,0),Math.max(qy,0))-r}
+      /* Header glass params (must match createLiquidGlass call for header) */
+      var _gp={hw:0.45,hh:0.35,r:0.6,edge:0.8,feather:0.15};
+      /* Returns pixel displacement [dx,dy] at normalised coord (ux,uy) centered at 0 */
+      function glassDisp(ux,uy,rw,rh){
+        var d=_sdf(ux,uy,_gp.hw,_gp.hh,_gp.r);
+        var disp=_ss(_gp.edge,0,d-_gp.feather);
+        var scaled=_ss(0,1,disp);
+        /* fragment returns (ux*scaled+0.5), original is (ux+0.5), diff = ux*(scaled-1) */
+        return[ux*(scaled-1)*rw, uy*(scaled-1)*rh];
+      }
+
+      function parseCol(s){
+        if(!s||s==='transparent'||s==='rgba(0, 0, 0, 0)')return null;
+        var m=s.match(/rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+        if(!m)return null;var a=m[4]!==undefined?+m[4]:1;
+        return a<0.05?null:[+m[1],+m[2],+m[3]];
+      }
+
+      /* Sample a pixel from an <img> via a 1×1 canvas */
+      function sampleImg(img,sx,sy){
+        try{
+          var r=img.getBoundingClientRect();
+          var nx=(sx-r.left)/r.width*img.naturalWidth;
+          var ny=(sy-r.top)/r.height*img.naturalHeight;
+          var c=document.createElement('canvas');c.width=c.height=1;
+          var ctx=c.getContext('2d');
+          ctx.drawImage(img,nx,ny,1,1,0,0,1,1);
+          var d=ctx.getImageData(0,0,1,1).data;
+          return d[3]>12?[d[0],d[1],d[2]]:null;
+        }catch(e){return null;}
+      }
+
+      /* Sample bg + fg (text) colour at a screen point, skipping header */
+      function sampleAt(x,y){
+        var res={bg:null,fg:null};
+        var els=document.elementsFromPoint(x,y);
+        for(var i=0;i<els.length;i++){
+          var el=els[i];
+          if(header.contains(el))continue;
+          /* Image → treat pixel colour as bg */
+          if(!res.bg&&el.tagName==='IMG'&&el.complete&&el.naturalWidth){
+            var c=sampleImg(el,x,y);if(c)res.bg=c;
+          }
+          /* First non-header element's text colour */
+          if(!res.fg){
+            var fg=parseCol(getComputedStyle(el).color);
+            if(fg)res.fg=fg;
+          }
+          /* Walk up for background-color */
+          if(!res.bg){
+            var node=el;
+            while(node&&node!==document.documentElement){
+              var bg=parseCol(getComputedStyle(node).backgroundColor);
+              if(bg){res.bg=bg;break;}
+              node=node.parentElement;
+            }
+          }
+          if(res.bg)return res;
+        }
+        var dark=document.documentElement.getAttribute('data-theme')==='dark';
+        if(!res.bg)res.bg=dark?[30,30,30]:[255,255,255];
+        return res;
+      }
+
+      function avg(arr){
+        var r=0,g=0,b=0;
+        for(var i=0;i<arr.length;i++){r+=arr[i][0];g+=arr[i][1];b+=arr[i][2];}
+        return[r/arr.length,g/arr.length,b/arr.length];
+      }
+      function cRatio(l1,l2){return l1>l2?(l1+0.05)/(l2+0.05):(l2+0.05)/(l1+0.05)}
+
+      var ticking=false,prevCls='';
+
+      function check(){
+        var rect=header.getBoundingClientRect();
+        var cy=rect.top+rect.height*0.5;
+        var bgArr=[],fgArr=[];
+        var step=rect.width/6;
+        for(var sx=step*2;sx<=rect.width-step;sx+=step){
+          /* Compute refraction offset at this point */
+          var ux=(sx-rect.left)/rect.width-0.5;
+          var uy=(cy-rect.top)/rect.height-0.5;
+          var disp=glassDisp(ux,uy,rect.width,rect.height);
+          /* Sample at the displaced source position */
+          var s=sampleAt(sx+disp[0],cy+disp[1]);
+          if(s.bg)bgArr.push(s.bg);
+          if(s.fg)fgArr.push(s.fg);
+        }
+        if(!bgArr.length){ticking=false;return;}
+
+        var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+        /* Nav text luminance: light #6c757d≈0.18, dark #a0a0a0≈0.35 */
+        var textL=isDark?0.35:0.18;
+
+        /* ① Background contrast (with glass tint simulation) */
+        var a=avg(bgArr);
+        var tA=isDark?0.55:0.25,tV=isDark?32:255,br=isDark?1.0:1.06;
+        var er=Math.min(255,(a[0]*(1-tA)+tV*tA)*br);
+        var eg=Math.min(255,(a[1]*(1-tA)+tV*tA)*br);
+        var eb=Math.min(255,(a[2]*(1-tA)+tV*tA)*br);
+        var bgL=relLum(er,eg,eb);
+        var bgR=cRatio(bgL,textL);
+
+        /* ② Foreground (text below) — if its colour ≈ nav text, they blend */
+        var fgR=Infinity,fgL=0;
+        if(fgArr.length){
+          var f=avg(fgArr);
+          fgL=relLum(f[0],f[1],f[2]);
+          fgR=cRatio(fgL,textL);
+        }
+
+        var cls='';
+        if(bgR<4.5){
+          /* Glass bg itself has poor contrast with nav text */
+          cls=bgL<0.5?'header-on-dark':'header-on-light';
+        }else if(fgR<3){
+          /* Text below is too similar to nav text — they overlap visually */
+          cls=fgL<0.5?'header-on-dark':'header-on-light';
+        }
+
+        if(cls!==prevCls){
+          header.classList.remove('header-on-dark','header-on-light');
+          if(cls)header.classList.add(cls);
+          prevCls=cls;
+        }
+        ticking=false;
+      }
+
+      window.addEventListener('scroll',function(){
+        if(!ticking){requestAnimationFrame(check);ticking=true;}
+      },{passive:true});
+      /* Re-check on theme toggle */
+      new MutationObserver(function(){requestAnimationFrame(check);})
+        .observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+      window.addEventListener('load',check);
+      setTimeout(check,200);
+    })();
+  </script>
+</body>
+</html>

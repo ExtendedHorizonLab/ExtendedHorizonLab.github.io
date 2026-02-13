@@ -1,0 +1,51 @@
+baseURL = 'https://ExtendedHorizonLab.github.io/'
+languageCode = 'en-us'
+title = 'Extended Horizon Lab'
+theme = 'labtheme'
+
+[params]
+  description = "Extended Horizon Lab at North Carolina State University"
+  labFullName = "Extended Horizon Lab"
+  university = "North Carolina State University"
+  department = "Department of Computer Science"
+  director = "Qiao (Georgie) Jin"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 2
+  [[menu.main]]
+    name = "People"
+    url = "/people/"
+    weight = 3
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 4
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 5
+  # [[menu.main]]
+  #   name = "Lab Handbook"
+  #   url = "/handbook/"
+  #   weight = 6
+  # [[menu.main]]
+  #   name = "Apply"
+  #   url = "/apply/"
+  #   weight = 7
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

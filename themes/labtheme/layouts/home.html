@@ -1,0 +1,192 @@
+{{ define "main" }}
+<!-- Hero Section with Slideshow -->
+<section class="home-hero">
+  <div class="hero-slideshow" id="hero-slideshow">
+    {{ $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
+    {{ $projects := first 6 $featured }}
+    {{ range $index, $project := $projects }}
+    <div class="hero-slide{{ if eq $index 0 }} active{{ end }}"
+      style="background-image: url('{{ $project.Params.image }}');"></div>
+    {{ end }}
+    <!-- Arrow Navigation -->
+    <button class="hero-arrow hero-arrow-left" aria-label="Previous slide">&#8249;</button>
+    <button class="hero-arrow hero-arrow-right" aria-label="Next slide">&#8250;</button>
+    <!-- Navigation Dots -->
+    <div class="hero-dots">
+      {{ range $index, $project := $projects }}
+      <button class="hero-dot{{ if eq $index 0 }} active{{ end }}" data-index="{{ $index }}"></button>
+      {{ end }}
+    </div>
+  </div>
+  <div class="hero-news">
+    {{ range first 5 (where site.RegularPages "Section" "news") }}
+    <div class="hero-news-item">
+      <span class="hero-news-date">{{ .Date.Format "Jan. 2, 2006" }}.</span>
+      <a href="{{ .RelPermalink }}">{{ .Title | truncate 50 }}</a>
+    </div>
+    {{ end }}
+    <a href="{{ "news/" | relURL }}" class="hero-news-more">See more news →</a>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const slideshow = document.getElementById('hero-slideshow');
+    if (!slideshow) return;
+
+    const slides = slideshow.querySelectorAll('.hero-slide');
+    const dots = slideshow.querySelectorAll('.hero-dot');
+    if (slides.length === 0) return;
+
+    let currentIndex = 0;
+    let interval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    }
+
+    function nextSlide() {
+      showSlide((currentIndex + 1) % slides.length);
+    }
+
+    function startAutoPlay() {
+      interval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(interval);
+    }
+
+    // Click on dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopAutoPlay();
+        showSlide(index);
+        startAutoPlay();
+      });
+    });
+
+    // Arrow navigation
+    const prevBtn = slideshow.querySelector('.hero-arrow-left');
+    const nextBtn = slideshow.querySelector('.hero-arrow-right');
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      stopAutoPlay();
+      showSlide((currentIndex - 1 + slides.length) % slides.length);
+      startAutoPlay();
+    });
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      stopAutoPlay();
+      nextSlide();
+      startAutoPlay();
+    });
+
+    // Start autoplay
+    startAutoPlay();
+  })();
+</script>
+
+<!-- Lab Intro Section -->
+<section class="home-intro">
+  <div class="container">
+    <h2 class="home-section-title">EXTENDED HORIZON LAB</h2>
+    <div class="intro-content">
+      <div class="intro-image">
+        <img src="/images/lab-illustration.png" alt="Lab illustration">
+      </div>
+      <div class="intro-text">
+        <p>We are a research lab directed by <a
+            href="/people/qiao-jin/">Professor Qiao (Georgie) Jin</a> in the <a
+            href="https://www.csc.ncsu.edu/">Department of Computer Science</a> at North Carolina State University.
+        </p>
+        <p>Our group explores how <strong>Extended Reality (XR)</strong> and <strong>AI</strong> can be designed to support learning, collaboration, and social connections across diverse populations. Our research spans:</p>
+        <ul class="intro-areas">
+          <li><strong>AR/VR/MR</strong>: Designing immersive experiences for education, collaboration, and social connection</li>
+          <li><strong>AI</strong>: Leveraging AI for interactive volumetric video, privacy protection, and intelligent systems</li>
+          <li><strong>Tangible Interfaces</strong>: Building tangible programming tools for children's learning</li>
+          <li><strong>IoT &amp; Robotics</strong>: Creating social robots and wearable devices for communication and health</li>
+        </ul>
+        <p>To learn more, see our <a href="/projects/">recent projects</a> and <a href="/publications/">publications</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Projects Section -->
+<section class="home-section">
+  <div class="container">
+    <h2 class="home-section-title">RECENT PROJECTS</h2>
+    <div class="home-projects-grid">
+      {{ range first 8 (where site.RegularPages "Section" "projects") }}
+      <div class="home-project-card">
+        <div class="home-project-image">
+          {{ with .Params.image }}
+          <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ else }}
+          <div class="home-project-placeholder"></div>
+          {{ end }}
+          {{ with .Params.award }}
+          <span class="home-project-badge">Award</span>
+          {{ end }}
+        </div>
+        <h3 class="home-project-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <div class="home-project-date">{{ .Params.date_range }}</div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="home-section-link">
+      <a href="{{ " projects/" | relURL }}">SEE ALL PROJECTS →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Papers Section -->
+<section class="home-section">
+  <div class="container">
+    <h2 class="home-section-title">RECENT PAPERS</h2>
+    <div class="home-papers-grid">
+      {{ range first 6 (where site.RegularPages "Section" "publications") }}
+      <div class="home-paper-card">
+        {{ with .Params.thumbnail }}
+        <div class="home-paper-thumb">
+          <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+        <div class="home-paper-info">
+          <h3 class="home-paper-title"><a href="{{ .RelPermalink }}">{{ .Title | truncate 60 }}</a></h3>
+          <div class="home-paper-venue">{{ .Params.venue }}</div>
+          <div class="home-paper-authors">{{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ $a }}{{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="home-section-link">
+      <a href="{{ " publications/" | relURL }}">SEE ALL PAPERS →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors Section -->
+{{ with site.Params.sponsors }}
+<section class="home-section home-sponsors">
+  <div class="container">
+    <h2 class="home-section-title">SPONSORS</h2>
+    <p class="sponsors-desc">Extended Horizon Lab research is made possible by the generous support of our sponsors. Our
+      research findings, opinions, and/or recommendations may not reflect their views.</p>
+    <div class="sponsors-grid">
+      {{ range . }}
+      <a href="{{ .url }}" target="_blank" class="sponsor-item">
+        <img src="{{ .logo }}" alt="{{ .name }}">
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

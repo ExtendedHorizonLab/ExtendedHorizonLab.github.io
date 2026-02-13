@@ -1,0 +1,115 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="single-page">
+      <div class="single-header">
+        <h1 class="single-title">{{ .Title }}</h1>
+
+        <div class="pub-authors" style="font-size: 1.125rem; margin: 1rem 0;">
+          {{ $members := site.Data.labmembers.names }}
+          {{ range $i, $author := .Params.authors }}
+            {{ if $i }}, {{ end }}
+            {{ $person := site.GetPage (printf "/people/%s" ($author | urlize)) }}
+            {{ if not $person }}
+              {{ range where site.RegularPages "Section" "people" }}
+                {{ if in .Params.alt_names $author }}
+                  {{ $person = . }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            {{ if $person }}
+              <a href="{{ $person.RelPermalink }}"><strong>{{ $author }}</strong></a>
+            {{ else if in $members $author }}
+              <strong>{{ $author }}</strong>
+            {{ else }}
+              {{ $author }}
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <div class="single-meta">
+          <span class="pub-venue" style="font-size: 1rem;">{{ .Params.venue }}</span>
+          <span>{{ .Date.Format "2006" }}</span>
+          {{ with .Params.pub_type }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+
+        {{ if .Params.award }}
+        <div style="margin-top: 1rem; padding: 0.75rem 1rem; background-color: rgba(245, 158, 11, 0.1); border-radius: 8px; border-left: 4px solid var(--accent-orange);">
+          <span style="color: var(--accent-orange);">🏆 {{ with .Params.award_name }}{{ . }}{{ else }}Award{{ end }}</span>
+        </div>
+        {{ end }}
+
+        <div class="pub-links" style="margin-top: 1.5rem;">
+          {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link" target="_blank">PDF</a>{{ end }}
+          {{ with .Params.doi }}<a href="{{ . }}" class="pub-link" target="_blank">DOI</a>{{ end }}
+          {{ with .Params.code }}<a href="{{ . }}" class="pub-link" target="_blank">Code</a>{{ end }}
+          {{ with .Params.video }}<a href="{{ . }}" class="pub-link" target="_blank">Video</a>{{ end }}
+          {{ with .Params.slides }}<a href="{{ . }}" class="pub-link" target="_blank">Slides</a>{{ end }}
+          {{ with .Params.website }}<a href="{{ . }}" class="pub-link" target="_blank">Website</a>{{ end }}
+          {{ with .Params.arxiv }}<a href="{{ . }}" class="pub-link" target="_blank">arXiv</a>{{ end }}
+        </div>
+      </div>
+
+      {{ with .Params.figure }}
+      <div style="margin: 2rem 0; border-radius: 12px; overflow: hidden; background-color: var(--bg-card); padding: 1rem;">
+        <img src="{{ . }}" alt="{{ $.Title }}" style="width: 100%; max-height: 400px; object-fit: contain;">
+      </div>
+      {{ end }}
+
+      <!-- Abstract -->
+      {{ with .Params.abstract }}
+      <section class="section">
+        <h2 class="section-title">Abstract</h2>
+        <div class="single-content">
+          <p>{{ . }}</p>
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Summary -->
+      {{ with .Params.summary }}
+      <section class="section">
+        <h2 class="section-title">Summary</h2>
+        <div class="single-content">
+          <p>{{ . }}</p>
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Main Content -->
+      {{ with .Content }}
+      <div class="single-content">
+        {{ . }}
+      </div>
+      {{ end }}
+
+      <!-- BibTeX -->
+      {{ with .Params.bibtex }}
+      <section class="section">
+        <h2 class="section-title">BibTeX</h2>
+        <pre style="background-color: var(--bg-card); padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.875rem;"><code>{{ . }}</code></pre>
+      </section>
+      {{ end }}
+
+      <!-- Related Project -->
+      {{ with .Params.project }}
+      {{ $project := site.GetPage (printf "/projects/%s" (. | urlize)) }}
+      {{ with $project }}
+      <section class="section">
+        <h2 class="section-title">Related Project</h2>
+        <div class="card" style="max-width: 400px;">
+          {{ with .Params.image }}
+          <div class="card-image">
+            <img src="{{ . }}" alt="{{ $.Title }}">
+          </div>
+          {{ end }}
+          <div class="card-content">
+            <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p class="card-description">{{ .Summary | truncate 100 }}</p>
+          </div>
+        </div>
+      </section>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

@@ -1,0 +1,120 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="page-layout">
+      <!-- Left Sidebar - Filter by Topic -->
+      <aside class="sidebar">
+        <div class="filter-title">FILTER BY TOPIC</div>
+        <ul class="filter-list" id="topic-filters">
+          {{ $allTags := slice }}
+          {{ range .Pages }}
+            {{ range .Params.tags }}
+              {{ $allTags = $allTags | append . }}
+            {{ end }}
+          {{ end }}
+          {{ $tagCounts := dict }}
+          {{ range $allTags }}
+            {{ $count := index $tagCounts . | default 0 }}
+            {{ $tagCounts = merge $tagCounts (dict . (add $count 1)) }}
+          {{ end }}
+          {{ range $tag, $count := $tagCounts }}
+          <li class="filter-item" data-topic="{{ $tag | urlize }}">
+            <span class="filter-name">{{ $tag }}</span>
+            <span class="filter-count">{{ $count }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h1 class="page-title">Projects</h1>
+
+        <!-- Active Projects -->
+        {{ $active := where .Pages "Params.status" "active" }}
+        {{ with $active }}
+        <section class="projects-section">
+          {{/* <h2 class="projects-section-title">Active Projects</h2> */}}
+          <div class="projects-grid">
+            {{ range . }}
+              <div class="project-card" data-status="active" data-tags="{{ range .Params.tags }}{{ . | urlize }} {{ end }}">
+                <div class="project-card-image">
+                  {{ with .Params.image }}
+                  <img src="{{ . }}" alt="{{ $.Title }}">
+                  {{ else }}
+                  <div class="project-card-placeholder"></div>
+                  {{ end }}
+                  {{ with .Params.award }}
+                  <span class="project-card-badge">Award</span>
+                  {{ end }}
+                </div>
+                <h3 class="project-card-title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                <div class="project-card-date">{{ .Params.date_range }}</div>
+              </div>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+
+        <!-- Completed Projects -->
+        {{ $completed := where .Pages "Params.status" "completed" }}
+        {{ with $completed }}
+        <section class="projects-section">
+          <h2 class="projects-section-title">Completed Projects</h2>
+          <div class="projects-grid">
+            {{ range . }}
+              <div class="project-card" data-status="completed" data-tags="{{ range .Params.tags }}{{ . | urlize }} {{ end }}">
+                <div class="project-card-image">
+                  {{ with .Params.image }}
+                  <img src="{{ . }}" alt="{{ $.Title }}">
+                  {{ else }}
+                  <div class="project-card-placeholder"></div>
+                  {{ end }}
+                </div>
+                <h3 class="project-card-title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                <div class="project-card-date">{{ .Params.date_range }}</div>
+              </div>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('#topic-filters .filter-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const isActive = this.classList.contains('active');
+
+        // Toggle active state
+        document.querySelectorAll('#topic-filters .filter-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          this.classList.add('active');
+        }
+
+        filterProjects();
+      });
+    });
+
+    function filterProjects() {
+      const activeFilter = document.querySelector('#topic-filters .filter-item.active');
+      const topicFilter = activeFilter ? activeFilter.dataset.topic : null;
+
+      document.querySelectorAll('.project-card').forEach(card => {
+        const tags = card.dataset.tags;
+        const match = !topicFilter || tags.includes(topicFilter);
+        card.style.display = match ? '' : 'none';
+      });
+
+      // Hide empty sections
+      document.querySelectorAll('.projects-section').forEach(section => {
+        const visibleCards = section.querySelectorAll('.project-card:not([style*="display: none"])');
+        section.style.display = visibleCards.length > 0 ? '' : 'none';
+      });
+    }
+  </script>
+{{ end }}

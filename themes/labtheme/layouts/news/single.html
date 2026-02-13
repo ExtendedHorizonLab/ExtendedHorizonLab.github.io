@@ -1,0 +1,62 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="single-page">
+      <div class="single-header">
+        <div class="single-meta" style="margin-bottom: 1rem;">
+          <span>{{ .Date.Format "January 2, 2006" }}</span>
+          {{ range .Params.tags }}
+            <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        <h1 class="single-title">{{ .Title }}</h1>
+      </div>
+
+      {{ with .Params.image }}
+      <div style="margin: 2rem 0; border-radius: 12px; overflow: hidden;">
+        <img src="{{ . }}" alt="{{ $.Title }}" style="width: 100%; max-height: 400px; object-fit: cover;">
+      </div>
+      {{ end }}
+
+      <div class="single-content">
+        {{ .Content }}
+      </div>
+
+      <!-- Related People -->
+      {{ with .Params.people }}
+      <section class="section">
+        <h2 class="section-title">People Mentioned</h2>
+        <div class="people-grid">
+          {{ range . }}
+            {{ $person := site.GetPage (printf "/people/%s" (. | urlize)) }}
+            {{ if $person }}
+              <div class="person-card">
+                <div class="person-photo">
+                  {{ with $person.Params.photo }}
+                    <img src="{{ . }}" alt="{{ $person.Title }}">
+                  {{ else }}
+                    <img src="/images/placeholder-person.jpg" alt="{{ $person.Title }}">
+                  {{ end }}
+                </div>
+                <h3 class="person-name"><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h3>
+                <div class="person-role">{{ $person.Params.position }}</div>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Navigation -->
+      <nav style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+        {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}" class="pub-link">← {{ .Title | truncate 40 }}</a>
+        {{ else }}
+          <span></span>
+        {{ end }}
+        {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}" class="pub-link">{{ .Title | truncate 40 }} →</a>
+        {{ end }}
+      </nav>
+    </div>
+  </div>
+{{ end }}

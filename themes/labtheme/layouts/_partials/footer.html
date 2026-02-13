@@ -1,0 +1,32 @@
+<div class="footer-content">
+  <div class="footer-section">
+    <a href="{{ "/" | relURL }}"><img src="{{ "images/logo-footer.png" | relURL }}" alt="{{ site.Title }}" class="footer-logo-img"></a>
+    <p>{{ site.Params.department }}</p>
+    <p>{{ site.Params.university }}</p>
+    {{/* Social icons hidden for now
+    <div class="footer-social">
+      <a href="#" title="GitHub">GitHub</a>
+      <a href="#" title="Twitter">Twitter</a>
+      <a href="#" title="LinkedIn">LinkedIn</a>
+      <a href="#" title="YouTube">YouTube</a>
+    </div>
+    */}}
+  </div>
+  <div class="footer-section">
+    <h3>Quick Links</h3>
+    <ul>
+      {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h3>Contact</h3>
+    <p>Email: qjin8@ncsu.edu</p>
+    <p>Address: 1730 Varsity Dr</p>
+    <p>Raleigh, NC 27606</p>
+  </div>
+</div>
+<div class="footer-bottom">
+  <p>&copy; {{ now.Year }} {{ site.Title }}. All rights reserved.</p>
+</div>

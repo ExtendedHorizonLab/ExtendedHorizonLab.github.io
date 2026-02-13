@@ -1,0 +1,87 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="single-page">
+      <div class="single-header">
+        <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+          <div class="person-photo" style="width: 200px; height: 200px; flex-shrink: 0;">
+            {{ with .Params.photo }}
+              <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ else }}
+              <img src="/images/placeholder-person.jpg" alt="{{ .Title }}">
+            {{ end }}
+            <div class="person-glass"></div>
+          </div>
+          <div style="flex: 1;">
+            <h1 class="single-title">{{ .Title }}</h1>
+            <div class="single-meta">
+              {{ with .Params.position }}<span>{{ . }}</span>{{ end }}
+              {{ with .Params.affiliation }}<span>{{ . }}</span>{{ end }}
+            </div>
+            <div class="person-links" style="margin-top: 1rem; justify-content: flex-start;">
+              {{ with .Params.email }}<a href="mailto:{{ . }}" title="Email" class="pub-link">Email</a>{{ end }}
+              {{ with .Params.website }}<a href="{{ . }}" title="Website" class="pub-link">Website</a>{{ end }}
+              {{ with .Params.scholar }}<a href="{{ . }}" title="Google Scholar" class="pub-link">Scholar</a>{{ end }}
+              {{ with .Params.github }}<a href="{{ . }}" title="GitHub" class="pub-link">GitHub</a>{{ end }}
+              {{ with .Params.twitter }}<a href="{{ . }}" title="Twitter" class="pub-link">Twitter</a>{{ end }}
+              {{ with .Params.linkedin }}<a href="{{ . }}" title="LinkedIn" class="pub-link">LinkedIn</a>{{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="single-content">
+        {{ .Content }}
+      </div>
+
+      <!-- Person's Publications -->
+      {{ $name := .Title }}
+      {{ $names := slice $name }}
+      {{ with .Params.alt_names }}{{ range . }}{{ $names = $names | append . }}{{ end }}{{ end }}
+      {{ $pubs := where site.RegularPages "Section" "publications" }}
+      {{ $personPubs := where $pubs "Params.authors" "intersect" $names }}
+      {{ with $personPubs }}
+      <section class="section">
+        <h2 class="section-title">Publications</h2>
+        <div class="news-list">
+          {{ $total := len . }}
+          {{ range $idx, $pub := . }}
+            <div class="pub-card" style="padding-bottom: 1rem;{{ if lt (add $idx 1) $total }} margin-bottom: 1rem; border-bottom: 1px solid rgba(128,128,128,0.2);{{ end }}">
+              <div class="pub-info">
+                <h3 class="pub-title"><a href="{{ $pub.RelPermalink }}">{{ $pub.Title }}</a></h3>
+                <div class="pub-venue">{{ $pub.Params.venue }}</div>
+                <div class="pub-authors">
+                  {{ range $i, $author := $pub.Params.authors }}{{ if $i }}, {{ end }}{{ if in $names $author }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Person's Projects -->
+      {{ $projects := where site.RegularPages "Section" "projects" }}
+      {{ $personProjects := where $projects "Params.team" "intersect" (slice $name) }}
+      {{ with $personProjects }}
+      <section class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="cards-grid">
+          {{ range . }}
+            <div class="card">
+              {{ with .Params.image }}
+              <div class="card-image">
+                <img src="{{ . }}" alt="{{ $.Title }}">
+              </div>
+              {{ end }}
+              <div class="card-content">
+                <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p class="card-description">{{ .Summary | truncate 100 }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

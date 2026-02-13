@@ -1,0 +1,23 @@
+<div class="header-content">
+  <div class="logo">
+    <a href="{{ "/" | relURL }}" class="logo-link">
+      <img src="{{ "images/logo.png" | relURL }}" alt="{{ site.Title }}" class="logo-img" />
+    </a>
+  </div>
+  <nav>
+    <ul>
+      {{ range site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+      <li>
+          <a href="javascript:void(0)" id="theme-toggle">
+            &#9790;
+          </a>
+        </li>
+    </ul>
+  </nav>
+</div>

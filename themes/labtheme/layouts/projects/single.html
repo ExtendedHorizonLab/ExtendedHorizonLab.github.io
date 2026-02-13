@@ -1,0 +1,110 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="single-page">
+      <div class="single-header">
+        {{ with .Params.image }}
+        <div style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden;">
+          <img src="{{ . }}" alt="{{ $.Title }}" style="width: 100%; max-height: 400px; object-fit: cover;">
+        </div>
+        {{ end }}
+
+        <h1 class="single-title">{{ .Title }}</h1>
+
+
+      </div>
+
+      <div class="single-content">
+        {{ .Content }}
+      </div>
+
+      <!-- Project Team -->
+      {{ with .Params.team }}
+      <section class="section">
+        <h2 class="section-title">Team</h2>
+        <div class="people-grid">
+          {{ range . }}
+            {{ $person := site.GetPage (printf "/people/%s" (. | urlize)) }}
+            {{ if $person }}
+              <div class="person-card">
+                <div class="person-photo">
+                  {{ with $person.Params.photo }}
+                    <img src="{{ . }}" alt="{{ $person.Title }}">
+                  {{ else }}
+                    <img src="/images/placeholder-person.jpg" alt="{{ $person.Title }}">
+                  {{ end }}
+                </div>
+                <h3 class="person-name"><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h3>
+                <div class="person-role">{{ $person.Params.position }}</div>
+              </div>
+            {{ else }}
+              <div class="person-card">
+                <div class="person-photo">
+                  <img src="/images/placeholder-person.jpg" alt="{{ . }}">
+                </div>
+                <h3 class="person-name">{{ . }}</h3>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Related Publications -->
+      {{ $projectTitle := .Title }}
+      {{ $pubs := where site.RegularPages "Section" "publications" }}
+      {{ $relatedPubs := where $pubs "Params.project" $projectTitle }}
+      {{ with $relatedPubs }}
+      <section class="section">
+        <h2 class="section-title">Related Publications</h2>
+        <div class="news-list">
+          {{ range . }}
+            <div class="pub-card">
+              {{ with .Params.thumbnail }}
+              <div class="pub-thumbnail">
+                <img src="{{ . }}" alt="{{ $.Title }}">
+              </div>
+              {{ end }}
+              <div class="pub-info">
+                <h3 class="pub-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <div class="pub-venue">{{ .Params.venue }}</div>
+                <div class="pub-authors">
+                  {{ range $i, $author := .Params.authors }}{{ if $i }}, {{ end }}{{ $author }}{{ end }}
+                </div>
+                <div class="pub-links">
+                  {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link">PDF</a>{{ end }}
+                  {{ with .Params.doi }}<a href="{{ . }}" class="pub-link">DOI</a>{{ end }}
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Project Links -->
+      {{ if or .Params.github .Params.website .Params.demo .Params.video }}
+      <section class="section">
+        <h2 class="section-title">Links</h2>
+        <div class="pub-links">
+          {{ with .Params.website }}<a href="{{ . }}" class="pub-link" target="_blank">Website</a>{{ end }}
+          {{ with .Params.github }}<a href="{{ . }}" class="pub-link" target="_blank">GitHub</a>{{ end }}
+          {{ with .Params.demo }}<a href="{{ . }}" class="pub-link" target="_blank">Demo</a>{{ end }}
+          {{ with .Params.video }}<a href="{{ . }}" class="pub-link" target="_blank">Video</a>{{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Sponsors -->
+      {{ with .Params.sponsors }}
+      <section class="section">
+        <h2 class="section-title">Sponsors</h2>
+        <div class="sponsors-grid">
+          {{ range . }}
+            <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
