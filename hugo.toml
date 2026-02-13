@@ -1,4 +1,4 @@
-baseURL = 'https://ExtendedHorizonLab.github.io/'
+baseURL = 'https://extendedhorizon.com/'
 languageCode = 'en-us'
 title = 'Extended Horizon Lab'
 theme = 'labtheme'
