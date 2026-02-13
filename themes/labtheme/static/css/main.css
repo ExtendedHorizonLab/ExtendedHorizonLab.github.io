@@ -583,7 +583,7 @@ html header.header-on-light nav ul li a.active {
 /* ===== PEOPLE ===== */
 .people-grid-5 {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1.5rem 1rem;
   margin-bottom: 3rem;
 }
@@ -594,8 +594,9 @@ html header.header-on-light nav ul li a.active {
 
 .person-photo {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 80%;
+  aspect-ratio: 1;
+  max-width: 180px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 0.5rem;
@@ -674,7 +675,7 @@ html header.header-on-light nav ul li a.active {
 /* Graduated PhD Grid */
 .graduated-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -716,7 +717,7 @@ html header.header-on-light nav ul li a.active {
 
 .alumni-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 0.5rem 2rem;
 }
 
@@ -737,7 +738,7 @@ html header.header-on-light nav ul li a.active {
 /* ===== NEWS ===== */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -1569,21 +1570,6 @@ footer::after {
     position: static;
   }
 
-  .people-grid-5 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .graduated-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .alumni-grid {
-    grid-template-columns: 1fr;
-  }
 
   /* Home page responsive */
   .home-hero {
@@ -1619,6 +1605,25 @@ footer::after {
 
   .home-papers-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SMALL MOBILE (phones portrait) ===== */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .single-page {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .single-title {
+    font-size: 1.5rem;
   }
 }
 
