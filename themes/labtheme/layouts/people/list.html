@@ -45,6 +45,8 @@
           <div class="person-photo">
             {{ with .Params.photo }}
               <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ else }}
+              <img src="/images/placeholder-person.png" alt="{{ .Title }}">
             {{ end }}
             <div class="person-glass"></div>
           </div>

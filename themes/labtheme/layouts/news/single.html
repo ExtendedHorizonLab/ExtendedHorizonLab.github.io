@@ -34,7 +34,7 @@
                   {{ with $person.Params.photo }}
                     <img src="{{ . }}" alt="{{ $person.Title }}">
                   {{ else }}
-                    <img src="/images/placeholder-person.jpg" alt="{{ $person.Title }}">
+                    <img src="/images/placeholder-person.png" alt="{{ $person.Title }}">
                   {{ end }}
                 </div>
                 <h3 class="person-name"><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h3>
