@@ -5,4 +5,4 @@ author: "Qiao (Georgie) Jin"
 image: "/images/news/ncsu-hunt-library.jpg"
 ---
 
-Grateful to receive [ETF](https://provost.ncsu.edu/administrative-resources/educational-and-technology-fee/) (Educational and Technology Fee) funding to support my ongoing XR education work.
+Grateful to receive [ETF](https://provost.ncsu.edu/administrative-resources/educational-and-technology-fee/) (Educational and Technology Fee) funding to support Prof. Georgie's ongoing XR education work.
