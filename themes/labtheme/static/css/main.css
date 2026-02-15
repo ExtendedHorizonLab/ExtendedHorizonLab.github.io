@@ -594,9 +594,8 @@ html header.header-on-light nav ul li a.active {
 
 .person-photo {
   position: relative;
-  width: 80%;
-  aspect-ratio: 1;
-  max-width: 180px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 0.5rem;
@@ -1610,6 +1609,11 @@ footer::after {
 
 /* ===== SMALL MOBILE (phones portrait) ===== */
 @media (max-width: 480px) {
+  .person-photo {
+    width: 120px;
+    height: 120px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
