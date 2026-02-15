@@ -5,6 +5,7 @@ venue: "International Society of the Learning Sciences (ISLS)"
 authors: ["Xiaozhou Deng", "Danli Wang", "Qiao Jin"]
 pub_type: "conference"
 pdf: "/papers/coprostory-isls2019.pdf"
+doi: "https://doi.dx.org/10.22318/cscl2019.232"
 thumbnail: "/images/publications/coprostory-isls2019.png"
 figure: "/images/publications/figures/coprostory-isls2019.png"
 abstract: >-

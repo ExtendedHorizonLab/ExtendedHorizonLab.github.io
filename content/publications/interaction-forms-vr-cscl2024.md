@@ -5,6 +5,7 @@ venue: "CSCL '24: Proceedings of the 17th International Conference on Computer-S
 authors: ["Qiao Jin", "Ishan Sodhi", "Angie Chen", "Svetlana Yarosh"]
 pub_type: "conference"
 pdf: "/papers/interaction-forms-vr-cscl2024.pdf"
+doi: "https://doi.org/10.22318/cscl2024.134087"
 thumbnail: "/images/publications/interaction-forms-vr-cscl2024.png"
 figure: "/images/publications/figures/interaction-forms-vr-cscl2024.png"
 abstract: "Collaborative and immersive environments both contribute to increasing engagement in video-based learning (VBL). This exploratory study delves into the dynamics of interaction forms within collaborative VR video-based learning and evaluates how shared and individual video control influence these interactions. Through a within-subject study involving 18 groups of three participants (N = 54), we aim to address three research questions: identifying interaction forms in collaborative VR video-based learning, comparing interaction forms between shared and individual video control, and examining the relationship between interaction forms and knowledge acquisition and satisfaction."
