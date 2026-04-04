@@ -134,8 +134,7 @@ a:hover { text-decoration: underline; }
 }
 
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-              url('/images/hero-bg.jpg') center/cover no-repeat;
+  background: #555 center/cover no-repeat;
   color: #fff;
   padding: 72px 24px 64px;
   text-align: center;
