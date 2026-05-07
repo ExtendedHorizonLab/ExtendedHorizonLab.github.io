@@ -1,8 +1,8 @@
 ---
 title: "Yichen (Andy) Yu"
-position: "Research Staff"
+position: "PhD Student"
 affiliation: "NCSU CS"
-role: "staff"
+role: "phd"
 photo: "/images/people/yichen-andy-yu.jpg"
 alt_names: ["Yichen Yu"]
 website: "http://yuyichen.net/"

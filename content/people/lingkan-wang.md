@@ -1,8 +1,9 @@
 ---
 title: "Lingkan Wang"
-position: "MS Student"
+status: "alumni"
+alumni_type: "graduate"
 affiliation: "Carnegie Mellon University"
-role: "masters"
+years: "2025-2026"
 photo: "/images/people/lingkan-wang.jpg"
-weight: 32
+weight: 300
 ---

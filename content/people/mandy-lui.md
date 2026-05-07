@@ -1,9 +1,10 @@
 ---
 title: "Mandy Lui"
-position: "Undergrad"
+status: "alumni"
+alumni_type: "undergrad"
 affiliation: "University of Rochester"
-role: "undergrad"
+years: "2025-2026"
 photo: "/images/people/mandy-lui.jpg"
 linkedin: "https://www.linkedin.com/in/mandyrlui/"
-weight: 35
+weight: 300
 ---
