@@ -10,5 +10,5 @@ email: "yyu55@ncsu.edu"
 twitter: "https://x.com/andyyuyc"
 scholar: "https://scholar.google.com/citations?user=DyG_BjgAAAAJ&hl"
 linkedin: "https://www.linkedin.com/in/andy-yu-a389bb131/"
-weight: 5
+weight: 6
 ---
