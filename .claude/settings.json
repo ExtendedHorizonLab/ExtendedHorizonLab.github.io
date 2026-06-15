@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /tmp/panelist-photos)",
+      "Bash(pdfimages -all \"/Users/andy/Downloads/Panelists.pdf\" /tmp/panelist-photos/img)",
+      "Bash(rm \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/.jpg\")",
+      "Bash(sips -s format jpeg -s formatOptions 85 -Z 600 /tmp/panelist-photos/img-000.png --out \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/vincent-aleven.jpg\")",
+      "Bash(sips -s format jpeg -s formatOptions 85 -Z 600 /tmp/panelist-photos/img-001.png --out \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/xiangen-hu.jpg\")",
+      "Bash(sips -s format jpeg -s formatOptions 85 -Z 600 /tmp/panelist-photos/img-002.png --out \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/qingsong-wen.jpg\")",
+      "Bash(sips -s format jpeg -s formatOptions 85 -Z 600 /tmp/panelist-photos/img-003.png --out \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/tiffany-barnes.jpg\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://127.0.0.1:1313/aied2026ws-ai-hci-ls/keynote/)",
+      "Bash(curl -sS --max-time 5 -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://127.0.0.1:1313/aied2026ws-ai-hci-ls/keynote/)",
+      "Bash(python3 -m http.server 8000 --bind 127.0.0.1)",
+      "Bash(curl -sS --max-time 3 -o /dev/null -w \"Panelists: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/aied2026ws-ai-hci-ls/keynote/)",
+      "Bash(curl -sS --max-time 3 -o /dev/null -w \"Schedule: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/aied2026ws-ai-hci-ls/schedule/)",
+      "Bash(curl -sS --max-time 3 -o /dev/null -w \"Photo: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/aied2026ws-ai-hci-ls/images/panelists/vincent-aleven.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/xiangen-hu.jpg\")"
+    ]
+  }
+}

@@ -587,6 +587,15 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
 }
 
+.speaker-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 .speaker-tag {
   display: inline-block;
   background: #1C75BC;
@@ -706,6 +715,7 @@ a:hover { text-decoration: underline; }
   .header-date { display: none; }
   .speaker-card { grid-template-columns: 1fr; }
   .speaker-photo-placeholder { width: 100px; height: 100px; font-size: 1.8rem; }
+  .speaker-photo { width: 100px; height: 100px; }
   .submission-formats { grid-template-columns: 1fr; }
   .organizers-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-toggle { display: flex; }
