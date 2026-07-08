@@ -20,7 +20,11 @@
       "Bash(python3 -m http.server 8791)",
       "Bash(open \"http://localhost:8791/aied2026ws-ai-hci-ls/program/\")",
       "Bash(curl -s -o /dev/null -w \"program page: %{http_code}\\\\n\" \"http://localhost:8791/aied2026ws-ai-hci-ls/program/\")",
-      "Bash(perl -pe 's/<li>/\\\\n  <li>/g')"
+      "Bash(perl -pe 's/<li>/\\\\n  <li>/g')",
+      "Bash(command -v pdftotext)",
+      "Bash(python3 -c \"import fitz; print\\('pymupdf: yes'\\)\")",
+      "Bash(python3 -c \"import pdfminer; print\\('pdfminer: yes'\\)\")",
+      "mcp__claude_ai_Google_Drive__get_file_metadata"
     ]
   }
 }
