@@ -742,3 +742,111 @@ a:hover { text-decoration: underline; }
   .section { padding: 40px 0; }
   .about-section { padding: 40px 20px; }
 }
+
+/* ===== Program / Accepted Papers & Demos ===== */
+.paper-list { display: flex; flex-direction: column; }
+.paper-item { padding: 16px 2px; border-bottom: 1px solid #eee; }
+.paper-item:last-child { border-bottom: none; }
+.paper-item-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+.paper-title { font-weight: 600; color: #1a1a2e; font-size: 1rem; line-height: 1.4; }
+.paper-authors { color: #777; font-size: 0.85rem; margin-top: 6px; line-height: 1.55; }
+.paper-pdf {
+  flex-shrink: 0;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #1C75BC;
+  border: 1.5px solid #1C75BC;
+  border-radius: 4px;
+  padding: 5px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.paper-pdf:hover { background: #1C75BC; color: #fff; }
+.paper-pdf.disabled { color: #bbb; border-color: #ddd; cursor: default; pointer-events: none; }
+.paper-video {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 540px;
+  border-radius: 6px;
+  display: block;
+  background: #000;
+}
+.demo-badge {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0d4f8a;
+  background: #d6e9fb;
+  border-radius: 3px;
+  padding: 2px 7px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.program-note { color: #555; font-size: 0.95rem; margin-bottom: 8px; }
+
+/* ===== Photo Gallery ===== */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+.photo-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+.gallery-placeholder {
+  color: #999;
+  font-size: 0.95rem;
+  font-style: italic;
+  padding: 20px 0;
+}
+@media (max-width: 600px) {
+  .paper-item-head { flex-direction: column-reverse; align-items: flex-start; }
+  .paper-pdf { margin-bottom: 8px; }
+}
+
+/* buttons group (PDF + Demo side by side) */
+.paper-links { display: inline-flex; gap: 8px; flex-shrink: 0; }
+.paper-demo { border-color: #0d4f8a; color: #0d4f8a; }
+.paper-demo:hover { background: #0d4f8a; color: #fff; }
+
+/* Photo gallery interactions + lightbox */
+.photo-gallery img { cursor: zoom-in; transition: transform 0.15s, box-shadow 0.15s; }
+.photo-gallery img:hover { transform: translateY(-2px); box-shadow: 0 5px 16px rgba(0,0,0,0.20); }
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  display: none; align-items: center; justify-content: center;
+  padding: 24px; cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 4px; box-shadow: 0 6px 40px rgba(0,0,0,0.6); }
+
+/* Featured (hero) workshop photo */
+.photo-featured { margin-bottom: 16px; }
+.photo-featured img {
+  width: 100%;
+  max-height: 640px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  cursor: zoom-in;
+  transition: box-shadow 0.15s;
+}
+.photo-featured img:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.22); }
+.photo-featured-caption { text-align: center; color: #888; font-size: 0.85rem; margin-top: 8px; }

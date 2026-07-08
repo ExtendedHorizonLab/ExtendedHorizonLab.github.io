@@ -14,7 +14,13 @@
       "Bash(curl -sS --max-time 3 -o /dev/null -w \"Panelists: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/aied2026ws-ai-hci-ls/keynote/)",
       "Bash(curl -sS --max-time 3 -o /dev/null -w \"Schedule: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/aied2026ws-ai-hci-ls/schedule/)",
       "Bash(curl -sS --max-time 3 -o /dev/null -w \"Photo: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/aied2026ws-ai-hci-ls/images/panelists/vincent-aleven.jpg)",
-      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/xiangen-hu.jpg\")"
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/andy/Library/Mobile Documents/com~apple~CloudDocs/Work/ExtendedHorizonLab.github.io/static/aied2026ws-ai-hci-ls/images/panelists/xiangen-hu.jpg\")",
+      "Bash(cat)",
+      "Bash(python3 /tmp/copy_papers.py)",
+      "Bash(python3 -m http.server 8791)",
+      "Bash(open \"http://localhost:8791/aied2026ws-ai-hci-ls/program/\")",
+      "Bash(curl -s -o /dev/null -w \"program page: %{http_code}\\\\n\" \"http://localhost:8791/aied2026ws-ai-hci-ls/program/\")",
+      "Bash(perl -pe 's/<li>/\\\\n  <li>/g')"
     ]
   }
 }
