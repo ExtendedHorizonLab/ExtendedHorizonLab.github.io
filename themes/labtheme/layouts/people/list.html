@@ -90,13 +90,20 @@
     <section class="people-section">
       <h2 class="people-section-title">Past Members</h2>
 
+      {{/* Shortened affiliation names, used only in this Past Members section */}}
+      {{ $abbr := dict
+        "University of Rochester CS" "UofRochester CS"
+        "University of Rochester" "UofRochester CS"
+        "Carnegie Mellon University" "CMU"
+      }}
+
       <!-- Graduate Students -->
       {{ $gradStudents := where $alumni "Params.alumni_type" "graduate" }}
       {{ with $gradStudents }}
       <h3 class="alumni-group-title">Graduate Students</h3>
       <div class="alumni-grid">
         {{ range . }}
-        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Params.affiliation }}, {{ .Params.years }}</div>
+        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ index $abbr .Params.affiliation | default .Params.affiliation }}, {{ .Params.years }}</div>
         {{ end }}
       </div>
       {{ end }}
@@ -107,7 +114,7 @@
       <h3 class="alumni-group-title">Undergrads</h3>
       <div class="alumni-grid">
         {{ range . }}
-        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Params.affiliation }}, {{ .Params.years }}</div>
+        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ index $abbr .Params.affiliation | default .Params.affiliation }}, {{ .Params.years }}</div>
         {{ end }}
       </div>
       {{ end }}
