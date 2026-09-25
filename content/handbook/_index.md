@@ -1,5 +1,6 @@
 ---
 title: "Lab Handbook"
+draft: true
 ---
 
 # Lab Handbook
@@ -64,4 +65,4 @@ Authorship follows ACM guidelines. Discuss authorship expectations early in any 
 
 ## Contact
 
-For questions about the lab, contact the lab manager at lab@university.edu.
+For questions about the lab, contact Prof. Qiao (Georgie) Jin at [qjin4@ncsu.edu](mailto:qjin4@ncsu.edu).

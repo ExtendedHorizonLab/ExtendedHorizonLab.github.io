@@ -1,8 +1,9 @@
 ---
 title: "Akash Ramaswamy"
-position: "Undergrad"
+status: "alumni"
+alumni_type: "undergrad"
 affiliation: "NCSU CS"
-role: "undergrad"
+years: "2025-2026"
 photo: "/images/people/akash-ramaswamy.jpg"
-weight: 38
+weight: 300
 ---
