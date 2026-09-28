@@ -4,7 +4,7 @@ position: "PhD Student"
 affiliation: "NCSU CS"
 role: "phd"
 photo: "/images/people/yichen-andy-yu.jpg"
-alt_names: ["Yichen Yu"]
+alt_names: ["Yichen Yu", "Yichen Andy Yu", "YiChen Yu"]
 website: "http://yuyichen.net/"
 email: "yyu55@ncsu.edu"
 twitter: "https://x.com/andyyuyc"

@@ -1,9 +1,10 @@
 ﻿---
 title: "GenLARP: Enabling Immersive Live Action Role-Play through LLM-Generated Worlds and Characters"
 date: 2025-10-01
-venue: "ISMAR '25: International Symposium on Mixed and Augmented Reality"
+venue: "Poster Proceedings of ISMAR 2025"
 authors: ["Yichen Yu", "Yifan Jiang", "Mandy Lui", "Qiao Jin"]
-pub_type: "conference"
+# Publication type source: content/news/our-poster-work-genlarp-enabling-immersive-live-action-rolep.md
+pub_type: "poster"
 pdf: "/papers/genlarp-ismar2025.pdf"
 doi: "https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00178"
 thumbnail: "/images/publications/genlarp-ismar2025.png"

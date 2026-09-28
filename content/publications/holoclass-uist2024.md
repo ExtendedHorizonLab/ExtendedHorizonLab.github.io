@@ -1,9 +1,10 @@
 ﻿---
 title: "HoloClass: Enhancing VR Classroom with Live Volumetric Video Streaming"
 date: 2024-10-13
-venue: "UIST '24: Adjunct Proceedings of the 37th Annual ACM Symposium on User Interface Software and Technology"
+venue: "Poster Proceedings of UIST 2024"
 authors: ["Yu Liu", "Bo Han", "Qiao Jin", "Svetlana Yarosh", "Zejun Zhang", "Feng Qian"]
-pub_type: "conference"
+# Publication type source: content/news/present-our-poster-work-at-uist2024-check-out-our-holoclass.md
+pub_type: "poster"
 pdf: "/papers/holoclass-uist2024.pdf"
 doi: "https://doi.org/10.1145/3672539.3686330"
 thumbnail: "/images/publications/holoclass-uist2024.png"

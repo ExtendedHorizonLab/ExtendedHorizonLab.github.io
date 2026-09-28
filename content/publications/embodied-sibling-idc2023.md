@@ -1,9 +1,10 @@
 ﻿---
 title: "Exploring Embodied Approaches for Large Age Gap Sibling Communication through Technology Probes"
 date: 2023-06-19
-venue: "IDC '23: Proceedings of the 22nd Annual ACM Interaction Design and Children"
+venue: "Poster Proceedings of IDC 2023"
 authors: ["Stuti Arora", "Qiao Jin", "Svetlana Yarosh"]
-pub_type: "conference"
+# Publication type source: https://idc.acm.org/2023/wp-content/uploads/2023/06/IDC-2023-Program-3-Compressed.pdf, Works-in-Progress Group 1a
+pub_type: "poster"
 pdf: "/papers/embodied-sibling-idc2023.pdf"
 doi: "https://doi.org/10.1145/3585088.3593892"
 thumbnail: "/images/publications/embodied-sibling-idc2023.png"

@@ -1,7 +1,7 @@
 ---
 title: "Volumivive: An Authoring System for Adding Interactivity to Volumetric Video"
 date: 2023-03-25
-venue: "IEEE VR '23 Poster: IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops"
+venue: "Poster Proceedings of IEEE VR 2023"
 authors: ["Qiao Jin", "Yu Liu", "Puqi Zhou", "Bo Han", "Svetlana Yarosh", "Feng Qian"]
 tags: ["Social XR for Higher Education"]
 pub_type: "poster"

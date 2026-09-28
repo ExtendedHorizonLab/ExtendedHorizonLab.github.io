@@ -1,9 +1,10 @@
 ﻿---
 title: "Exploring Privacy Challenges in Using Volumetric Video for Educational VR"
 date: 2025-06-15
-venue: "MobiHoc '25: Proceedings of the Twenty-sixth International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing"
+venue: "Poster Proceedings of MobiHoc 2025"
 authors: ["Yu Liu", "Qiao Jin", "Feng Qian"]
-pub_type: "conference"
+# Publication type source: static/papers/privacy-volumetric-video-2025.pdf, abstract and introduction
+pub_type: "poster"
 pdf: "/papers/privacy-volumetric-video-2025.pdf"
 doi: "https://doi.org/10.1145/3704413.3765311"
 thumbnail: "/images/publications/privacy-volumetric-video-2025.png"

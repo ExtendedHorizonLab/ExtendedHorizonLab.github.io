@@ -55,6 +55,8 @@
                   <div class="pub-links">
                     {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link" target="_blank">pdf</a>{{ end }}
                     {{ with .Params.doi }}<a href="{{ . }}" class="pub-link" target="_blank">doi</a>{{ end }}
+                    {{ with .Params.arxiv }}<a href="{{ . }}" class="pub-link" target="_blank">arXiv</a>{{ end }}
+                    {{ with .Params.website }}<a href="{{ . }}" class="pub-link" target="_blank">website</a>{{ end }}
                     {{ with .Params.acm }}<a href="{{ . }}" class="pub-link" target="_blank">acm</a>{{ end }}
                     {{ with .Params.code }}<a href="{{ . }}" class="pub-link" target="_blank">code</a>{{ end }}
                     {{ with .Params.video }}<a href="{{ . }}" class="pub-link" target="_blank">video</a>{{ end }}

@@ -1,5 +1,6 @@
 ---
 title: "Wanru (Jovie) Li"
+alt_names: ["Jovie Li", "Wanru Li", "Wanru Jovie Li"]
 position: "MS Student"
 affiliation: "Carnegie Mellon University"
 role: "masters"
