@@ -75,7 +75,7 @@
                     {{ with .Params.website }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "website" }}website</a>{{ end }}
                     {{ with .Params.acm }}<a href="{{ . }}" class="pub-link" target="_blank">acm</a>{{ end }}
                     {{ with .Params.code }}<a href="{{ . }}" class="pub-link" target="_blank">code</a>{{ end }}
-                    {{ with .Params.video }}<a href="{{ . }}" class="pub-link" target="_blank">video</a>{{ end }}
+                    {{ with .Params.video }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "video" }}video</a>{{ end }}
                     {{ with .Params.talk }}<a href="{{ . }}" class="pub-link" target="_blank">talk</a>{{ end }}
                   </div>
                 </div>
