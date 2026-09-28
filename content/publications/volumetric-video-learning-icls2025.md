@@ -4,6 +4,7 @@ date: 2025-06-08
 venue: "ICLS '25: The International Conference of the Learning Sciences"
 authors: ["Qiao Jin", "Yu Liu", "Yuxuan Huang", "Bo Han", "Feng Qian", "Svetlana Yarosh"]
 pub_type: "conference"
+paper_tags: ["xr", "learning", "systems", "user-studies"]
 pdf: "/papers/volumetric-video-learning-icls2025.pdf"
 doi: "https://doi.org/10.22318/icls2025.459272"
 thumbnail: "/images/publications/volumetric-video-learning-icls2025.png"

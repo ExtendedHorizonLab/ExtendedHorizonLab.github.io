@@ -5,6 +5,7 @@ venue: "CSCW '24: The ACM Conference on Computer-Supported Cooperative Work and 
 authors: ["Ye Yuan", "Peter Genatempo", "Qiao Jin", "Svetlana Yarosh"]
 tags: ["XR for Children"]
 pub_type: "conference"
+paper_tags: ["xr", "learning", "collaboration", "families", "systems", "user-studies"]
 award: true
 award_name: "DEI Recognition"
 pdf: "/papers/ar-reading-cscw2024.pdf"

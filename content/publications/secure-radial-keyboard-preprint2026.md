@@ -7,6 +7,7 @@ date: 2026-01-09
 venue: "arXiv preprint"
 authors: ["Yuxuan Huang", "Qiao Jin", "Tongyu Nie", "Victoria Interrante", "Evan Suma Rosenberg"]
 pub_type: "preprint"
+paper_tags: ["xr", "ethics", "systems", "user-studies"]
 pdf: "/papers/secure-radial-keyboard-preprint2026.pdf"
 arxiv: "https://arxiv.org/abs/2601.05516"
 thumbnail: "/images/publications/secure-radial-keyboard-preprint2026.png"

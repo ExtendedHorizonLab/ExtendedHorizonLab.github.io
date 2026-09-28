@@ -4,6 +4,7 @@ date: 2023-10-14
 venue: "CSCW '23: Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing"
 authors: ["Juan Pablo Hourcade", "Elizabeth Bonsignore", "Tamara Clegg", "Flannery Currin", "Jerry A. Fails", "Georgie Qiao Jin", "Summer R. Schmuecker", "Lana Yarosh"]
 pub_type: "workshop"
+paper_tags: ["xr", "collaboration", "families", "ethics", "conceptual"]
 pdf: "/papers/ethics-emerging-cscw2023.pdf"
 doi: "https://doi.org/10.1145/3584931.3606957"
 thumbnail: "/images/publications/ethics-emerging-cscw2023.png"

@@ -5,6 +5,7 @@ venue: "Poster Proceedings of UIST 2024"
 authors: ["Hao Jin", "Lyumanshan Ye", "Qiao Jin"]
 # Publication type source: content/news/present-our-poster-work-at-uist2024-check-out-our-holoclass.md
 pub_type: "poster"
+paper_tags: ["xr", "collaboration", "families", "systems"]
 pdf: "/papers/sensebot-uist2024.pdf"
 doi: "https://doi.org/10.1145/3672539.3686734"
 thumbnail: "/images/publications/sensebot-uist2024.png"

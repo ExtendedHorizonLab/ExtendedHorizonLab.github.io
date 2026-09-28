@@ -8,6 +8,7 @@ date: 2026-06-21
 venue: "Short Paper Proceedings of IDC 2026"
 authors: ["Qiao Jin", "Leah Ajmani", "Samantha Singh", "Adhitya Balasubramanian", "Svetlana Yarosh"]
 pub_type: "short paper"
+paper_tags: ["collaboration", "families", "user-studies", "participatory-design"]
 doi: "https://doi.org/10.1145/3773077.3806134"
 pdf: "/papers/group-prioritization-idc2026.pdf"
 thumbnail: "/images/publications/group-prioritization-idc2026.png"

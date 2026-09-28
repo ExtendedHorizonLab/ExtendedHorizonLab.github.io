@@ -5,6 +5,7 @@ venue: "Work-in-Progress at CHI PLAY 2025"
 authors: ["Hongfei Ji", "Yuhan Yuan", "Qiao Jin"]
 # Publication type source: https://hongfeiji.com/en/portfolio/children-ai-domestic-pap, Project Source
 pub_type: "work-in-progress"
+paper_tags: ["ai", "families", "wellbeing", "user-studies"]
 pdf: "/papers/jump-stop-chiplay2025.pdf"
 doi: "https://doi.org/10.1145/3744736.3749349"
 thumbnail: "/images/publications/jump-stop-chiplay2025.png"

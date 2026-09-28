@@ -4,6 +4,7 @@ date: 2025-03-01
 venue: "International Journal of Child-Computer Interaction"
 authors: ["Qiao Jin", "Ye Yuan"]
 pub_type: "journal"
+paper_tags: ["ai", "families", "user-studies"]
 pdf: "/papers/ai-images-stories-ijcci2025.pdf"
 doi: "https://doi.org/10.1016/j.ijcci.2025.100787"
 thumbnail: "/images/publications/ai-images-stories-ijcci2025.png"

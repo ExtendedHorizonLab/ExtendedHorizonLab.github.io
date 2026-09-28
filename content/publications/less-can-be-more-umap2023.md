@@ -4,6 +4,7 @@ date: 2023-06-18
 venue: "UMAP '23: Adjunct Proceedings of the 31st ACM Conference on User Modeling, Adaptation and Personalization"
 authors: ["Ruixuan Sun", "Ruoyan Kong", "Qiao Jin", "Joseph A. Konstan"]
 pub_type: "conference"
+paper_tags: ["ai", "analysis"]
 pdf: "/papers/less-can-be-more-umap2023.pdf"
 doi: "https://doi.org/10.1145/3563359.3597390"
 thumbnail: "/images/publications/less-can-be-more-umap2023.png"

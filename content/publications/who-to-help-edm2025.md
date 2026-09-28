@@ -4,6 +4,7 @@ date: 2025-07-14
 venue: "EDM '25: International Conference on Educational Data Mining"
 authors: ["Qiao Jin", "Conrad Borchers", "Stephen Fancsali", "Vincent Aleven"]
 pub_type: "conference"
+paper_tags: ["ai", "learning", "analysis"]
 pdf: "/papers/who-to-help-edm2025.pdf"
 doi: "https://zenodo.org/records/15870229"
 thumbnail: "/images/publications/who-to-help-edm2025.png"

@@ -4,6 +4,7 @@ date: 2024-05-11
 venue: "CHI EA '24: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems"
 authors: ["Bengisu Cagiltay", "Zhaoyuan Su", "Qiao (Georgie) Jin", "Hui-Ru (Irene) Ho", "Yuxing Wu", "Junnan Yu", "Kaiwen Sun", "Olivia Richards", "Jerry Alan Fails", "Jason Yip", "Jodi Forlizzi"]
 pub_type: "workshop"
+paper_tags: ["families", "participatory-design", "conceptual"]
 pdf: "/papers/family-centered-design-chiea2024.pdf"
 doi: "https://doi.org/10.1145/3613905.3636290"
 thumbnail: "/images/publications/family-centered-design-chiea2024.png"

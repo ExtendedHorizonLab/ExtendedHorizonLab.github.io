@@ -4,6 +4,7 @@ date: 2025-05-01
 venue: "2025"
 authors: ["Qiao Jin", "Kyle Price", "Will Morgus", "Michael Sandbothe", "Jonathan Sewall", "Octav Popescu", "Amy Wu", "Luke Freimanis", "Ravi Oliveira Nedungadi", "Pragati Maheshwary", "Susan Berman", "Stephen Fancsali", "Steve Ritter", "Vincent Aleven"]
 pub_type: "conference"
+paper_tags: ["ai", "xr", "learning", "systems"]
 pdf: "/papers/lumilo2-2025.pdf"
 doi: "https://doi.org/10.13140/RG.2.2.26768.52488"
 thumbnail: "/images/publications/lumilo2-2025.png"

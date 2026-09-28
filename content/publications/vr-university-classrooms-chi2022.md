@@ -5,6 +5,7 @@ venue: "CHI '22: Proceedings of the 2022 CHI Conference on Human Factors in Comp
 authors: ["Qiao Jin", "Yu Liu", "Svetlana Yarosh", "Bo Han", "Feng Qian"]
 tags: ["Social XR for Higher Education"]
 pub_type: "conference"
+paper_tags: ["xr", "learning", "user-studies", "participatory-design"]
 pdf: "/papers/vr-university-classrooms-chi2022.pdf"
 doi: "https://dl.acm.org/doi/abs/10.1145/3491102.3517542"
 video: "https://www.youtube.com/watch?v=BAD72KnJG8Y"

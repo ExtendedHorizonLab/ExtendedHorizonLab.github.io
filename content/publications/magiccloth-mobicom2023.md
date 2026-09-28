@@ -4,6 +4,7 @@ date: 2023-10-02
 venue: "MIC '23: Proceedings of the 1st ACM Workshop on Mobile Immersive Computing"
 authors: ["Yuming Hu", "Mingyu Zhu", "Qiao Jin", "Feng Qian", "Bin Li"]
 pub_type: "workshop"
+paper_tags: ["xr", "ethics", "systems"]
 pdf: "/papers/magiccloth-mobicom2023.pdf"
 doi: "https://doi.org/10.1145/3615452.3617936"
 thumbnail: "/images/publications/magiccloth-mobicom2023.png"

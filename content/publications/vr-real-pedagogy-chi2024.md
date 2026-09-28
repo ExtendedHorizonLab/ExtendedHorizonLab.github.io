@@ -5,6 +5,7 @@ venue: "CHI '24: Proceedings of the 2024 CHI Conference on Human Factors in Comp
 authors: ["Qiao Jin", "Yu Liu", "Ye Yuan", "Bo Han", "Feng Qian", "Svetlana Yarosh"]
 tags: ["Social XR for Higher Education"]
 pub_type: "conference"
+paper_tags: ["xr", "learning", "user-studies"]
 pdf: "/papers/vr-real-pedagogy-chi2024.pdf"
 doi: "https://dl.acm.org/doi/10.1145/3613904.3642510"
 video: "https://www.youtube.com/watch?v=orGyn56ZnLM"

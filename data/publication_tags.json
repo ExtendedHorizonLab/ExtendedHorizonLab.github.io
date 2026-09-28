@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ai",
+    "label": "Human-centered AI",
+    "description": "Human interaction with AI, intelligent agents, and AI-supported tools."
+  },
+  {
+    "id": "xr",
+    "label": "XR & Immersive Systems",
+    "description": "Virtual, augmented, and mixed reality systems and experiences."
+  },
+  {
+    "id": "learning",
+    "label": "Learning & Education",
+    "description": "Learning tools, teaching practices, and educational experiences."
+  },
+  {
+    "id": "collaboration",
+    "label": "Collaboration & Social Connection",
+    "description": "Shared activity, collaboration, and communication across distance."
+  },
+  {
+    "id": "families",
+    "label": "Children & Families",
+    "description": "Technology designed or studied with children, families, and generations."
+  },
+  {
+    "id": "ethics",
+    "label": "Privacy, Safety & Ethics",
+    "description": "Privacy, security, safety, equity, and responsible technology design."
+  },
+  {
+    "id": "wellbeing",
+    "label": "Perception & Wellbeing",
+    "description": "Spatial perception, emotion, physical activity, and wellbeing."
+  },
+  {
+    "id": "systems",
+    "label": "Systems & Interfaces",
+    "description": "Design and implementation of interactive systems, interfaces, or prototypes."
+  },
+  {
+    "id": "user-studies",
+    "label": "User Studies",
+    "description": "Empirical work with people, including interviews, experiments, field studies, and usability evaluations."
+  },
+  {
+    "id": "analysis",
+    "label": "Data Analysis & Modeling",
+    "description": "A central contribution based on analyzing datasets, interaction traces, or computational models."
+  },
+  {
+    "id": "participatory-design",
+    "label": "Participatory Design",
+    "description": "Involving stakeholders in design activities or setting research and design priorities."
+  },
+  {
+    "id": "conceptual",
+    "label": "Conceptual & Position Work",
+    "description": "Conceptual frameworks, position papers, and research agendas, including workshop and SIG proposals."
+  }
+]

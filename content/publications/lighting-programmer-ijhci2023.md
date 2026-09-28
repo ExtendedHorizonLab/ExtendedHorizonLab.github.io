@@ -5,6 +5,7 @@ venue: "IJHCI '23: International Journal of Human-Computer Interaction"
 authors: ["Xinyuan Wang", "Qian Xing", "Qiao Jin", "Danli Wang"]
 tags: ["Communication and Collaboration for Children"]
 pub_type: "journal"
+paper_tags: ["learning", "collaboration", "families", "systems", "user-studies"]
 pdf: "/papers/lighting-programmer-ijhci2023.pdf"
 doi: "https://www.tandfonline.com/doi/abs/10.1080/10447318.2022.2163783"
 thumbnail: "/images/publications/lighting-programmer-ijhci2023.png"

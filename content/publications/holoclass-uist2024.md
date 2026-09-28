@@ -5,6 +5,7 @@ venue: "Poster Proceedings of UIST 2024"
 authors: ["Yu Liu", "Bo Han", "Qiao Jin", "Svetlana Yarosh", "Zejun Zhang", "Feng Qian"]
 # Publication type source: content/news/present-our-poster-work-at-uist2024-check-out-our-holoclass.md
 pub_type: "poster"
+paper_tags: ["xr", "learning", "collaboration", "systems", "user-studies"]
 pdf: "/papers/holoclass-uist2024.pdf"
 doi: "https://doi.org/10.1145/3672539.3686330"
 thumbnail: "/images/publications/holoclass-uist2024.png"

@@ -9,6 +9,7 @@ date: 2026-05-07
 venue: "Workshop at CSCW 2026"
 authors: ["Xiaoyi Tian", "Renkai Ma", "Qiao Jin", "Kaiwen Sun", "Afsaneh Razi", "Yang Shi", "Bengisu Cagiltay", "Jerry Alan Fails", "Yubo Kou"]
 pub_type: "workshop"
+paper_tags: ["ai", "families", "ethics", "conceptual"]
 pdf: "/papers/family-centered-ai-cscw2026.pdf"
 website: "/cscw2026ws-family-ai/"
 summary: "This workshop examines how families jointly shape and experience AI across generations. It brings together perspectives on shared use, care, privacy, and agency to develop directions for family-centered AI research and design."

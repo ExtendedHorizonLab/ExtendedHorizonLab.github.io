@@ -4,6 +4,7 @@ date: 2024-02-01
 venue: "Cerebral Cortex"
 authors: ["Yanyan Zhao", "Danli Wang", "Xinyuan Wang", "Qiao Jin", "Xuange Gao"]
 pub_type: "journal"
+paper_tags: ["wellbeing", "user-studies", "analysis"]
 pdf: "/papers/emotions-spatial-cerebralcortex2024.pdf"
 doi: "https://doi.org/10.1093/cercor/bhad541"
 thumbnail: "/images/publications/emotions-spatial-cerebralcortex2024.png"

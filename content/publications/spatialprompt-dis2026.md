@@ -9,6 +9,7 @@ date: 2026-06-12
 venue: "Poster Proceedings of DIS 2026"
 authors: ["Yichen Andy Yu", "Wanru Li", "Qiaoran Wang", "Jymon Ross", "Gavin Johnson", "Mandy Lui", "Qiao Jin"]
 pub_type: "poster"
+paper_tags: ["ai", "xr", "collaboration", "systems", "user-studies"]
 doi: "https://doi.org/10.1145/3802974.3809475"
 pdf: "/papers/spatialprompt-dis2026.pdf"
 arxiv: "https://arxiv.org/abs/2605.07894"

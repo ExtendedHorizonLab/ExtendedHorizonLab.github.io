@@ -8,6 +8,7 @@ date: 2026-08-30
 venue: "Proceedings of the 32nd ACM Symposium on Virtual Reality Software and Technology (VRST 2026)"
 authors: ["Yuxuan Huang", "Qiao Jin", "Tongyu Nie", "Victoria Interrante", "Evan Suma Rosenberg"]
 pub_type: "conference"
+paper_tags: ["xr", "ethics", "systems", "user-studies"]
 pdf: "/papers/vr-authentication-vrst2026.pdf"
 arxiv: "https://arxiv.org/abs/2608.29531"
 summary: "Adaptive Direction-Based Authentication uses environmental context to help people create memorable VR passwords, with context or digits available during entry. In a longitudinal study, it improved memorability and reduced perceived workload compared with PINs, although entry took longer."

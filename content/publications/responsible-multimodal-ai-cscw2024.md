@@ -4,6 +4,7 @@ date: 2024-11-09
 venue: "CSCW '24: Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing"
 authors: ["Qingxiao Zheng", "Xi Lu", "Qiao Jin", "Jitesh Jain", "Hedda Meadan-Kaplansky", "Humphrey Shi", "Jinjun Xiong", "Yun Huang"]
 pub_type: "workshop"
+paper_tags: ["ai", "ethics", "analysis", "conceptual"]
 pdf: "/papers/responsible-multimodal-ai-cscw2024.pdf"
 doi: "https://doi.org/10.1145/3678884.3687137"
 thumbnail: "/images/publications/responsible-multimodal-ai-cscw2024.png"

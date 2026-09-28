@@ -5,6 +5,7 @@ venue: "Poster Proceedings of MobiHoc 2025"
 authors: ["Yu Liu", "Qiao Jin", "Feng Qian"]
 # Publication type source: static/papers/privacy-volumetric-video-2025.pdf, abstract and introduction
 pub_type: "poster"
+paper_tags: ["xr", "learning", "ethics", "conceptual"]
 pdf: "/papers/privacy-volumetric-video-2025.pdf"
 doi: "https://doi.org/10.1145/3704413.3765311"
 thumbnail: "/images/publications/privacy-volumetric-video-2025.png"

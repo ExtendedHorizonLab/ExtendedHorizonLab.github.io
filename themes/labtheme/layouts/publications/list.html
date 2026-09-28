@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container">
-    <div class="page-layout">
+    <div class="page-layout publications-page" data-publication-browser>
       <!-- Left Sidebar with Years -->
       <aside class="sidebar">
         <ul class="year-nav" id="year-nav">
@@ -21,6 +21,22 @@
       <div class="main-content">
         <h1 class="page-title">Publications</h1>
 
+        <div class="publication-filters" hidden>
+          <div class="paper-filter-buttons" role="group" aria-label="Filter papers by tag">
+            <button type="button" class="paper-filter" data-all-papers aria-pressed="true">All papers</button>
+            {{ range site.Data.publication_tags }}
+              {{ if where $.Pages "Params.paper_tags" "intersect" (slice .id) }}
+              <button type="button" class="paper-filter" data-filter-tag="{{ .id }}" aria-pressed="false" title="{{ .description }}">{{ .label }}</button>
+              {{ end }}
+            {{ end }}
+          </div>
+          <div class="paper-filter-summary">
+            <span class="paper-filter-hint">Select tags to find papers matching all selections.</span>
+            <span class="paper-results-count" role="status" aria-live="polite" aria-atomic="true">{{ len .Pages }} papers</span>
+          </div>
+        </div>
+        <p class="paper-empty-state" hidden>No papers match these tags. Select fewer tags or choose All papers.</p>
+
         {{ $years := slice }}
         {{ range .Pages.ByDate.Reverse }}
           {{ $years = $years | append (.Date.Format "2006") }}
@@ -32,7 +48,7 @@
           <div class="year-section" id="year-{{ $year }}">
             <h2 class="year-heading">{{ $year }}</h2>
             {{ range . }}
-              <div class="pub-item">
+              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}">
                 <div class="pub-thumb">
                   {{ with .Params.thumbnail }}
                   <img src="{{ . }}" alt="{{ $.Title }}">
@@ -52,6 +68,7 @@
                     {{ range $i, $author := .Params.authors }}{{ if $i }}, {{ end }}{{ $person := site.GetPage (printf "/people/%s" ($author | urlize)) }}{{ if not $person }}{{ range where site.RegularPages "Section" "people" }}{{ if in .Params.alt_names $author }}{{ $person = . }}{{ end }}{{ end }}{{ end }}{{ if $person }}<a href="{{ $person.RelPermalink }}"><strong>{{ $author }}</strong></a>{{ else if in $members $author }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}
                   </div>
                   <div class="pub-venue">{{ .Params.venue }}</div>
+                  {{ partial "publication-tags.html" . }}
                   <div class="pub-links">
                     {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link" target="_blank">pdf</a>{{ end }}
                     {{ with .Params.doi }}<a href="{{ . }}" class="pub-link" target="_blank">doi</a>{{ end }}
@@ -72,46 +89,5 @@
     </div>
   </div>
 
-  <script>
-    // Smooth scroll for year navigation
-    document.querySelectorAll('.year-nav a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const target = document.getElementById(targetId);
-        if (target) {
-          const headerHeight = document.querySelector('header').offsetHeight;
-          const y = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-        // Update active state
-        document.querySelectorAll('.year-nav li').forEach(li => li.classList.remove('active'));
-        this.parentElement.classList.add('active');
-      });
-    });
-
-    // Update active year on scroll
-    function updateActiveYear() {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const sections = document.querySelectorAll('.year-section');
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - headerHeight - 32) {
-          current = section.getAttribute('id');
-        }
-      });
-      if (!current && sections.length) {
-        current = sections[0].getAttribute('id');
-      }
-      document.querySelectorAll('.year-nav li').forEach(li => {
-        li.classList.remove('active');
-        if (li.querySelector('a').getAttribute('href') === '#' + current) {
-          li.classList.add('active');
-        }
-      });
-    }
-    window.addEventListener('scroll', updateActiveYear);
-    updateActiveYear();
-  </script>
+  <script src="{{ "js/publications.js" | relURL }}" defer></script>
 {{ end }}

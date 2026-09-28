@@ -1,0 +1,10 @@
+{{ with .Params.paper_tags }}
+<div class="pub-tags" aria-label="Paper tags">
+  {{ range . }}
+    {{ $id := . }}
+    {{ $tag := index (where site.Data.publication_tags "id" $id) 0 }}
+    {{ if not $tag }}{{ errorf "Unknown paper tag: %s" $id }}{{ end }}
+    <a class="pub-tag" href="{{ "publications/" | relURL }}?tag={{ $id }}" data-paper-tag="{{ $id }}" title="{{ $tag.description }}">{{ $tag.label }}</a>
+  {{ end }}
+</div>
+{{ end }}

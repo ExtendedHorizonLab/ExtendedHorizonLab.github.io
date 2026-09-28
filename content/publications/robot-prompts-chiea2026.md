@@ -7,6 +7,7 @@ date: 2026-04-13
 venue: "Extended Abstract Proceedings of CHI 2026"
 authors: ["Xiaoran Yang", "Yang Zhan", "Qiao Jin"]
 pub_type: "extended abstract"
+paper_tags: ["ai", "xr", "user-studies"]
 doi: "https://doi.org/10.1145/3772363.3798326"
 pdf: "/papers/robot-prompts-chiea2026.pdf"
 thumbnail: "/images/publications/robot-prompts-chiea2026.png"

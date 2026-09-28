@@ -4,6 +4,7 @@ date: 2024-04-15
 venue: "International Journal of Human-Computer Interaction"
 authors: ["Mingyu Zhang", "Qiao Jin", "Qian Dong", "Danli Wang", "Jun Xie"]
 pub_type: "journal"
+paper_tags: ["ai", "learning", "systems", "user-studies"]
 pdf: "/papers/ek-chess-ijhci2024.pdf"
 doi: "https://doi.org/10.1080/10447318.2024.2348229"
 thumbnail: "/images/publications/ek-chess-ijhci2024.png"

@@ -4,6 +4,7 @@ date: 2025-09-01
 venue: "VL/HCC '25: The IEEE Symposium on Visual Languages and Human-Centric Computing"
 authors: ["Xiaoran Yang", "Yang Zhan", "Noboru Matsuda", "Qiao Jin"]
 pub_type: "conference"
+paper_tags: ["ai", "xr", "learning", "collaboration", "systems", "user-studies"]
 award: true
 award_name: "Best Paper Honorable Mention"
 pdf: "/papers/tool-to-partner-vlhcc2025.pdf"

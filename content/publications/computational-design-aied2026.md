@@ -8,6 +8,7 @@ date: 2026-06-28
 venue: "Workshop Paper at AIED 2026"
 authors: ["Yichen Andy Yu", "Qiao Jin"]
 pub_type: "workshop"
+paper_tags: ["ai", "learning", "conceptual"]
 pdf: "/papers/computational-design-aied2026.pdf"
 website: "/aied2026ws-ai-hci-ls/"
 summary: "This position paper proposes AI tools that help students develop and inspect computational designs. Learners express their intent, examine intermediate plans, simulate behavior, and revise solutions while practicing the reasoning behind the code."

@@ -5,6 +5,7 @@ venue: "CSCW '24: The ACM Conference on Computer-Supported Cooperative Work and 
 authors: ["Ye Yuan", "Qiao Jin", "Chelsea Mills", "Svetlana Yarosh", "Carman Neustaedter"]
 tags: ["Communication and Collaboration for Children"]
 pub_type: "conference"
+paper_tags: ["collaboration", "families", "user-studies"]
 pdf: "/papers/intergenerational-play-cscw2024.pdf"
 doi: "https://dl.acm.org/doi/10.1145/3687031"
 thumbnail: "/images/publications/intergenerational-play-cscw2024.png"

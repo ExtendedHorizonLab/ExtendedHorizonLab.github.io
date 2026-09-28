@@ -5,6 +5,7 @@ venue: "Poster Proceedings of IDC 2023"
 authors: ["Stuti Arora", "Qiao Jin", "Svetlana Yarosh"]
 # Publication type source: https://idc.acm.org/2023/wp-content/uploads/2023/06/IDC-2023-Program-3-Compressed.pdf, Works-in-Progress Group 1a
 pub_type: "poster"
+paper_tags: ["collaboration", "families", "systems", "user-studies"]
 pdf: "/papers/embodied-sibling-idc2023.pdf"
 doi: "https://doi.org/10.1145/3585088.3593892"
 thumbnail: "/images/publications/embodied-sibling-idc2023.png"

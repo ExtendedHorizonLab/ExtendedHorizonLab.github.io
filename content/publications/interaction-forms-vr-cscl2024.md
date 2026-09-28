@@ -4,6 +4,7 @@ date: 2024-06-10
 venue: "CSCL '24: Proceedings of the 17th International Conference on Computer-Supported Collaborative Learning"
 authors: ["Qiao Jin", "Ishan Sodhi", "Angie Chen", "Svetlana Yarosh"]
 pub_type: "conference"
+paper_tags: ["xr", "learning", "collaboration", "user-studies", "analysis"]
 pdf: "/papers/interaction-forms-vr-cscl2024.pdf"
 doi: "https://doi.org/10.22318/cscl2024.134087"
 thumbnail: "/images/publications/interaction-forms-vr-cscl2024.png"

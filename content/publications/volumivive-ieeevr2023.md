@@ -5,6 +5,7 @@ venue: "Poster Proceedings of IEEE VR 2023"
 authors: ["Qiao Jin", "Yu Liu", "Puqi Zhou", "Bo Han", "Svetlana Yarosh", "Feng Qian"]
 tags: ["Social XR for Higher Education"]
 pub_type: "poster"
+paper_tags: ["xr", "systems"]
 pdf: "/papers/volumivive-ieeevr2023.pdf"
 doi: "https://doi.org/10.1109/VRW58643.2023.00127"
 video: "https://www.youtube.com/watch?v=8W9ihvCKZHc"

@@ -4,6 +4,7 @@ date: 2025-06-22
 venue: "IDC '25: Proceedings of the 24th Interaction Design and Children"
 authors: ["Qiao Jin", "Leah Ajmani", "Samantha Singh", "Adhitya Balasubramanian", "Svetlana Yarosh"]
 pub_type: "conference"
+paper_tags: ["xr", "families", "user-studies", "participatory-design"]
 pdf: "/papers/sip-idc2025.pdf"
 doi: "https://doi.org/10.1145/3713043.3731505"
 thumbnail: "/images/publications/sip-idc2025.png"

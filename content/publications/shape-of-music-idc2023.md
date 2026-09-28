@@ -6,6 +6,7 @@ authors: ["Qiao Jin", "Danli Wang", "Haoran Yun", "Svetlana Yarosh"]
 tags: ["XR for Children"]
 # Publication type source: https://idc.acm.org/2023/wp-content/uploads/2023/06/IDC-2023-Program-3-Compressed.pdf, Works-in-Progress Group 1a
 pub_type: "poster"
+paper_tags: ["xr", "learning", "families", "systems"]
 pdf: "/papers/shape-of-music-idc2023.pdf"
 doi: "https://doi.org/10.1145/3585088.3593872"
 thumbnail: "/images/publications/shape-of-music-idc2023.png"

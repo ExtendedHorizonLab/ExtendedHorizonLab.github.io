@@ -4,6 +4,7 @@ date: 2025-04-01
 venue: "CSCW '25: Proceedings of the ACM on Human-Computer Interaction"
 authors: ["Anjali Srivastava", "Qiao Jin", "Sabirat Rubya", "Carrie Kistler", "Diana Vuong", "Svetlana Yarosh"]
 pub_type: "conference"
+paper_tags: ["collaboration", "ethics", "analysis"]
 pdf: "/papers/disparities-communities-cscw2025.pdf"
 doi: "https://doi.org/10.1145/3757553"
 thumbnail: "/images/publications/disparities-communities-cscw2025.png"

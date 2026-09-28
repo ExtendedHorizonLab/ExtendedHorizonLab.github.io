@@ -5,6 +5,7 @@ venue: "CHI '23: Proceedings of the 2023 CHI Conference on Human Factors in Comp
 authors: ["Qiao Jin", "Ye Yuan", "Svetlana Yarosh"]
 tags: ["Communication and Collaboration for Children"]
 pub_type: "conference"
+paper_tags: ["collaboration", "families", "user-studies"]
 award: true
 award_name: "Best Paper Honorable Mention"
 pdf: "/papers/siblings-communication-chi2023.pdf"

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}?v=11">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}?v=13">
   <link rel="icon" href="{{ "favicon.png" | relURL }}?v=2" type="image/png">
   {{ partial "head.html" . }}
   <script>
@@ -181,7 +181,7 @@
       var sidebarOpts={
         hw:0.3,hh:0.3,r:0.6,edge:0.8,feather:0.15
       };
-      document.querySelectorAll('.filter-list, .year-nav').forEach(function(el){
+      document.querySelectorAll('.filter-list, .year-nav, .publication-filters').forEach(function(el){
         createLiquidGlass(el,sidebarOpts);
       });
     })();

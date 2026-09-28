@@ -4,6 +4,7 @@ date: 2023-12-01
 venue: "CCF Transactions on Pervasive Computing and Interaction"
 authors: ["Mingyu Zhang", "Jiaxiang Li", "Yiyan Lin", "Qiao Jin", "Danli Wang"]
 pub_type: "journal"
+paper_tags: ["xr", "learning", "collaboration", "families", "systems", "user-studies"]
 pdf: "/papers/coar-maze-ccf2023.pdf"
 doi: "https://doi.org/10.1007/s42486-023-00135-8"
 thumbnail: "/images/publications/coar-maze-ccf2023.png"

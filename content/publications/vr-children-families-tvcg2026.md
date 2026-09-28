@@ -7,6 +7,7 @@ date: 2026-04-07
 venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VR 2026)"
 authors: ["Qiao Jin", "Xiaoran Yang", "Svetlana Yarosh"]
 pub_type: "journal"
+paper_tags: ["xr", "families", "ethics", "user-studies", "participatory-design"]
 doi: "https://doi.org/10.1109/tvcg.2026.3680729"
 pdf: "/papers/vr-children-families-tvcg2026.pdf"
 thumbnail: "/images/publications/vr-children-families-tvcg2026.png"

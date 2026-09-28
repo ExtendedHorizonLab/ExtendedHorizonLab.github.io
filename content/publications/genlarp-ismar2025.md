@@ -5,6 +5,7 @@ venue: "Poster Proceedings of ISMAR 2025"
 authors: ["Yichen Yu", "Yifan Jiang", "Mandy Lui", "Qiao Jin"]
 # Publication type source: content/news/our-poster-work-genlarp-enabling-immersive-live-action-rolep.md
 pub_type: "poster"
+paper_tags: ["ai", "xr", "systems"]
 pdf: "/papers/genlarp-ismar2025.pdf"
 doi: "https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00178"
 thumbnail: "/images/publications/genlarp-ismar2025.png"

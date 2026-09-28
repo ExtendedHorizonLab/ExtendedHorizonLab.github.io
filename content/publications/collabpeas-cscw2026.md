@@ -8,6 +8,7 @@ date: 2026-01-01
 venue: "Extended Abstract Proceedings of CSCW 2026"
 authors: ["Wanru Jovie Li", "Yichen Andy Yu", "Qiao Jin"]
 pub_type: "extended abstract"
+paper_tags: ["ai", "xr", "learning", "collaboration", "systems"]
 doi: "https://doi.org/10.1145/3785651.3831526"
 pdf: "/papers/collabpeas-cscw2026.pdf"
 thumbnail: "/images/publications/collabpeas-cscw2026.png"

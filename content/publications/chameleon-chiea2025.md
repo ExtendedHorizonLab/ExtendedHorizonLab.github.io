@@ -5,6 +5,7 @@ venue: "Extended Abstract Proceedings of CHI 2025"
 authors: ["Yichen Yu", "Qiao Jin"]
 # Publication type source: https://yuyichen.net/ and https://chi2025.acm.org/for-authors/late-breaking-work/
 pub_type: "extended abstract"
+paper_tags: ["xr", "ethics", "systems", "user-studies"]
 pdf: "/papers/chameleon-chiea2025.pdf"
 doi: "https://doi.org/10.1145/3706599.3719779"
 thumbnail: "/images/publications/chameleon-chiea2025.png"

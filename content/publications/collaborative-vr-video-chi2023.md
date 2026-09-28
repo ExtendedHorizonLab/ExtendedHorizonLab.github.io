@@ -5,6 +5,7 @@ venue: "CHI '23: Proceedings of the 2023 CHI Conference on Human Factors in Comp
 authors: ["Qiao Jin", "Yu Liu", "Ruixuan Sun", "Chen Chen", "Puqi Zhou", "Bo Han", "Feng Qian", "Svetlana Yarosh"]
 tags: ["Social XR for Higher Education"]
 pub_type: "conference"
+paper_tags: ["xr", "learning", "collaboration", "systems", "user-studies"]
 pdf: "/papers/collaborative-vr-video-chi2023.pdf"
 doi: "https://dl.acm.org/doi/10.1145/3544548.3581395"
 video: "https://www.youtube.com/watch?v=o3Ven4d-O2Q"

@@ -5,6 +5,7 @@ venue: "IDC '24: Proceedings of the 2024 ACM Interaction Design and Children Con
 authors: ["Qiao Jin", "Saba Kawas", "Stuti Arora", "Ye Yuan", "Svetlana Yarosh"]
 tags: ["XR for Children"]
 pub_type: "conference"
+paper_tags: ["xr", "families", "ethics", "user-studies"]
 award: true
 award_name: "Best Paper Honorable Mention"
 pdf: "/papers/family-vr-ethics-idc2024.pdf"
