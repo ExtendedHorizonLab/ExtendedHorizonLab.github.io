@@ -5,7 +5,7 @@
 # Date and conditional acceptance status follow the public preprint.
 title: "Context When Needed, Digits When Useful: Balancing Memorability and Efficiency in Virtual Reality Authentication"
 date: 2026-08-30
-venue: "VRST 2026"
+venue: "Proceedings of the 32nd ACM Symposium on Virtual Reality Software and Technology (VRST 2026)"
 authors: ["Yuxuan Huang", "Qiao Jin", "Tongyu Nie", "Victoria Interrante", "Evan Suma Rosenberg"]
 pub_type: "conference"
 pdf: "/papers/vr-authentication-vrst2026.pdf"
