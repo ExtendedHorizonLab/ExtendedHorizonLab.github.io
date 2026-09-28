@@ -41,13 +41,13 @@
         {{ end }}
 
         <div class="pub-links" style="margin-top: 1.5rem;">
-          {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link" target="_blank">PDF</a>{{ end }}
-          {{ with .Params.doi }}<a href="{{ . }}" class="pub-link" target="_blank">DOI</a>{{ end }}
+          {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "pdf" }}PDF</a>{{ end }}
+          {{ with .Params.doi }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "doi" }}DOI</a>{{ end }}
           {{ with .Params.code }}<a href="{{ . }}" class="pub-link" target="_blank">Code</a>{{ end }}
           {{ with .Params.video }}<a href="{{ . }}" class="pub-link" target="_blank">Video</a>{{ end }}
           {{ with .Params.slides }}<a href="{{ . }}" class="pub-link" target="_blank">Slides</a>{{ end }}
-          {{ with .Params.website }}<a href="{{ . }}" class="pub-link" target="_blank">Website</a>{{ end }}
-          {{ with .Params.arxiv }}<a href="{{ . }}" class="pub-link" target="_blank">arXiv</a>{{ end }}
+          {{ with .Params.website }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "website" }}Website</a>{{ end }}
+          {{ with .Params.arxiv }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "arxiv" }}arXiv</a>{{ end }}
         </div>
       </div>
 

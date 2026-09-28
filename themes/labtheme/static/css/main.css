@@ -559,6 +559,12 @@ html header.header-on-light nav ul li a.active {
   color: var(--text-dark);
 }
 
+.pub-link-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
 .pub-award {
   display: inline-block;
   background: rgba(255, 193, 7, 0.85);
