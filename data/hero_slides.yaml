@@ -1,0 +1,13 @@
+# Homepage slideshow, shown in this order.
+# image:    path under static/ (use photos at least ~1920px wide; they fill the full screen width)
+# position: optional CSS background-position (default: center)
+- image: /images/hero/vr-haptic-vest.jpg          # NC State CS (Facebook), VR headset + haptic vest
+  position: center 18%
+- image: /images/hero/georgie-vr-demo.jpg         # NC State CS (Facebook), Prof. Jin's VR demo
+  position: center 20%
+- image: /images/hero/cs-sponsor-chat.jpg         # NC State CS (Facebook), Senior Design sponsor + student
+  position: center 12%
+- image: /images/hero/cs-vr-senior-design.jpg     # NC State CS (Facebook), VR Biotech Minigames at Senior Design
+  position: center 10%
+- image: /images/news/ncsu-belltower.jpg
+  position: center 15%

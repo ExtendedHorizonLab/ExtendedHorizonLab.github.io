@@ -2,18 +2,18 @@
 <!-- Hero Section with Slideshow -->
 <section class="home-hero">
   <div class="hero-slideshow" id="hero-slideshow">
-    {{ $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
-    {{ $projects := first 6 $featured }}
-    {{ range $index, $project := $projects }}
+    {{/* Slides are listed in data/hero_slides.yaml */}}
+    {{ $slides := site.Data.hero_slides }}
+    {{ range $index, $slide := $slides }}
     <div class="hero-slide{{ if eq $index 0 }} active{{ end }}"
-      style="background-image: url('{{ $project.Params.image }}');"></div>
+      style="background-image: url('{{ $slide.image | relURL }}');{{ with $slide.position }} background-position: {{ . }};{{ end }}"></div>
     {{ end }}
     <!-- Arrow Navigation -->
     <button class="hero-arrow hero-arrow-left" aria-label="Previous slide">&#8249;</button>
     <button class="hero-arrow hero-arrow-right" aria-label="Next slide">&#8250;</button>
     <!-- Navigation Dots -->
     <div class="hero-dots">
-      {{ range $index, $project := $projects }}
+      {{ range $index, $slide := $slides }}
       <button class="hero-dot{{ if eq $index 0 }} active{{ end }}" data-index="{{ $index }}"></button>
       {{ end }}
     </div>
