@@ -12,7 +12,7 @@ lastmod: 2026-09-29
 - **Today:** today's lab events, quick actions and overdue devices
 - **Schedule:** the lab's Google Calendar in month, week and day views, and, if you turn it on, your own meetings with the advisor
 - **Equipment:** who has which device, and borrowing and returning in a few taps
-- **Archive:** search the lab's document archive and ask questions about it
+- **EH LLM:** search the lab's document archive and ask questions about it
 
 The app works in English and Simplified Chinese on iPhone and iPad.
 
@@ -50,11 +50,11 @@ Two people tried to borrow it at the same moment and the other request arrived f
 
 Yes. The app reads and writes the lab's existing equipment sheet. Changes made in the app show up in the sheet, and edits made in the sheet show up in the app after a refresh.
 
-### The Archive says the service is restarting or not reachable.
+### EH LLM says the service is restarting or not reachable.
 
 The lab's archive server may be restarting, which takes about a minute. Try again shortly. If it keeps happening, contact us with the reference code shown in the message, if there is one.
 
-### What is sent to OpenAI when I use the Archive?
+### What is sent to OpenAI when I use EH LLM?
 
 **Find files** sends your question so it can be reworded for the search; **Ask** also sends the matching passages from the lab's archive so an answer can be written. The app asks for your permission first. Your own calendar is never sent. See the [privacy policy](/privacy-policy/).
 
@@ -86,7 +86,7 @@ Lab website: [extendedhorizon.com](https://extendedhorizon.com/) · [Privacy pol
 - **今天**：今天的实验室安排、快捷操作、逾期未还的设备
 - **日程**：实验室的 Google 日历，可按月、周、日查看；打开设置后，还能显示你自己与导师的会议
 - **设备**：哪台设备在谁手上，点几下就能借用、归还
-- **资料库**：检索实验室的资料库，并就其中的内容提问
+- **EH LLM**：检索实验室的资料库，并就其中的内容提问
 
 app 支持 iPhone 和 iPad，界面有简体中文和英文。
 
@@ -124,11 +124,11 @@ app 需要“查看公开日历上的活动”这项权限来显示实验室日�
 
 是的。app 直接读写实验室现有的设备表格。在 app 里的改动会出现在表格里，在表格里的修改刷新后也会出现在 app 里。
 
-#### 资料库提示服务正在重启或无法连接。
+#### EH LLM 提示服务正在重启或无法连接。
 
 实验室的资料库服务器可能在重启，大约需要一分钟，请稍后再试。如果一直这样，请联系我们，并附上提示里的参考编号（如果有）。
 
-#### 使用资料库时，哪些内容会发送给 OpenAI？
+#### 使用 EH LLM 时，哪些内容会发送给 OpenAI？
 
 **搜索文件** 会发送你的问题，用来改写成检索词；**提问** 还会发送资料库中匹配到的段落，用来写出回答。发送前 app 会先征得你的同意。你自己的日历绝不会被发送。详见 [隐私政策](/privacy-policy/#zh)。
 
