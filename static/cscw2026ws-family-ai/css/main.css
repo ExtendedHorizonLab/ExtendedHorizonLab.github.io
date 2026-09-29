@@ -150,6 +150,17 @@ a:hover { text-decoration: underline; }
 .cfp-details li { font-size: 0.97rem; color: #333; margin-bottom: 8px; padding-left: 14px; position: relative; line-height: 1.65; }
 .cfp-details li::before { content: '•'; position: absolute; left: 0; color: #333; }
 
+/* ===== Accepted Papers ===== */
+.accepted-papers-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.88rem; }
+.accepted-papers-table th { padding: 12px 14px; background: #EAF4FF; color: #333; text-align: left; vertical-align: middle; font-weight: 600; border-bottom: 2px solid #C7DDF4; }
+.accepted-papers-table th:nth-child(1) { width: 42%; }
+.accepted-papers-table th:nth-child(2) { width: 58%; }
+.accepted-papers-table td { padding: 13px 14px; vertical-align: top; color: #555; line-height: 1.6; overflow-wrap: anywhere; }
+.accepted-papers-table tr.paper-start:not(:first-child) > td { border-top: 1px solid #d7e0e8; }
+.accepted-papers-table tr.paper-author-row > td { border-top: 1px solid #edf1f4; }
+.accepted-papers-table .paper-title { color: #1a1a2e; font-weight: 600; padding-top: 16px; }
+.accepted-papers-table .paper-affiliation::before { content: ', '; }
+
 /* ===== Organizers (circle photos) ===== */
 .organizers-grid-home { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 20px; max-width: 760px; margin: 0 auto; }
 .organizer-card-home { text-align: center; }
@@ -185,6 +196,12 @@ a:hover { text-decoration: underline; }
 .site-footer a:hover { color: #0d4f8a; }
 
 /* ===== Responsive ===== */
+@media (min-width: 768px) and (max-width: 1050px) {
+  .header-inner { padding: 0 18px; }
+  .logo-text { font-size: 1rem; }
+  .nav-links li + li::before { margin: 0; }
+  .nav-links li a { padding: 6px 5px; font-size: 0.8rem; }
+}
 @media (max-width: 767px) {
   .home-hero { padding: 30px 20px; height: auto; min-height: calc(100vh - 56px); }
   .home-hero-content { grid-template-columns: 1fr; gap: 24px; }
@@ -201,7 +218,20 @@ a:hover { text-decoration: underline; }
   .nav-links.open { display: flex; }
   .nav-links li::before { display: none; }
   .nav-links li a { padding: 9px 6px; border-bottom: 1px solid #f0f0f0; }
+  .subpage-hero-banner img { width: 200%; max-width: none; transform: translateX(-25%); }
   .subpage-hero-title h1 { font-size: 1.6rem; }
+  .accepted-papers-table, .accepted-papers-table tbody, .accepted-papers-table tr, .accepted-papers-table td { display: block; width: 100%; }
+  .accepted-papers-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .accepted-papers-table tr { padding: 0; border-bottom: none; }
+  .accepted-papers-table tr.paper-start:not(:first-child) { margin-top: 16px; padding-top: 16px; border-top: 1px solid #c7d7e6; }
+  .accepted-papers-table tr.paper-start:not(:first-child) > td, .accepted-papers-table tr.paper-author-row > td { border-top: none; }
+  .accepted-papers-table tr.paper-author-row { position: relative; padding-top: 5px; }
+  .accepted-papers-table tr.paper-author-row::before { content: ''; position: absolute; top: 0; left: 100px; right: 0; border-top: 1px solid #edf1f4; }
+  .accepted-papers-table td { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 12px; padding: 5px 0; border-bottom: none; }
+  .accepted-papers-table .paper-title { padding-top: 0; padding-bottom: 10px; }
+  .accepted-papers-table td::before { content: attr(data-label); color: #333; font-weight: 600; }
+  .accepted-papers-table .paper-author { display: block; position: relative; padding: 5px 0 5px 100px; }
+  .accepted-papers-table .paper-author::before { content: attr(data-label); position: absolute; left: 0; top: 5px; }
   /* Important Dates: stack label above value so the nowrap label
      cannot squeeze the date into a few pixels on a phone. */
   .important-dates { padding: 20px 16px; }
