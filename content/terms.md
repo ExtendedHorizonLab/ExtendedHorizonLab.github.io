@@ -32,7 +32,7 @@ When using the App, you agree not to:
 
 ## Your Information
 
-Your use of the App is also governed by our [Privacy Policy](/privacy-policy/), which explains what information the App receives and how it is handled. Information obtained through Google Sign-In is stored locally on your own device.
+Your use of the App is also governed by our [Privacy Policy](/privacy-policy/), which explains what information the App receives, where it goes and how it is handled.
 
 ## Intellectual Property
 

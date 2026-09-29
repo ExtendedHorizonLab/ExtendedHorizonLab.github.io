@@ -56,7 +56,7 @@ The lab's archive server may be restarting, which takes about a minute. Try agai
 
 ### What is sent to OpenAI when I use the Archive?
 
-**Find files** sends your question so it can be reworded for the search; **Ask** also sends the matching passages from the lab's archive so an answer can be written. The app asks for your permission first. Your own calendar is never sent. See the [privacy policy](/app/privacy/).
+**Find files** sends your question so it can be reworded for the search; **Ask** also sends the matching passages from the lab's archive so an answer can be written. The app asks for your permission first. Your own calendar is never sent. See the [privacy policy](/privacy-policy/).
 
 ### How do I change the language?
 
@@ -75,7 +75,7 @@ Department of Computer Science, North Carolina State University<br>
 1730 Varsity Dr, Raleigh, NC 27606, USA<br>
 Email: **TODO — support email**
 
-Lab website: [extendedhorizon.com](https://extendedhorizon.com/) · [Privacy policy](/app/privacy/)
+Lab website: [extendedhorizon.com](https://extendedhorizon.com/) · [Privacy policy](/privacy-policy/)
 
 <div lang="zh-Hans">
 
@@ -130,7 +130,7 @@ app 需要“查看公开日历上的活动”这项权限来显示实验室日�
 
 #### 使用资料库时，哪些内容会发送给 OpenAI？
 
-**搜索文件** 会发送你的问题，用来改写成检索词；**提问** 还会发送资料库中匹配到的段落，用来写出回答。发送前 app 会先征得你的同意。你自己的日历绝不会被发送。详见 [隐私政策](/app/privacy/#zh)。
+**搜索文件** 会发送你的问题，用来改写成检索词；**提问** 还会发送资料库中匹配到的段落，用来写出回答。发送前 app 会先征得你的同意。你自己的日历绝不会被发送。详见 [隐私政策](/privacy-policy/#zh)。
 
 #### 怎样切换语言？
 
@@ -149,6 +149,6 @@ Extended Horizon Lab<br>
 1730 Varsity Dr, Raleigh, NC 27606, USA<br>
 邮箱：**TODO — 支持邮箱**
 
-实验室网站：[extendedhorizon.com](https://extendedhorizon.com/) · [隐私政策](/app/privacy/#zh)
+实验室网站：[extendedhorizon.com](https://extendedhorizon.com/) · [隐私政策](/privacy-policy/#zh)
 
 </div>
