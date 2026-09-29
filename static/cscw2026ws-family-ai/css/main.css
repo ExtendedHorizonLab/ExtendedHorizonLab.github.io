@@ -159,6 +159,9 @@ a:hover { text-decoration: underline; }
 .accepted-papers-table tr.paper-start:not(:first-child) > td { border-top: 1px solid #d7e0e8; }
 .accepted-papers-table tr.paper-author-row > td { border-top: 1px solid #edf1f4; }
 .accepted-papers-table .paper-title { color: #1a1a2e; font-weight: 600; padding-top: 16px; }
+.accepted-papers-table .paper-title-link { color: inherit; text-decoration-line: underline; text-decoration-color: #8aadd2; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.accepted-papers-table .paper-title-link:hover { color: #245f96; text-decoration-thickness: 2px; }
+.accepted-papers-table .paper-title-link:focus-visible { outline: 2px solid #245f96; outline-offset: 3px; border-radius: 2px; }
 .accepted-papers-table .paper-affiliation::before { content: ', '; }
 
 /* ===== Organizers (circle photos) ===== */
