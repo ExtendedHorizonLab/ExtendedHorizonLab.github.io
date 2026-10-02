@@ -850,3 +850,12 @@ a:hover { text-decoration: underline; }
 }
 .photo-featured img:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.22); }
 .photo-featured-caption { text-align: center; color: #888; font-size: 0.85rem; margin-top: 8px; }
+
+/* ===== 3x3 organizer grid (nine organizers) ===== */
+.organizers-grid-home.grid-3 { grid-template-columns: repeat(3, 1fr); max-width: 600px; }
+@media (max-width: 767px) {
+  .organizers-grid-home.grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Schedule: wrap longer activity labels in the time column ===== */
+.schedule-table .time-col.wrap { white-space: normal; }
