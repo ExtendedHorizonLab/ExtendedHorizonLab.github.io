@@ -859,3 +859,9 @@ a:hover { text-decoration: underline; }
 
 /* ===== Schedule: wrap longer activity labels in the time column ===== */
 .schedule-table .time-col.wrap { white-space: normal; }
+
+/* ===== Three-column submission cards that stack on mobile ===== */
+.submission-formats.cols-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 767px) {
+  .submission-formats.cols-3 { grid-template-columns: 1fr; }
+}
