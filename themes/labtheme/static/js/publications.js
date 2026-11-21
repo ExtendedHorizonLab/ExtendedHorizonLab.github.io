@@ -7,9 +7,11 @@
   const topicButtons = [...browser.querySelectorAll('[data-filter-tag]')];
   const allFormats = browser.querySelector('[data-all-formats]');
   const allTopics = browser.querySelector('[data-all-topics]');
+  const awardButton = browser.querySelector('[data-filter-awards]');
   const papers = [...browser.querySelectorAll('[data-paper-tags]')].map(element => ({
     element,
     format: element.dataset.format,
+    hasAward: element.hasAttribute('data-paper-award'),
     tags: new Set(element.dataset.paperTags.split(/\s+/))
   }));
   const sections = [...browser.querySelectorAll('.year-section')];
@@ -22,6 +24,7 @@
   const availableTopics = new Set(topicButtons.map(button => button.dataset.filterTag));
   let selectedFormats = new Set();
   let selectedTopics = new Set();
+  let awardsOnly = false;
 
   const headerHeight = () => document.querySelector('header')?.offsetHeight || 0;
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -41,9 +44,10 @@
   }
 
   function render() {
-    papers.forEach(({ element, format, tags }) => {
+    papers.forEach(({ element, format, tags, hasAward }) => {
       const matchesFormat = !selectedFormats.size || selectedFormats.has(format);
-      element.hidden = !matchesFormat || ![...selectedTopics].every(tag => tags.has(tag));
+      const matchesTopics = [...selectedTopics].every(tag => tags.has(tag));
+      element.hidden = !matchesFormat || !matchesTopics || (awardsOnly && !hasAward);
     });
     sections.forEach(section => {
       section.hidden = !section.querySelector('.pub-item:not([hidden])');
@@ -62,6 +66,7 @@
     });
     allFormats.setAttribute('aria-pressed', String(!selectedFormats.size));
     allTopics.setAttribute('aria-pressed', String(!selectedTopics.size));
+    awardButton.setAttribute('aria-pressed', String(awardsOnly));
     updateActiveYear();
   }
 
@@ -69,6 +74,8 @@
     const url = new URL(window.location.href);
     url.searchParams.delete('format');
     url.searchParams.delete('tag');
+    if (awardsOnly) url.searchParams.set('award', '1');
+    else url.searchParams.delete('award');
     selectedFormats.forEach(format => url.searchParams.append('format', format));
     selectedTopics.forEach(topic => url.searchParams.append('tag', topic));
     url.hash = '';
@@ -82,6 +89,7 @@
       .map(format => formatAliases.get(format) || format)
       .filter(format => availableFormats.has(format)));
     selectedTopics = new Set(params.getAll('tag').filter(topic => availableTopics.has(topic)));
+    awardsOnly = params.get('award') === '1';
     render();
   }
 
@@ -103,6 +111,11 @@
   });
   allTopics.addEventListener('click', () => {
     selectedTopics.clear();
+    saveSelection();
+  });
+
+  awardButton.addEventListener('click', () => {
+    awardsOnly = !awardsOnly;
     saveSelection();
   });
 

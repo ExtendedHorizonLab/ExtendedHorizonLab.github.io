@@ -1037,6 +1037,13 @@ nav ul li a.active {
   line-height: 1.7;
 }
 
+.single-content .join-us-mascot {
+  float: right;
+  width: clamp(3.5rem, 12vw, 5.375rem);
+  height: auto;
+  margin: 0 0 0.75rem 1.25rem;
+}
+
 .info-page-content a {
   color: var(--link-hover);
   text-decoration: underline;

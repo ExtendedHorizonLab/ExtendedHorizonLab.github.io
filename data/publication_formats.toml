@@ -7,6 +7,7 @@
 "workshop" = "Workshop paper"
 "workshop-sig" = "Workshop/SIG"
 "preprint" = "Preprint"
+"student innovation contest" = "Student Innovation Contest"
 
 [aliases]
 "workshop proposal" = "workshop-sig"

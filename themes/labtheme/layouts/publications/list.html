@@ -42,6 +42,9 @@
             </div>
           </div>
           <div class="paper-filter-group">
+            <button type="button" class="paper-filter" data-filter-awards aria-pressed="false">With awards</button>
+          </div>
+          <div class="paper-filter-group">
             <h2 id="publication-topic-label">Topic</h2>
             <div class="paper-filter-buttons" role="group" aria-labelledby="publication-topic-label">
               <button type="button" class="paper-filter" data-all-topics aria-pressed="true">All topics</button>
@@ -53,7 +56,7 @@
             </div>
           </div>
         </div>
-        <p class="paper-empty-state" hidden>No papers match these filters. Try another format or clear the topic tags.</p>
+        <p class="paper-empty-state" hidden>No publications match these filters. Try changing your selections.</p>
 
         {{ $years := slice }}
         {{ range .Pages.ByDate.Reverse }}
@@ -68,7 +71,7 @@
             {{ range . }}
               {{ $type := .Params.pub_type | default "" }}
               {{ $format := index site.Data.publication_formats.aliases $type | default $type }}
-              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}" data-format="{{ $format | urlize }}">
+              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}" data-format="{{ $format | urlize }}"{{ if or .Params.award .Params.award_name }} data-paper-award{{ end }}>
                 <div class="pub-thumb">
                   {{ with .Params.thumbnail }}
                   <img src="{{ . }}" alt="{{ $.Title }}">
@@ -110,5 +113,5 @@
     </div>
   </div>
 
-  <script src="{{ "js/publications.js" | relURL }}" defer></script>
+  <script src="{{ "js/publications.js" | relURL }}?v=2" defer></script>
 {{ end }}
