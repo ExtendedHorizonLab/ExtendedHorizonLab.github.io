@@ -4,6 +4,7 @@
       <div class="single-header">
         <div class="single-meta" style="margin-bottom: 1rem;">
           <span>{{ .Date.Format "January 2, 2006" }}</span>
+          {{ with .Params.news_kind }}<span class="tag">{{ . }}</span>{{ end }}
           {{ range .Params.tags }}
             <span class="tag">{{ . }}</span>
           {{ end }}
@@ -19,6 +20,7 @@
 
       <div class="single-content">
         {{ .Content }}
+        {{ partial "news-sources.html" . }}
       </div>
 
       <!-- Related People -->

@@ -4,7 +4,7 @@
 # Verified: https://doi.org/10.1109/tvcg.2026.3680729
 title: "“We Care More About What It Does”: Priorities and Responsibilities in VR for Children and Families"
 date: 2026-04-07
-venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VR 2026)"
+venue: "IEEE Transactions on Visualization and Computer Graphics (TVCG)"
 authors: ["Qiao Jin", "Xiaoran Yang", "Svetlana Yarosh"]
 pub_type: "journal"
 paper_tags: ["xr", "families", "ethics", "user-studies", "participatory-design"]

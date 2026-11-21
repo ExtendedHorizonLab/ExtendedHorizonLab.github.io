@@ -22,19 +22,38 @@
         <h1 class="page-title">Publications</h1>
 
         <div class="publication-filters" hidden>
-          <div class="paper-filter-buttons" role="group" aria-label="Filter papers by tag">
-            <button type="button" class="paper-filter" data-all-papers aria-pressed="true">All papers</button>
-            {{ range site.Data.publication_tags }}
-              {{ if where $.Pages "Params.paper_tags" "intersect" (slice .id) }}
-              <button type="button" class="paper-filter" data-filter-tag="{{ .id }}" aria-pressed="false" title="{{ .description }}">{{ .label }}</button>
+          <div class="paper-filter-group">
+            <h2 id="publication-format-label">Format</h2>
+            <div class="paper-filter-buttons" role="group" aria-labelledby="publication-format-label">
+              <button type="button" class="paper-filter" data-all-formats aria-pressed="true">All formats</button>
+              {{ range $format, $label := site.Data.publication_formats.formats }}
+                {{ $types := slice $format }}
+                {{ $aliases := slice }}
+                {{ range $alias, $target := site.Data.publication_formats.aliases }}
+                  {{ if eq $target $format }}
+                    {{ $types = $types | append $alias }}
+                    {{ $aliases = $aliases | append ($alias | urlize) }}
+                  {{ end }}
+                {{ end }}
+                {{ if where $.Pages "Params.pub_type" "in" $types }}
+                  <button type="button" class="paper-filter" data-filter-format="{{ $format | urlize }}"{{ with $aliases }} data-format-aliases="{{ delimit . " " }}"{{ end }} aria-pressed="false">{{ $label }}</button>
+                {{ end }}
               {{ end }}
-            {{ end }}
+            </div>
           </div>
-          <div class="paper-filter-summary">
-            <span class="paper-results-count" role="status" aria-live="polite" aria-atomic="true">{{ len .Pages }} papers</span>
+          <div class="paper-filter-group">
+            <h2 id="publication-topic-label">Topic</h2>
+            <div class="paper-filter-buttons" role="group" aria-labelledby="publication-topic-label">
+              <button type="button" class="paper-filter" data-all-topics aria-pressed="true">All topics</button>
+              {{ range site.Data.publication_tags }}
+                {{ if where $.Pages "Params.paper_tags" "intersect" (slice .id) }}
+                  <button type="button" class="paper-filter" data-filter-tag="{{ .id }}" aria-pressed="false" title="{{ .description }}">{{ .label }}</button>
+                {{ end }}
+              {{ end }}
+            </div>
           </div>
         </div>
-        <p class="paper-empty-state" hidden>No papers match these tags. Select fewer tags or choose All papers.</p>
+        <p class="paper-empty-state" hidden>No papers match these filters. Try another format or clear the topic tags.</p>
 
         {{ $years := slice }}
         {{ range .Pages.ByDate.Reverse }}
@@ -47,7 +66,9 @@
           <div class="year-section" id="year-{{ $year }}">
             <h2 class="year-heading">{{ $year }}</h2>
             {{ range . }}
-              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}">
+              {{ $type := .Params.pub_type | default "" }}
+              {{ $format := index site.Data.publication_formats.aliases $type | default $type }}
+              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}" data-format="{{ $format | urlize }}">
                 <div class="pub-thumb">
                   {{ with .Params.thumbnail }}
                   <img src="{{ . }}" alt="{{ $.Title }}">
@@ -67,6 +88,7 @@
                     {{ range $i, $author := .Params.authors }}{{ if $i }}, {{ end }}{{ $person := site.GetPage (printf "/people/%s" ($author | urlize)) }}{{ if not $person }}{{ range where site.RegularPages "Section" "people" }}{{ if in .Params.alt_names $author }}{{ $person = . }}{{ end }}{{ end }}{{ end }}{{ if $person }}<a href="{{ $person.RelPermalink }}"><strong>{{ $author }}</strong></a>{{ else if in $members $author }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}
                   </div>
                   <div class="pub-venue">{{ .Params.venue }}</div>
+                  {{ partial "publication-format.html" . }}
                   {{ partial "publication-tags.html" . }}
                   <div class="pub-links">
                     {{ with .Params.pdf }}<a href="{{ . }}" class="pub-link" target="_blank">{{ partial "pub-link-icon.html" "pdf" }}pdf</a>{{ end }}

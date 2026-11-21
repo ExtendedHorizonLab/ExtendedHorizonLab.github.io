@@ -1,13 +1,17 @@
 {{ define "main" }}
-  <div class="page-header">
-    <div class="container">
-      <h1>{{ .Title }}</h1>
+  {{ $infoPage := in (slice "/work-with-us" "/teaching") .Path }}
+  {{ if not $infoPage }}
+    <div class="page-header">
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+      </div>
     </div>
-  </div>
+  {{ end }}
 
   <div class="container">
     <div class="single-page">
-      <div class="single-content">
+      {{ if $infoPage }}<h1 class="page-title">{{ .Title }}</h1>{{ end }}
+      <div class="single-content{{ if $infoPage }} info-page-content{{ end }}">
         {{ .Content }}
       </div>
     </div>

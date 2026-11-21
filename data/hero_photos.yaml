@@ -1,0 +1,22 @@
+# Position controls framing when cropped.
+- image: /images/hero/vr-outreach.jpg
+  alt: Visitors trying VR headsets at an outdoor NC State demonstration
+  position: center 30%
+- image: /images/hero/virtual-classroom.png
+  alt: A virtual classroom with a volumetric instructor and a 3D model
+- image: /images/news/tool-to-partner-vlhcc2025.jpg
+  alt: An embodied AI partner and a learner in a virtual coding environment
+- image: /images/projects/chameleon-vr.jpg
+  alt: Chameleon VR maps physical objects to scenery in a virtual world
+- image: /images/hero/cs-vr-senior-design.jpg
+  alt: Students demonstrating VR Biotech Minigames at Senior Design
+  position: center 10%
+- image: /images/hero/spatialprompt-teaser.jpg
+  alt: SpatialPrompt turns a blue 3D sketch into a pitched-roof model in mixed reality
+  position: 77% center
+- image: /images/hero/cs-sponsor-chat.jpg
+  alt: A student speaks with an NC State Senior Design sponsor
+  position: center 12%
+- image: /images/hero/georgie-vr-demo.jpg
+  alt: Qiao Jin demonstrating virtual reality
+  position: center 20%

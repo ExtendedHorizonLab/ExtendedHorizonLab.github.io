@@ -1,39 +1,37 @@
 {{ define "main" }}
   <div class="container">
-    <h1 class="page-title">Latest News</h1>
-
-    {{ $paginator := .Paginate .Pages 12 }}
-    <div class="news-grid">
-      {{ range $paginator.Pages }}
-        <article class="news-card">
-          <a href="{{ .RelPermalink }}" class="news-card-image">
-            {{ with .Params.image }}
-            <img src="{{ . }}" alt="{{ $.Title }}">
-            {{ else }}
-            <div class="news-card-placeholder"></div>
+    <div class="single-page lab-news">
+      <h1 class="page-title">{{ .Title }}</h1>
+      <div class="single-content">{{ .Content }}</div>
+      {{ $paginator := .Paginate .Pages.ByDate.Reverse 12 }}
+      <div class="lab-news-list">
+        {{ range $paginator.Pages }}
+          {{ $entry := . }}
+          <article class="lab-news-entry{{ if or .Params.thumbnail .Params.image }} lab-news-entry-with-thumbnail{{ end }}">
+            {{ with or .Params.thumbnail .Params.image }}
+              <div class="lab-news-thumbnail">
+                <img src="{{ . | relURL }}" alt="{{ $entry.Params.thumbnail_alt }}" width="240" height="150" loading="lazy" decoding="async">
+              </div>
             {{ end }}
-          </a>
-          <h2 class="news-card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h2>
-          <div class="news-card-meta">
-            {{ with .Params.author }}BY {{ . | upper }}{{ end }} • {{ .Date.Format "Jan 02, 2006" | upper }}
-          </div>
-        </article>
+            <div>
+              <p class="lab-news-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                {{ with .Params.news_kind }}<span>{{ . }}</span>{{ end }}
+              </p>
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <div class="single-content">{{ .Content }}</div>
+              {{ partial "news-sources.html" . }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+      {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination" aria-label="More news">
+          {{ if $paginator.HasPrev }}<a class="pagination-link" href="{{ $paginator.Prev.URL }}">Previous</a>{{ end }}
+          <span class="pagination-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+          {{ if $paginator.HasNext }}<a class="pagination-link" href="{{ $paginator.Next.URL }}">Next</a>{{ end }}
+        </nav>
       {{ end }}
     </div>
-
-    <!-- Pagination -->
-    {{ if gt $paginator.TotalPages 1 }}
-    <nav class="pagination">
-      {{ if $paginator.HasPrev }}
-        <a href="{{ $paginator.Prev.URL }}" class="pagination-link">← Previous</a>
-      {{ end }}
-      <span class="pagination-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
-      {{ if $paginator.HasNext }}
-        <a href="{{ $paginator.Next.URL }}" class="pagination-link">Next →</a>
-      {{ end }}
-    </nav>
-    {{ end }}
   </div>
 {{ end }}

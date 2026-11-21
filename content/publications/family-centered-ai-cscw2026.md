@@ -8,7 +8,7 @@ title: "Growing Up (and Old) with AI: Co-Constructing the Future for Family-Cent
 date: 2026-05-07
 venue: "Workshop at CSCW 2026"
 authors: ["Xiaoyi Tian", "Renkai Ma", "Qiao Jin", "Kaiwen Sun", "Afsaneh Razi", "Yang Shi", "Bengisu Cagiltay", "Jerry Alan Fails", "Yubo Kou"]
-pub_type: "workshop"
+pub_type: "workshop proposal"
 paper_tags: ["ai", "families", "ethics", "conceptual"]
 pdf: "/papers/family-centered-ai-cscw2026.pdf"
 website: "/cscw2026ws-family-ai/"

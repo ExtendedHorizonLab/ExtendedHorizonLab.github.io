@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "We're co-organizing the HAIL workshop at AIED 2026 on designing and evaluating next-generation learning interfaces."
 date: 2026-05-06
 image: "/images/news/aied2026-hail-workshop.jpg"

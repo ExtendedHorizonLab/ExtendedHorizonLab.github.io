@@ -1,0 +1,24 @@
+[formats]
+"full paper" = "Full paper"
+"conference" = "Conference paper"
+"short paper" = "Short paper"
+"journal" = "Journal article"
+"poster" = "Poster/Extended abstract/Demo"
+"workshop" = "Workshop paper"
+"workshop-sig" = "Workshop/SIG"
+"preprint" = "Preprint"
+
+[aliases]
+"workshop proposal" = "workshop-sig"
+"sig proposal" = "workshop-sig"
+"demo" = "poster"
+"extended abstract" = "poster"
+"work-in-progress" = "poster"
+
+[paper_labels]
+"workshop proposal" = "Workshop"
+"sig proposal" = "SIG"
+"poster" = "Poster"
+"extended abstract" = "Extended abstract"
+"work-in-progress" = "Work in progress"
+"demo" = "Demo"

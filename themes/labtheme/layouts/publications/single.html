@@ -29,7 +29,7 @@
         <div class="single-meta">
           <span class="pub-venue" style="font-size: 1rem;">{{ .Params.venue }}</span>
           <span>{{ .Date.Format "2006" }}</span>
-          {{ with .Params.pub_type }}<span class="tag">{{ . }}</span>{{ end }}
+          {{ partial "publication-format.html" . }}
         </div>
 
         {{ partial "publication-tags.html" . }}
@@ -90,27 +90,6 @@
         <h2 class="section-title">BibTeX</h2>
         <pre style="background-color: var(--bg-card); padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.875rem;"><code>{{ . }}</code></pre>
       </section>
-      {{ end }}
-
-      <!-- Related Project -->
-      {{ with .Params.project }}
-      {{ $project := site.GetPage (printf "/projects/%s" (. | urlize)) }}
-      {{ with $project }}
-      <section class="section">
-        <h2 class="section-title">Related Project</h2>
-        <div class="card" style="max-width: 400px;">
-          {{ with .Params.image }}
-          <div class="card-image">
-            <img src="{{ . }}" alt="{{ $.Title }}">
-          </div>
-          {{ end }}
-          <div class="card-content">
-            <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <p class="card-description">{{ .Summary | truncate 100 }}</p>
-          </div>
-        </div>
-      </section>
-      {{ end }}
       {{ end }}
     </div>
   </div>

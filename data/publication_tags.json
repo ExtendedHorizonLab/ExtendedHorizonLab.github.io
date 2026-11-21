@@ -33,30 +33,5 @@
     "id": "wellbeing",
     "label": "Perception & Wellbeing",
     "description": "Spatial perception, emotion, physical activity, and wellbeing."
-  },
-  {
-    "id": "systems",
-    "label": "Systems & Interfaces",
-    "description": "Design and implementation of interactive systems, interfaces, or prototypes."
-  },
-  {
-    "id": "user-studies",
-    "label": "User Studies",
-    "description": "Empirical work with people, including interviews, experiments, field studies, and usability evaluations."
-  },
-  {
-    "id": "analysis",
-    "label": "Data Analysis & Modeling",
-    "description": "A central contribution based on analyzing datasets, interaction traces, or computational models."
-  },
-  {
-    "id": "participatory-design",
-    "label": "Participatory Design",
-    "description": "Involving stakeholders in design activities or setting research and design priorities."
-  },
-  {
-    "id": "conceptual",
-    "label": "Conceptual & Position Work",
-    "description": "Conceptual frameworks, position papers, and research agendas, including workshop and SIG proposals."
   }
 ]

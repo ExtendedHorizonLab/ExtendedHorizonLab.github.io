@@ -7,7 +7,7 @@ title: "Designing and Evaluating Next-Generation Learning Interfaces: Linking AI
 date: 2026-06-28
 venue: "Workshop at AIED 2026"
 authors: ["Meng Xia", "Yan Chen", "Qiao Jin", "Yang Shi", "Paul Denny", "Tiffany Barnes", "Qingsong Wen", "Vincent Aleven"]
-pub_type: "workshop"
+pub_type: "workshop proposal"
 paper_tags: ["ai", "learning", "conceptual"]
 pdf: "/papers/learning-interfaces-aied2026.pdf"
 arxiv: "https://arxiv.org/abs/2604.25721"

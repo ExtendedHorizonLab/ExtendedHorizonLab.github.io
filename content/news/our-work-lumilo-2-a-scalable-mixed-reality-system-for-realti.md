@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Our work \"Lumilo 2: A Scalable Mixed Reality System for Real-Time Teacher Analytics and Intervention\" has been accepted to #AIED 2025 Interactive Events Track. Come check out our demo!"
 date: 2025-05-28
 author: "Qiao (Georgie) Jin"

@@ -1,8 +1,10 @@
 ---
-title: "Grateful to receive funding from the NCSU Innovation Fellows Program to support our work useXR: Designing Shared Learning Experiences through Extended Reality. Also grateful to receive ETF funding to support Prof. Georgie's ongoing XR education work."
-date: 2025-11-26
-author: "Qiao (Georgie) Jin"
-image: "/images/news/ncsu-hunt-library.jpg"
+title: "MuseXR receives Innovation Fellows funding"
+date: 2025-11-13
+thumbnail: "/images/news/ncsu-hunt-library.jpg"
+news_kind: "Funding"
+source_name: "NC State College of Education"
+source_url: "https://ced.ncsu.edu/news/2025/11/13/two-new-innovation-fellows-projects-leverage-technology-for-research-learning-experiences/"
 ---
 
-Grateful to receive funding from the NCSU Innovation Fellows Program to support our work useXR: Designing Shared Learning Experiences through Extended Reality. Also grateful to receive [ETF](https://provost.ncsu.edu/administrative-resources/educational-and-technology-fee/) (Educational and Technology Fee) funding to support Prof. Georgie's ongoing XR education work.
+Joey Huang and Qiao Jin are developing a module in which students design shared XR learning experiences inspired by the North Carolina Museum of Art.

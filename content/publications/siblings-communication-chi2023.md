@@ -4,7 +4,7 @@ date: 2023-04-23
 venue: "CHI '23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems"
 authors: ["Qiao Jin", "Ye Yuan", "Svetlana Yarosh"]
 tags: ["Communication and Collaboration for Children"]
-pub_type: "conference"
+pub_type: "full paper"
 paper_tags: ["collaboration", "families", "user-studies"]
 award: true
 award_name: "Best Paper Honorable Mention"

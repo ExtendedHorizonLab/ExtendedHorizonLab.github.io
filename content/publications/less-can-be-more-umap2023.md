@@ -1,9 +1,9 @@
 ﻿---
 title: "Less Can Be More: Exploring Population Rating Dispositions with Partitioned Models in Recommender Systems"
 date: 2023-06-18
-venue: "UMAP '23: Adjunct Proceedings of the 31st ACM Conference on User Modeling, Adaptation and Personalization"
+venue: "GMAP 2023 Workshop, Adjunct Proceedings of ACM UMAP 2023"
 authors: ["Ruixuan Sun", "Ruoyan Kong", "Qiao Jin", "Joseph A. Konstan"]
-pub_type: "conference"
+pub_type: "workshop"
 paper_tags: ["ai", "analysis"]
 pdf: "/papers/less-can-be-more-umap2023.pdf"
 doi: "https://doi.org/10.1145/3563359.3597390"

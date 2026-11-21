@@ -1,10 +1,10 @@
 ---
 title: "Designing Collaborative Technology for Intergenerational Social Play over Distance"
 date: 2024-11-09
-venue: "CSCW '24: The ACM Conference on Computer-Supported Cooperative Work and Social Computing"
+venue: "Proceedings of the ACM on Human-Computer Interaction (PACMHCI), CSCW 2024"
 authors: ["Ye Yuan", "Qiao Jin", "Chelsea Mills", "Svetlana Yarosh", "Carman Neustaedter"]
 tags: ["Communication and Collaboration for Children"]
-pub_type: "conference"
+pub_type: "journal"
 paper_tags: ["collaboration", "families", "user-studies"]
 pdf: "/papers/intergenerational-play-cscw2024.pdf"
 doi: "https://dl.acm.org/doi/10.1145/3687031"

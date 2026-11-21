@@ -4,7 +4,7 @@
 # Date follows the author publication page; the public manuscript does not yet provide a final DOI.
 title: "Effects of Field-of-View Restriction and Peripheral Teleportation on Path Integration during Virtual Locomotion"
 date: 2026-07-22
-venue: "IEEE Transactions on Visualization and Computer Graphics (ISMAR 2026)"
+venue: "IEEE Transactions on Visualization and Computer Graphics (TVCG)"
 authors: ["Tongyu Nie", "Yuxuan Huang", "Ville Cantory", "Danhua Zhang", "Evan Suma Rosenberg"]
 pub_type: "journal"
 paper_tags: ["xr", "wellbeing", "user-studies"]

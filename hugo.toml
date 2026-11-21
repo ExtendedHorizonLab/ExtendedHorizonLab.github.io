@@ -2,6 +2,7 @@ baseURL = 'https://extendedhorizon.com/'
 languageCode = 'en-us'
 title = 'Extended Horizon Lab'
 theme = 'labtheme'
+ignoreFiles = ['/content/projects/']
 
 [params]
   description = "Extended Horizon Lab at North Carolina State University"
@@ -24,21 +25,17 @@ theme = 'labtheme'
     url = "/people/"
     weight = 3
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 4
-  [[menu.main]]
     name = "Publications"
     url = "/publications/"
+    weight = 4
+  [[menu.main]]
+    name = "Teaching"
+    pageRef = "/teaching"
     weight = 5
-  # [[menu.main]]
-  #   name = "Lab Handbook"
-  #   url = "/handbook/"
-  #   weight = 6
-  # [[menu.main]]
-  #   name = "Apply"
-  #   url = "/apply/"
-  #   weight = 7
+  [[menu.main]]
+    name = "Work with Us"
+    pageRef = "/work-with-us"
+    weight = 6
 
 [taxonomies]
   tag = "tags"

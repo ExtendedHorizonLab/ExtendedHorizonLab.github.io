@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Grateful to receive ETF (Educational and Technology Fee) funding to support ongoing XR education work."
 date: 2025-11-25
 author: "Qiao (Georgie) Jin"

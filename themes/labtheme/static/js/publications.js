@@ -3,16 +3,25 @@
   if (!browser) return;
 
   const filters = browser.querySelector('.publication-filters');
-  const buttons = [...browser.querySelectorAll('[data-filter-tag]')];
-  const allButton = browser.querySelector('[data-all-papers]');
+  const formatButtons = [...browser.querySelectorAll('[data-filter-format]')];
+  const topicButtons = [...browser.querySelectorAll('[data-filter-tag]')];
+  const allFormats = browser.querySelector('[data-all-formats]');
+  const allTopics = browser.querySelector('[data-all-topics]');
   const papers = [...browser.querySelectorAll('[data-paper-tags]')].map(element => ({
     element,
+    format: element.dataset.format,
     tags: new Set(element.dataset.paperTags.split(/\s+/))
   }));
   const sections = [...browser.querySelectorAll('.year-section')];
   const yearLinks = [...browser.querySelectorAll('.year-nav a')];
-  const availableTags = new Set(buttons.map(button => button.dataset.filterTag));
-  let selected = new Set();
+  const availableFormats = new Set(formatButtons.map(button => button.dataset.filterFormat));
+  const formatAliases = new Map(formatButtons.flatMap(button =>
+    (button.dataset.formatAliases || '').split(' ').filter(Boolean)
+      .map(alias => [alias, button.dataset.filterFormat])
+  ));
+  const availableTopics = new Set(topicButtons.map(button => button.dataset.filterTag));
+  let selectedFormats = new Set();
+  let selectedTopics = new Set();
 
   const headerHeight = () => document.querySelector('header')?.offsetHeight || 0;
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -32,10 +41,9 @@
   }
 
   function render() {
-    let count = 0;
-    papers.forEach(({ element, tags }) => {
-      element.hidden = ![...selected].every(tag => tags.has(tag));
-      if (!element.hidden) count++;
+    papers.forEach(({ element, format, tags }) => {
+      const matchesFormat = !selectedFormats.size || selectedFormats.has(format);
+      element.hidden = !matchesFormat || ![...selectedTopics].every(tag => tags.has(tag));
     });
     sections.forEach(section => {
       section.hidden = !section.querySelector('.pub-item:not([hidden])');
@@ -43,51 +51,67 @@
     yearLinks.forEach(link => {
       link.parentElement.hidden = document.getElementById(link.hash.slice(1)).hidden;
     });
-    browser.querySelector('.year-nav').hidden = count === 0;
-    buttons.forEach(button => {
-      button.setAttribute('aria-pressed', String(selected.has(button.dataset.filterTag)));
+    const hasResults = sections.some(section => !section.hidden);
+    browser.querySelector('.year-nav').hidden = !hasResults;
+    browser.querySelector('.paper-empty-state').hidden = hasResults;
+    formatButtons.forEach(button => {
+      button.setAttribute('aria-pressed', String(selectedFormats.has(button.dataset.filterFormat)));
     });
-    allButton.setAttribute('aria-pressed', String(selected.size === 0));
-    browser.querySelector('.paper-results-count').textContent = selected.size
-      ? `${count} of ${papers.length} papers`
-      : `${papers.length} papers`;
-    browser.querySelector('.paper-empty-state').hidden = count !== 0;
+    topicButtons.forEach(button => {
+      button.setAttribute('aria-pressed', String(selectedTopics.has(button.dataset.filterTag)));
+    });
+    allFormats.setAttribute('aria-pressed', String(!selectedFormats.size));
+    allTopics.setAttribute('aria-pressed', String(!selectedTopics.size));
     updateActiveYear();
   }
 
   function saveSelection() {
     const url = new URL(window.location.href);
+    url.searchParams.delete('format');
     url.searchParams.delete('tag');
-    selected.forEach(tag => url.searchParams.append('tag', tag));
+    selectedFormats.forEach(format => url.searchParams.append('format', format));
+    selectedTopics.forEach(topic => url.searchParams.append('tag', topic));
     url.hash = '';
     if (url.href !== window.location.href) window.history.pushState(null, '', url);
     render();
   }
 
   function readSelection() {
-    selected = new Set(new URL(window.location.href).searchParams.getAll('tag')
-      .filter(tag => availableTags.has(tag)));
+    const params = new URL(window.location.href).searchParams;
+    selectedFormats = new Set(params.getAll('format')
+      .map(format => formatAliases.get(format) || format)
+      .filter(format => availableFormats.has(format)));
+    selectedTopics = new Set(params.getAll('tag').filter(topic => availableTopics.has(topic)));
     render();
   }
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const tag = button.dataset.filterTag;
-      if (selected.has(tag)) selected.delete(tag);
-      else selected.add(tag);
-      saveSelection();
-    });
+  function toggleSelection(selection, value) {
+    if (selection.has(value)) selection.delete(value);
+    else selection.add(value);
+    saveSelection();
+  }
+
+  formatButtons.forEach(button => {
+    button.addEventListener('click', () => toggleSelection(selectedFormats, button.dataset.filterFormat));
   });
-  allButton.addEventListener('click', () => {
-    selected.clear();
+  topicButtons.forEach(button => {
+    button.addEventListener('click', () => toggleSelection(selectedTopics, button.dataset.filterTag));
+  });
+  allFormats.addEventListener('click', () => {
+    selectedFormats.clear();
+    saveSelection();
+  });
+  allTopics.addEventListener('click', () => {
+    selectedTopics.clear();
     saveSelection();
   });
 
-  browser.querySelectorAll('[data-paper-tag]').forEach(link => {
+  browser.querySelectorAll('[data-paper-tag], [data-paper-format]').forEach(link => {
     link.addEventListener('click', event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
       event.preventDefault();
-      selected.add(link.dataset.paperTag);
+      if (link.dataset.paperFormat) selectedFormats.add(link.dataset.paperFormat);
+      else selectedTopics.add(link.dataset.paperTag);
       saveSelection();
       window.scrollTo({
         top: filters.getBoundingClientRect().top + window.scrollY - headerHeight() - 16,

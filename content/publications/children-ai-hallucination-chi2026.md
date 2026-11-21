@@ -6,7 +6,7 @@ title: "When AI Gets It Wrong: Scaffolding AI Hallucination Detection for Childr
 date: 2026-04-13
 venue: "Proceedings of CHI 2026"
 authors: ["Xiaoyi Tian", "Deniz Ozturk", "Sreekar Edula", "Jibran Adil", "Qiao Jin", "Yang Shi", "Tiffany Barnes"]
-pub_type: "conference"
+pub_type: "full paper"
 paper_tags: ["ai", "learning", "families", "ethics", "systems", "user-studies"]
 doi: "https://doi.org/10.1145/3772318.3791480"
 pdf: "/papers/children-ai-hallucination-chi2026.pdf"

@@ -58,30 +58,6 @@
         </div>
       </section>
       {{ end }}
-
-      <!-- Person's Projects -->
-      {{ $projects := where site.RegularPages "Section" "projects" }}
-      {{ $personProjects := where $projects "Params.team" "intersect" (slice $name) }}
-      {{ with $personProjects }}
-      <section class="section">
-        <h2 class="section-title">Projects</h2>
-        <div class="cards-grid">
-          {{ range . }}
-            <div class="card">
-              {{ with .Params.image }}
-              <div class="card-image">
-                <img src="{{ . }}" alt="{{ $.Title }}">
-              </div>
-              {{ end }}
-              <div class="card-content">
-                <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                <p class="card-description">{{ .Summary | truncate 100 }}</p>
-              </div>
-            </div>
-          {{ end }}
-        </div>
-      </section>
-      {{ end }}
     </div>
   </div>
 {{ end }}

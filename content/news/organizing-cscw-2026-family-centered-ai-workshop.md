@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "We're co-organizing the Family-Centered AI workshop at CSCW 2026: Growing Up (and Old) with AI."
 date: 2026-05-07
 image: "/images/news/cscw2026-family-ai-workshop.jpg"

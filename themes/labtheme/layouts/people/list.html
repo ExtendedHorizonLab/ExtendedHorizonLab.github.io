@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <div class="container">
-    <h1 class="page-title">People</h1>
+  <div class="container people-page">
+    <h1 class="page-title">{{ .Title }}</h1>
 
     {{/* Filter out alumni and graduated */}}
     {{ $current := where .Pages "Params.status" "!=" "alumni" }}

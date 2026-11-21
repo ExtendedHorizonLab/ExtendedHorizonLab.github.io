@@ -1,10 +1,10 @@
 ---
 title: "Field Trial of a Tablet-based AR System for Intergenerational Connections through Remote Reading"
 date: 2024-11-09
-venue: "CSCW '24: The ACM Conference on Computer-Supported Cooperative Work and Social Computing"
+venue: "Proceedings of the ACM on Human-Computer Interaction (PACMHCI), CSCW 2024"
 authors: ["Ye Yuan", "Peter Genatempo", "Qiao Jin", "Svetlana Yarosh"]
 tags: ["XR for Children"]
-pub_type: "conference"
+pub_type: "journal"
 paper_tags: ["xr", "learning", "collaboration", "families", "systems", "user-studies"]
 award: true
 award_name: "DEI Recognition"

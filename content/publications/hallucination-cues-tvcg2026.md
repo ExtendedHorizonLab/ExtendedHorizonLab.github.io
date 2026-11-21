@@ -4,7 +4,7 @@
 # Date is the public preprint date; arXiv identifies the ISMAR 2026 TVCG special issue.
 title: "Signals of AI Hallucination: Designing Hallucination-Aware Cues for Embodied Conversational Agents in VR"
 date: 2026-09-23
-venue: "IEEE Transactions on Visualization and Computer Graphics (ISMAR 2026)"
+venue: "IEEE Transactions on Visualization and Computer Graphics (TVCG)"
 authors: ["Xiaoran Yang", "Yang Zhan", "Xie He", "Yuxuan Huang", "Yichen Yu", "Zhuo Wang", "Noboru Matsuda", "Qiao Jin"]
 pub_type: "journal"
 paper_tags: ["ai", "xr", "ethics", "systems", "user-studies"]

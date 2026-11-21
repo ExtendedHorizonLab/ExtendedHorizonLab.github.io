@@ -1,9 +1,9 @@
 ﻿---
 title: "Who to Help? A Time-Slice Analysis of K-12 Teachers' Decisions in Classes with AI-Supported Tutoring"
 date: 2025-07-14
-venue: "EDM '25: International Conference on Educational Data Mining"
+venue: "Poster Proceedings of the International Conference on Educational Data Mining (EDM 2025)"
 authors: ["Qiao Jin", "Conrad Borchers", "Stephen Fancsali", "Vincent Aleven"]
-pub_type: "conference"
+pub_type: "poster"
 paper_tags: ["ai", "learning", "analysis"]
 pdf: "/papers/who-to-help-edm2025.pdf"
 doi: "https://zenodo.org/records/15870229"
