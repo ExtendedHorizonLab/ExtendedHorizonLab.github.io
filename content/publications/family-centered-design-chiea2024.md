@@ -1,7 +1,7 @@
 ﻿---
 title: "Methods for Family-Centered Design: Bridging the Gap Between Research and Practice"
 date: 2024-05-11
-venue: "CHI EA '24: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems"
+venue: "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA 2024)"
 authors: ["Bengisu Cagiltay", "Zhaoyuan Su", "Qiao (Georgie) Jin", "Hui-Ru (Irene) Ho", "Yuxing Wu", "Junnan Yu", "Kaiwen Sun", "Olivia Richards", "Jerry Alan Fails", "Jason Yip", "Jodi Forlizzi"]
 pub_type: "sig proposal"
 paper_tags: ["families", "participatory-design", "conceptual"]

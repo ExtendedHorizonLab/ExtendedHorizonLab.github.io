@@ -13,6 +13,9 @@
           </a>
         </li>
       {{ end }}
+      {{ with site.Params.labworkspaceurl }}
+        <li><a class="lab-workspace-link" href="{{ . }}" aria-label="Member Portal (lab members only)" title="Lab members only"><span class="lab-workspace-lock" aria-hidden="true"></span>Member Portal</a></li>
+      {{ end }}
       <li>
           <a href="javascript:void(0)" id="theme-toggle">
             &#9790;

@@ -1,7 +1,7 @@
 ﻿---
 title: "Lumilo 2: A Scalable Mixed Reality System for Real-Time Teacher Analytics and Intervention"
 date: 2025-05-01
-venue: "AIED 2025, Interactive Events Track"
+venue: "International Conference on Artificial Intelligence in Education (AIED 2025)"
 authors: ["Qiao Jin", "Kyle Price", "Will Morgus", "Michael Sandbothe", "Jonathan Sewall", "Octav Popescu", "Amy Wu", "Luke Freimanis", "Ravi Oliveira Nedungadi", "Pragati Maheshwary", "Susan Berman", "Stephen Fancsali", "Steve Ritter", "Vincent Aleven"]
 pub_type: "demo"
 paper_tags: ["ai", "xr", "learning", "systems"]

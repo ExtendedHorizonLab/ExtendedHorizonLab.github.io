@@ -148,6 +148,45 @@ nav ul li a {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
+.header-content .lab-workspace-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lab-workspace-lock {
+  position: relative;
+  width: 0.65rem;
+  height: 0.5rem;
+  margin-top: 0.2rem;
+  border: 1px solid currentColor;
+  border-radius: 0.12rem;
+}
+
+.lab-workspace-lock::before {
+  position: absolute;
+  inset: auto 1px 100%;
+  height: 0.3rem;
+  border: 1px solid currentColor;
+  border-bottom: 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+  content: "";
+}
+
+header nav ul {
+  gap: clamp(0.125rem, 0.45vw, 0.4rem);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header nav ul li a {
+  padding: 0.45rem clamp(0.35rem, 0.75vw, 0.65rem);
+  font-size: 0.875rem;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
 nav ul li a:hover {
   color: var(--text-dark);
   text-decoration: none;
@@ -1261,6 +1300,11 @@ footer::after {
 }
 
 /* Lab Intro Section */
+.home-intro,
+.home-section {
+  font-family: Inter, "Open Sans", system-ui, sans-serif;
+}
+
 .home-intro {
   padding: 3rem 0;
 }
@@ -1286,8 +1330,10 @@ footer::after {
 }
 
 .intro-opening h2 {
-  margin-bottom: 0.5rem;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
   line-height: 1.2;
 }
 
@@ -1297,9 +1343,33 @@ footer::after {
   height: auto;
 }
 
+.intro-focus {
+  max-width: 55ch;
+  margin-bottom: 0.875rem;
+  font-size: clamp(1.0625rem, 1.7vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 .intro-lead {
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
-  line-height: 1.55;
+  max-width: 59ch;
+  color: var(--text-gray);
+  line-height: 1.65;
+}
+
+@media (max-width: 520px) {
+  .intro-opening {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .intro-opening > div {
+    grid-column: 1 / -1;
+  }
+
+  .intro-opening img {
+    width: 86px;
+    justify-self: end;
+  }
 }
 
 .intro-areas {
@@ -1315,13 +1385,30 @@ footer::after {
 }
 
 .intro-areas h3 {
-  margin-bottom: 0.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.25rem;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 650;
+}
+
+.intro-area-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.4rem;
+  background: var(--bg-light);
+  color: var(--link-hover);
+  font-family: system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1;
 }
 
 .intro-areas p {
-  line-height: 1.55;
+  padding-inline-start: 2.375rem;
+  line-height: 1.6;
 }
 
 .intro-affiliation {
@@ -1556,7 +1643,7 @@ footer::after {
     gap: 0.75rem;
   }
 
-  nav ul {
+  header nav ul {
     flex-wrap: wrap;
     justify-content: center;
   }

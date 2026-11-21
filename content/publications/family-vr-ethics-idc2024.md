@@ -1,7 +1,7 @@
 ---
 title: "Is Your Family Ready for VR? Ethical Concerns and Considerations in Children's VR Usage"
 date: 2024-06-17
-venue: "IDC '24: Proceedings of the 2024 ACM Interaction Design and Children Conference"
+venue: "ACM Interaction Design and Children Conference (IDC 2024)"
 authors: ["Qiao Jin", "Saba Kawas", "Stuti Arora", "Ye Yuan", "Svetlana Yarosh"]
 tags: ["XR for Children"]
 pub_type: "conference"

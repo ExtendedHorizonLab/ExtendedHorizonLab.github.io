@@ -1,7 +1,7 @@
 ---
 title: "Collaborative Online Learning with VR Video: Roles of Collaborative Tools and Shared Video Control"
 date: 2023-04-23
-venue: "CHI '23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems"
+venue: "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI 2023)"
 authors: ["Qiao Jin", "Yu Liu", "Ruixuan Sun", "Chen Chen", "Puqi Zhou", "Bo Han", "Feng Qian", "Svetlana Yarosh"]
 tags: ["Social XR for Higher Education"]
 pub_type: "full paper"

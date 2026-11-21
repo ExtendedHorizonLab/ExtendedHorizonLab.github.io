@@ -1,7 +1,7 @@
 ---
 title: '"Be a Lighting Programmer": Supporting Children Collaborative Learning through Tangible Programming System'
 date: 2023-01-15
-venue: "IJHCI '23: International Journal of Human-Computer Interaction"
+venue: "International Journal of Human-Computer Interaction"
 authors: ["Xinyuan Wang", "Qian Xing", "Qiao Jin", "Danli Wang"]
 tags: ["Communication and Collaboration for Children"]
 pub_type: "journal"

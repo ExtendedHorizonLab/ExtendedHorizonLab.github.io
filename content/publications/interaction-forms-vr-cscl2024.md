@@ -1,7 +1,7 @@
 ﻿---
 title: "Interaction Forms of Collaborative VR Video Learning: An Exploratory Study"
 date: 2024-06-10
-venue: "CSCL '24: Proceedings of the 17th International Conference on Computer-Supported Collaborative Learning"
+venue: "International Conference on Computer-Supported Collaborative Learning (CSCL 2024)"
 authors: ["Qiao Jin", "Ishan Sodhi", "Angie Chen", "Svetlana Yarosh"]
 pub_type: "conference"
 paper_tags: ["xr", "learning", "collaboration", "user-studies", "analysis"]

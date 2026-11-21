@@ -5,7 +5,7 @@
 # Date is the workshop date.
 title: "From Code Generation to Computational Design: Generative AI as an Interactive Partner for Future Computer Science Education"
 date: 2026-06-28
-venue: "Workshop Paper at AIED 2026"
+venue: "Next-Generation Learning Interfaces Workshop at the International Conference on Artificial Intelligence in Education (AIED 2026)"
 authors: ["Yichen Andy Yu", "Qiao Jin"]
 pub_type: "workshop"
 paper_tags: ["ai", "learning", "conceptual"]

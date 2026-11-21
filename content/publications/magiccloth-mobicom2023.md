@@ -1,7 +1,7 @@
 ﻿---
 title: "MagicCloth: Protect User Privacy in AR Streaming"
 date: 2023-10-02
-venue: "MIC '23: Proceedings of the 1st ACM Workshop on Mobile Immersive Computing"
+venue: "Proceedings of the 1st ACM Workshop on Mobile Immersive Computing, Networking, and Systems (ImmerCom 2023)"
 authors: ["Yuming Hu", "Mingyu Zhu", "Qiao Jin", "Feng Qian", "Bin Li"]
 pub_type: "workshop"
 paper_tags: ["xr", "ethics", "systems"]

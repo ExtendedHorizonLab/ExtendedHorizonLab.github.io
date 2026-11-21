@@ -5,7 +5,7 @@
 # PDF source: https://dl.acm.org/doi/pdf/10.1145/3773077.3806134
 title: "Child-Involved Group Prioritization: Effects of Group Composition on Experience, Participation Level, and Interaction"
 date: 2026-06-21
-venue: "Short Paper Proceedings of IDC 2026"
+venue: "ACM Interaction Design and Children Conference (IDC 2026)"
 authors: ["Qiao Jin", "Leah Ajmani", "Samantha Singh", "Adhitya Balasubramanian", "Svetlana Yarosh"]
 pub_type: "short paper"
 paper_tags: ["collaboration", "families", "user-studies", "participatory-design"]

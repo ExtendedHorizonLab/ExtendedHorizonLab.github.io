@@ -6,7 +6,7 @@
 # Poster classification is confirmed by the first author publication list.
 title: "SpatialPrompt: XR-Based Spatial Intent Expression as Executable Constraints for AI Generative 3D Design"
 date: 2026-06-12
-venue: "Poster Proceedings of DIS 2026"
+venue: "Companion Publication of the 2026 ACM Designing Interactive Systems Conference (DIS Companion 2026)"
 authors: ["Yichen Andy Yu", "Wanru Li", "Qiaoran Wang", "Jymon Ross", "Gavin Johnson", "Mandy Lui", "Qiao Jin"]
 pub_type: "poster"
 paper_tags: ["ai", "xr", "collaboration", "systems", "user-studies"]

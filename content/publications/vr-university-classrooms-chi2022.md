@@ -1,7 +1,7 @@
 ---
 title: "How Will VR Enter University Classrooms? Multi-stakeholders Investigation of VR in Higher Education"
 date: 2022-04-29
-venue: "CHI '22: Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems"
+venue: "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems (CHI 2022)"
 authors: ["Qiao Jin", "Yu Liu", "Svetlana Yarosh", "Bo Han", "Feng Qian"]
 tags: ["Social XR for Higher Education"]
 pub_type: "full paper"

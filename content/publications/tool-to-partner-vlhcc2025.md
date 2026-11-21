@@ -1,7 +1,7 @@
 ﻿---
 title: "From Tool to Partner: Exploring the Roles of Embodiment on AI Agent in Pair Programming"
 date: 2025-09-01
-venue: "VL/HCC '25: The IEEE Symposium on Visual Languages and Human-Centric Computing"
+venue: "IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC 2025)"
 authors: ["Xiaoran Yang", "Yang Zhan", "Noboru Matsuda", "Qiao Jin"]
 pub_type: "short paper"
 paper_tags: ["ai", "xr", "learning", "collaboration", "systems", "user-studies"]

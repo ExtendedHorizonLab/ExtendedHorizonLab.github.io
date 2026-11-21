@@ -4,7 +4,7 @@
 # Author PDF: https://xiaoranyang.com/papers/CHI26_Poster.pdf
 title: "Understanding Prompt Construction and Interaction Challenges in LLM-Based Multi-Robot Systems for Spatial Tasks"
 date: 2026-04-13
-venue: "Extended Abstract Proceedings of CHI 2026"
+venue: "Proceedings of the Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA 2026)"
 authors: ["Xiaoran Yang", "Yang Zhan", "Qiao Jin"]
 pub_type: "extended abstract"
 paper_tags: ["ai", "xr", "user-studies"]

@@ -1,7 +1,7 @@
 ﻿---
 title: "SenseBot: Leveraging Embodied Asymmetric Interaction and Social Robotic to Enhance Intergenerational Communication"
 date: 2024-10-13
-venue: "Poster Proceedings of UIST 2024"
+venue: "The 37th Annual ACM Symposium on User Interface Software and Technology (UIST Adjunct 2024)"
 authors: ["Hao Jin", "Lyumanshan Ye", "Qiao Jin"]
 # Publication type source: content/news/present-our-poster-work-at-uist2024-check-out-our-holoclass.md
 pub_type: "poster"

@@ -1,7 +1,7 @@
 ---
 title: "Shape of Music: AR-based Tangible Programming Tool for Music Visualization"
 date: 2023-06-19
-venue: "Poster Proceedings of IDC 2023"
+venue: "ACM Interaction Design and Children Conference (IDC 2023)"
 authors: ["Qiao Jin", "Danli Wang", "Haoran Yun", "Svetlana Yarosh"]
 tags: ["XR for Children"]
 # Publication type source: https://idc.acm.org/2023/wp-content/uploads/2023/06/IDC-2023-Program-3-Compressed.pdf, Works-in-Progress Group 1a

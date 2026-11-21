@@ -5,7 +5,7 @@
 # The supplied PDF lists three authors; this supersedes the four-author list in the spreadsheet.
 title: "CollabPEAS: A Collaborative VR System for Learning AI Agent Design Through the PEAS Framework"
 date: 2026-01-01
-venue: "Extended Abstract Proceedings of CSCW 2026"
+venue: "Companion of the Computer-Supported Cooperative Work and Social Computing (CSCW Companion 2026)"
 authors: ["Wanru Jovie Li", "Yichen Andy Yu", "Qiao Jin"]
 pub_type: "extended abstract"
 paper_tags: ["ai", "xr", "learning", "collaboration", "systems"]

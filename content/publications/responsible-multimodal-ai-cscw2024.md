@@ -1,7 +1,7 @@
 ﻿---
 title: "Towards Responsible Use of Large Multi-modal AI to Analyze Human Social Behaviors"
 date: 2024-11-09
-venue: "CSCW '24: Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing"
+venue: "Companion of the 2024 Computer-Supported Cooperative Work and Social Computing (CSCW Companion 2024)"
 authors: ["Qingxiao Zheng", "Xi Lu", "Qiao Jin", "Jitesh Jain", "Hedda Meadan-Kaplansky", "Humphrey Shi", "Jinjun Xiong", "Yun Huang"]
 pub_type: "sig proposal"
 paper_tags: ["ai", "ethics", "analysis", "conceptual"]

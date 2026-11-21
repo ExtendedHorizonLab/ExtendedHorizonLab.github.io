@@ -1,7 +1,7 @@
 ﻿---
 title: "Ethics of Emerging Communication and Collaboration Technologies for Children"
 date: 2023-10-14
-venue: "CSCW '23: Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing"
+venue: "Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing (CSCW Companion 2023)"
 authors: ["Juan Pablo Hourcade", "Elizabeth Bonsignore", "Tamara Clegg", "Flannery Currin", "Jerry A. Fails", "Georgie Qiao Jin", "Summer R. Schmuecker", "Lana Yarosh"]
 pub_type: "sig proposal"
 paper_tags: ["xr", "collaboration", "families", "ethics", "conceptual"]

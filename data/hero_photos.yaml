@@ -11,9 +11,9 @@
 - image: /images/hero/cs-vr-senior-design.jpg
   alt: Students demonstrating VR Biotech Minigames at Senior Design
   position: center 10%
-- image: /images/hero/spatialprompt-teaser.jpg
-  alt: SpatialPrompt turns a blue 3D sketch into a pitched-roof model in mixed reality
-  position: 77% center
+- image: /images/hero/spatialprompt-demo.jpg
+  alt: Two people demonstrate SpatialPrompt with mixed-reality headsets and shared 3D sketches
+  position: center 46%
 - image: /images/hero/cs-sponsor-chat.jpg
   alt: A student speaks with an NC State Senior Design sponsor
   position: center 12%

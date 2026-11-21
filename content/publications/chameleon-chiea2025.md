@@ -1,7 +1,7 @@
 ﻿---
 title: "Chameleon: Unobtrusive Substitution of Real-World Obstacles in VR with Risk-Level-Aware Adaptation"
 date: 2025-04-26
-venue: "Extended Abstract Proceedings of CHI 2025"
+venue: "Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA 2025)"
 authors: ["Yichen Yu", "Qiao Jin"]
 # Publication type source: https://yuyichen.net/ and https://chi2025.acm.org/for-authors/late-breaking-work/
 pub_type: "extended abstract"

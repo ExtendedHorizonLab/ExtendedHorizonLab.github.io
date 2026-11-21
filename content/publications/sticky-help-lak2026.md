@@ -4,7 +4,7 @@
 # Verified: https://doi.org/10.1145/3785022.3785128
 title: "Sticky Help, Bounded Effects: Session-by-Session Analytics of Teacher Interventions in K-12 Classrooms"
 date: 2026-04-26
-venue: "Proceedings of LAK 2026"
+venue: "International Conference on Learning Analytics and Knowledge (LAK 2026)"
 authors: ["Qiao Jin", "Conrad Borchers", "Ashish Gurung", "Sean Jackson", "Sameeksha Agarwal", "Cancan Wang", "YiChen Yu", "Pragati Maheshwary", "Vincent Aleven"]
 pub_type: "conference"
 paper_tags: ["ai", "learning", "user-studies", "analysis"]

@@ -6,7 +6,8 @@
 # The proposal PDF contains a placeholder DOI, which is intentionally omitted.
 title: "Growing Up (and Old) with AI: Co-Constructing the Future for Family-Centered AI"
 date: 2026-05-07
-venue: "Workshop at CSCW 2026"
+venue: "Companion of the Computer-Supported Cooperative Work and Social Computing (CSCW Companion 2026)"
+doi: "https://doi.org/10.1145/3785651.3816096"
 authors: ["Xiaoyi Tian", "Renkai Ma", "Qiao Jin", "Kaiwen Sun", "Afsaneh Razi", "Yang Shi", "Bengisu Cagiltay", "Jerry Alan Fails", "Yubo Kou"]
 pub_type: "workshop proposal"
 paper_tags: ["ai", "families", "ethics", "conceptual"]

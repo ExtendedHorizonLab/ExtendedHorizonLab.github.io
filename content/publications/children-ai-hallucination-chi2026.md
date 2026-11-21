@@ -4,7 +4,7 @@
 # Verified: https://doi.org/10.1145/3772318.3791480
 title: "When AI Gets It Wrong: Scaffolding AI Hallucination Detection for Children Through Chatbot Creation"
 date: 2026-04-13
-venue: "Proceedings of CHI 2026"
+venue: "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI 2026)"
 authors: ["Xiaoyi Tian", "Deniz Ozturk", "Sreekar Edula", "Jibran Adil", "Qiao Jin", "Yang Shi", "Tiffany Barnes"]
 pub_type: "full paper"
 paper_tags: ["ai", "learning", "families", "ethics", "systems", "user-studies"]

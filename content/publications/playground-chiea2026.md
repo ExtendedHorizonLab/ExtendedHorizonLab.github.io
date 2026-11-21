@@ -4,7 +4,7 @@
 # PDF source: https://dl.acm.org/doi/pdf/10.1145/3772363.3798573
 title: "Playground+: an AI-MR System for Adaptable Open-Ended Family Physical Activity Play"
 date: 2026-04-13
-venue: "Extended Abstract Proceedings of CHI 2026"
+venue: "Proceedings of the Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA 2026)"
 authors: ["Hongfei Ji", "Qiao Jin"]
 pub_type: "extended abstract"
 paper_tags: ["ai", "xr", "families", "wellbeing", "systems"]

@@ -5,7 +5,7 @@
 # Workshop organizer proposal; date is the workshop date.
 title: "Designing and Evaluating Next-Generation Learning Interfaces: Linking AI, HCI, and the Learning Sciences"
 date: 2026-06-28
-venue: "Workshop at AIED 2026"
+venue: "International Conference on Artificial Intelligence in Education (AIED 2026)"
 authors: ["Meng Xia", "Yan Chen", "Qiao Jin", "Yang Shi", "Paul Denny", "Tiffany Barnes", "Qingsong Wen", "Vincent Aleven"]
 pub_type: "workshop proposal"
 paper_tags: ["ai", "learning", "conceptual"]

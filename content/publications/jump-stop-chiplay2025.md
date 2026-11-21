@@ -1,7 +1,7 @@
 ﻿---
 title: "Jump, Stop, Jump Again: Exploring AI-Supported Physical Activity Play at Home with Parents and Children"
 date: 2025-07-01
-venue: "Work-in-Progress at CHI PLAY 2025"
+venue: "Companion Proceedings of the Annual Symposium on Computer-Human Interaction in Play (CHI PLAY Companion 2025)"
 authors: ["Hongfei Ji", "Yuhan Yuan", "Qiao Jin"]
 # Publication type source: https://hongfeiji.com/en/portfolio/children-ai-domestic-pap, Project Source
 pub_type: "work-in-progress"

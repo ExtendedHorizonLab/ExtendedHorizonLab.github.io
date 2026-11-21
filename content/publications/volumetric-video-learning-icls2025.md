@@ -1,7 +1,7 @@
 ﻿---
 title: "An Exploratory Study of Using Interactive Volumetric Video in VR for Embodied Learning"
 date: 2025-06-08
-venue: "ICLS '25: The International Conference of the Learning Sciences"
+venue: "International Conference of the Learning Sciences (ICLS 2025)"
 authors: ["Qiao Jin", "Yu Liu", "Yuxuan Huang", "Bo Han", "Feng Qian", "Svetlana Yarosh"]
 pub_type: "conference"
 paper_tags: ["xr", "learning", "systems", "user-studies"]

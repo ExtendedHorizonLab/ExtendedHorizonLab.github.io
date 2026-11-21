@@ -6,7 +6,7 @@
 # PDF source: https://link.springer.com/chapter/10.1007/978-3-032-29770-9_36
 title: "Using an MR-Based Teacher Orchestration Tool in AI-Supported K-12 Classrooms"
 date: 2026-06-27
-venue: "Short Paper Proceedings of AIED 2026"
+venue: "International Conference on Artificial Intelligence in Education (AIED 2026)"
 authors: ["Qiao Jin", "Yang Zhan", "Will Morgus", "Kyle Price", "Michael Sandbothe", "Jonathan Sewall", "Octav Popescu", "Susan Berman", "Stephen E. Fancsali", "Steve Ritter", "Kenneth Holstein", "Vincent Aleven"]
 pub_type: "short paper"
 paper_tags: ["ai", "xr", "learning", "user-studies"]

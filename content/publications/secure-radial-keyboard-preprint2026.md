@@ -4,7 +4,7 @@
 # No accepted conference is asserted.
 title: "Secure Text Entry using a Virtual Radial Keyboard with Dynamically Resized Keys and Non-Intrusive Randomization"
 date: 2026-01-09
-venue: "arXiv preprint"
+venue: "arXiv"
 authors: ["Yuxuan Huang", "Qiao Jin", "Tongyu Nie", "Victoria Interrante", "Evan Suma Rosenberg"]
 pub_type: "preprint"
 paper_tags: ["xr", "ethics", "systems", "user-studies"]

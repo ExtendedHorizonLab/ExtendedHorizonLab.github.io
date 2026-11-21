@@ -1,7 +1,7 @@
 ---
 title: "Socio-technical Opportunities in Long-Distance Communication Between the Siblings with a Large Age Difference"
 date: 2023-04-23
-venue: "CHI '23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems"
+venue: "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI 2023)"
 authors: ["Qiao Jin", "Ye Yuan", "Svetlana Yarosh"]
 tags: ["Communication and Collaboration for Children"]
 pub_type: "full paper"

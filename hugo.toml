@@ -10,6 +10,7 @@ ignoreFiles = ['/content/projects/']
   university = "North Carolina State University"
   department = "Department of Computer Science"
   director = "Qiao (Georgie) Jin"
+  labWorkspaceURL = "https://extendedhorizon.com/app/"
 
 [menu]
   [[menu.main]]
@@ -33,7 +34,7 @@ ignoreFiles = ['/content/projects/']
     pageRef = "/teaching"
     weight = 5
   [[menu.main]]
-    name = "Work with Us"
+    name = "Join Us"
     pageRef = "/work-with-us"
     weight = 6
 

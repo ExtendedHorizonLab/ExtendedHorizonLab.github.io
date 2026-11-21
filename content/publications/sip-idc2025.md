@@ -1,7 +1,7 @@
 ﻿---
 title: "Stakeholder-Informed Prioritization (SIP): A Technique for Quickly Gauging Research and Design Priorities"
 date: 2025-06-22
-venue: "IDC '25: Proceedings of the 24th Interaction Design and Children"
+venue: "ACM Interaction Design and Children Conference (IDC 2025)"
 authors: ["Qiao Jin", "Leah Ajmani", "Samantha Singh", "Adhitya Balasubramanian", "Svetlana Yarosh"]
 pub_type: "work-in-progress"
 paper_tags: ["xr", "families", "user-studies", "participatory-design"]

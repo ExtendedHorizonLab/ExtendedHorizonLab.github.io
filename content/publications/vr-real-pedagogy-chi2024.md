@@ -1,7 +1,7 @@
 ---
 title: "Virtual Reality, Real Pedagogy: A Contextual Inquiry of Instructor Practices with VR Video"
 date: 2024-05-11
-venue: "CHI '24: Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems"
+venue: "Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI 2024)"
 authors: ["Qiao Jin", "Yu Liu", "Ye Yuan", "Bo Han", "Feng Qian", "Svetlana Yarosh"]
 tags: ["Social XR for Higher Education"]
 pub_type: "full paper"
