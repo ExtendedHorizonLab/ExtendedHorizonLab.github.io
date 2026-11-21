@@ -2,6 +2,12 @@
 title: "Teaching"
 ---
 
+## CSC 536 · AI-Enhanced Extended Reality
+
+**Fall 2027**
+
+This graduate course explores how AI can make immersive experiences respond to what users say and do. Students learn the fundamentals of 3D interaction and spatial interfaces, then use Unity and AI services to prototype adaptive interfaces, embodied agents, and multimodal interactions. Programming assignments and a team project take students from prototyping to evaluating an AI-enhanced XR application.
+
 ## CSC 591 · Extended Reality and 3D Interaction
 
 This graduate course introduces the design, development, and evaluation of virtual, augmented, and mixed reality experiences. Students study tracking and sensing, displays, and spatial interaction techniques, then work in teams to prototype XR applications in Unity and evaluate how people use them.
