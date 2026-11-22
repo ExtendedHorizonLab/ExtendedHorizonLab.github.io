@@ -1,6 +1,10 @@
 {{- $type := .Params.pub_type | default "" -}}
-{{- $format := index site.Data.publication_formats.aliases $type | default $type -}}
-{{- $label := index site.Data.publication_formats.paper_labels $type | default (index site.Data.publication_formats.formats $format) -}}
-{{- with $label -}}
-  <a class="pub-tag pub-format" href="{{ "publications/" | relURL }}?format={{ $format | urlize }}" data-paper-format="{{ $format | urlize }}">{{ . }}</a>
+{{- range $i, $format := partial "publication-formats.html" . -}}
+  {{- $label := index site.Data.publication_formats.formats $format -}}
+  {{- if eq $i 0 -}}
+    {{- $label = index site.Data.publication_formats.paper_labels $type | default $label -}}
+  {{- end -}}
+  {{- with $label }}
+    <a class="pub-tag pub-format" href="{{ "publications/" | relURL }}?format={{ $format | urlize }}" data-paper-format="{{ $format | urlize }}">{{ . }}</a>
+  {{- end -}}
 {{- end -}}

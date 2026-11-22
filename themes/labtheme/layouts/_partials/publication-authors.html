@@ -1,0 +1,24 @@
+{{- $members := site.Data.labmembers.names -}}
+{{- $equalContributors := .Params.equal_contributors | default (slice) -}}
+{{- range $i, $author := .Params.authors -}}
+  {{- if $i }}, {{ end -}}
+  {{- $person := site.GetPage (printf "/people/%s" ($author | urlize)) -}}
+  {{- if not $person -}}
+    {{- range where site.RegularPages "Section" "people" -}}
+      {{- if in .Params.alt_names $author -}}
+        {{- $person = . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if and $person $person.Params.website -}}
+    <a href="{{ $person.Params.website }}"><strong>{{ $author }}</strong></a>
+  {{- else if or $person (in $members $author) -}}
+    <strong>{{ $author }}</strong>
+  {{- else -}}
+    {{- $author -}}
+  {{- end -}}
+  {{- if in $equalContributors $author -}}<sup>*</sup>{{- end -}}
+{{- end -}}
+{{- with $equalContributors -}}
+  <small class="pub-author-note">* These authors contributed equally.</small>
+{{- end -}}

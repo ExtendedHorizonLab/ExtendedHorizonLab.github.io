@@ -23,3 +23,9 @@
 "extended abstract" = "Extended abstract"
 "work-in-progress" = "Work in progress"
 "demo" = "Demo"
+
+[additional_formats]
+"full paper" = ["conference"]
+"short paper" = ["conference"]
+"conference" = ["full paper"]
+"journal" = ["full paper"]

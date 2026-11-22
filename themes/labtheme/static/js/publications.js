@@ -10,7 +10,7 @@
   const awardButton = browser.querySelector('[data-filter-awards]');
   const papers = [...browser.querySelectorAll('[data-paper-tags]')].map(element => ({
     element,
-    format: element.dataset.format,
+    formats: element.dataset.formats.split(/\s+/),
     hasAward: element.hasAttribute('data-paper-award'),
     tags: new Set(element.dataset.paperTags.split(/\s+/))
   }));
@@ -44,8 +44,8 @@
   }
 
   function render() {
-    papers.forEach(({ element, format, tags, hasAward }) => {
-      const matchesFormat = !selectedFormats.size || selectedFormats.has(format);
+    papers.forEach(({ element, formats, tags, hasAward }) => {
+      const matchesFormat = !selectedFormats.size || formats.some(format => selectedFormats.has(format));
       const matchesTopics = [...selectedTopics].every(tag => tags.has(tag));
       element.hidden = !matchesFormat || !matchesTopics || (awardsOnly && !hasAward);
     });

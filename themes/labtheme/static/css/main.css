@@ -496,6 +496,12 @@ nav ul li a.active {
   margin-bottom: 0.25rem;
 }
 
+.pub-author-note {
+  display: block;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
 .pub-authors a {
   color: inherit;
   text-decoration: none;

@@ -50,7 +50,7 @@
             {{ end }}
             <div class="person-glass"></div>
           </div>
-          <h3 class="person-name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <h3 class="person-name">{{ partial "person-name.html" . }}</h3>
           {{ with .Params.position }}<div class="person-role">{{ . }}</div>{{ end }}
           <div class="person-affiliation">{{ .Params.affiliation }}</div>
         </div>
@@ -66,7 +66,7 @@
       <div class="graduated-grid">
         {{ range . }}
           <div class="graduated-card">
-            <h3 class="graduated-name">{{ with .Params.title_prefix }}{{ . }} {{ end }}{{ .Title }}</h3>
+            <h3 class="graduated-name">{{ with .Params.title_prefix }}{{ . }} {{ end }}{{ partial "person-name.html" . }}</h3>
             <div class="graduated-degree">{{ .Params.degree }}</div>
             {{ with .Params.dissertation }}
             <div class="graduated-dissertation">
@@ -103,7 +103,7 @@
       <h3 class="alumni-group-title">Graduate Students</h3>
       <div class="alumni-grid">
         {{ range . }}
-        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ index $abbr .Params.affiliation | default .Params.affiliation }}{{ with .Params.years }}, {{ . }}{{ end }}</div>
+        <div class="alumni-item">{{ partial "person-name.html" . }}, {{ index $abbr .Params.affiliation | default .Params.affiliation }}{{ with .Params.years }}, {{ . }}{{ end }}</div>
         {{ end }}
       </div>
       {{ end }}
@@ -114,7 +114,7 @@
       <h3 class="alumni-group-title">Undergrads</h3>
       <div class="alumni-grid">
         {{ range . }}
-        <div class="alumni-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ index $abbr .Params.affiliation | default .Params.affiliation }}{{ with .Params.years }}, {{ . }}{{ end }}</div>
+        <div class="alumni-item">{{ partial "person-name.html" . }}, {{ index $abbr .Params.affiliation | default .Params.affiliation }}{{ with .Params.years }}, {{ . }}{{ end }}</div>
         {{ end }}
       </div>
       {{ end }}

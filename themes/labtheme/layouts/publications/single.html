@@ -5,30 +5,13 @@
         <h1 class="single-title">{{ .Title }}</h1>
 
         <div class="pub-authors" style="font-size: 1.125rem; margin: 1rem 0;">
-          {{ $members := site.Data.labmembers.names }}
-          {{ range $i, $author := .Params.authors }}
-            {{ if $i }}, {{ end }}
-            {{ $person := site.GetPage (printf "/people/%s" ($author | urlize)) }}
-            {{ if not $person }}
-              {{ range where site.RegularPages "Section" "people" }}
-                {{ if in .Params.alt_names $author }}
-                  {{ $person = . }}
-                {{ end }}
-              {{ end }}
-            {{ end }}
-            {{ if $person }}
-              <a href="{{ $person.RelPermalink }}"><strong>{{ $author }}</strong></a>
-            {{ else if in $members $author }}
-              <strong>{{ $author }}</strong>
-            {{ else }}
-              {{ $author }}
-            {{ end }}
-          {{ end }}
+          {{ partial "publication-authors.html" . }}
         </div>
 
         <div class="single-meta">
           <span class="pub-venue" style="font-size: 1rem;">{{ .Params.venue }}</span>
-          <span>{{ .Date.Format "2006" }}</span>
+          <span>{{ .Params.publication_year | default .Date.Year }}</span>
+          {{ with .Params.publication_status }}<span> · <strong>{{ . }}</strong></span>{{ end }}
           {{ partial "publication-format.html" . }}
         </div>
 

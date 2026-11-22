@@ -39,7 +39,7 @@
                     <img src="/images/placeholder-person.png" alt="{{ $person.Title }}">
                   {{ end }}
                 </div>
-                <h3 class="person-name"><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h3>
+                <h3 class="person-name">{{ partial "person-name.html" $person }}</h3>
                 <div class="person-role">{{ $person.Params.position }}</div>
               </div>
             {{ end }}

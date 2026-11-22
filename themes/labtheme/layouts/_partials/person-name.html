@@ -1,0 +1,6 @@
+{{- $name := .Title -}}
+{{- with .Params.website -}}
+  <a href="{{ . }}">{{ $name }}</a>
+{{- else -}}
+  {{- $name -}}
+{{- end -}}

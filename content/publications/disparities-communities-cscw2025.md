@@ -3,6 +3,7 @@ title: "Assessing Disparities in Hybrid and Online-Only Local Support Communitie
 date: 2025-04-01
 venue: "Proceedings of the ACM on Human-Computer Interaction (PACMHCI), CSCW 2025"
 authors: ["Anjali Srivastava", "Qiao Jin", "Sabirat Rubya", "Carrie Kistler", "Diana Vuong", "Svetlana Yarosh"]
+equal_contributors: ["Anjali Srivastava", "Qiao Jin"]
 pub_type: "journal"
 paper_tags: ["collaboration", "ethics", "analysis"]
 pdf: "/papers/disparities-communities-cscw2025.pdf"

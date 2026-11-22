@@ -48,7 +48,7 @@
           <p>We design tools that make it easier for people with different levels of technical experience to create immersive content, share knowledge, and collaborate. We study the safety, security, and ethical questions that arise as people use these tools.</p>
         </li>
       </ul>
-      <p class="intro-affiliation">We’re a <a href="{{ "people/" | relURL }}">team of students and researchers</a> at <a href="https://csc.ncsu.edu/">NC State’s Department of Computer Science</a>, led by <a href="{{ "people/qiao-jin/" | relURL }}">Qiao (Georgie) Jin</a>.</p>
+      <p class="intro-affiliation">We’re a <a href="{{ "people/" | relURL }}">team of students and researchers</a> at <a href="https://csc.ncsu.edu/">NC State’s Department of Computer Science</a>, led by {{ with site.GetPage "/people/qiao-jin" }}{{ partial "person-name.html" . }}{{ end }}.</p>
     </div>
   </div>
 </section>

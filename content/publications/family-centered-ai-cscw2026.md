@@ -9,6 +9,7 @@ date: 2026-05-07
 venue: "Companion of the Computer-Supported Cooperative Work and Social Computing (CSCW Companion 2026)"
 doi: "https://doi.org/10.1145/3785651.3816096"
 authors: ["Xiaoyi Tian", "Renkai Ma", "Qiao Jin", "Kaiwen Sun", "Afsaneh Razi", "Yang Shi", "Bengisu Cagiltay", "Jerry Alan Fails", "Yubo Kou"]
+equal_contributors: ["Xiaoyi Tian", "Renkai Ma", "Qiao Jin"]
 pub_type: "workshop proposal"
 paper_tags: ["ai", "families", "ethics", "conceptual"]
 pdf: "/papers/family-centered-ai-cscw2026.pdf"

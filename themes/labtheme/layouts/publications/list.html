@@ -1,15 +1,18 @@
 {{ define "main" }}
+  {{ $papersByYear := newScratch }}
+  {{ $years := slice }}
+  {{ range .Pages.ByDate.Reverse }}
+    {{ $year := .Params.publication_year | default .Date.Year | string }}
+    {{ $papersByYear.Add $year (slice .) }}
+    {{ $years = $years | append $year }}
+  {{ end }}
+  {{ $years = sort ($years | uniq) "value" "desc" }}
   <div class="container">
     <div class="page-layout publications-page" data-publication-browser>
       <!-- Left Sidebar with Years -->
       <aside class="sidebar">
         <ul class="year-nav" id="year-nav">
-          {{ $years := slice }}
-          {{ range .Pages.ByDate.Reverse }}
-            {{ $years = $years | append (.Date.Format "2006") }}
-          {{ end }}
-          {{ $uniqueYears := $years | uniq }}
-          {{ range $i, $year := $uniqueYears }}
+          {{ range $i, $year := $years }}
             <li{{ if eq $i 0 }} class="active"{{ end }}>
               <a href="#year-{{ $year }}">{{ $year }}</a>
             </li>
@@ -26,16 +29,20 @@
             <h2 id="publication-format-label">Format</h2>
             <div class="paper-filter-buttons" role="group" aria-labelledby="publication-format-label">
               <button type="button" class="paper-filter" data-all-formats aria-pressed="true">All formats</button>
+              {{ $availableFormats := slice }}
+              {{ range .Pages }}
+                {{ range partial "publication-formats.html" . }}
+                  {{ $availableFormats = $availableFormats | append . }}
+                {{ end }}
+              {{ end }}
               {{ range $format, $label := site.Data.publication_formats.formats }}
-                {{ $types := slice $format }}
                 {{ $aliases := slice }}
                 {{ range $alias, $target := site.Data.publication_formats.aliases }}
                   {{ if eq $target $format }}
-                    {{ $types = $types | append $alias }}
                     {{ $aliases = $aliases | append ($alias | urlize) }}
                   {{ end }}
                 {{ end }}
-                {{ if where $.Pages "Params.pub_type" "in" $types }}
+                {{ if in $availableFormats $format }}
                   <button type="button" class="paper-filter" data-filter-format="{{ $format | urlize }}"{{ with $aliases }} data-format-aliases="{{ delimit . " " }}"{{ end }} aria-pressed="false">{{ $label }}</button>
                 {{ end }}
               {{ end }}
@@ -56,20 +63,17 @@
         </div>
         <p class="paper-empty-state" hidden>No publications match these filters. Try changing your selections.</p>
 
-        {{ $years := slice }}
-        {{ range .Pages.ByDate.Reverse }}
-          {{ $years = $years | append (.Date.Format "2006") }}
-        {{ end }}
-        {{ range $years | uniq }}
-          {{ $year := . }}
-          {{ $yearPubs := where $.Pages "Date.Year" (int $year) }}
+        {{ range $year := $years }}
+          {{ $yearPubs := $papersByYear.Get $year }}
           {{ with $yearPubs }}
           <div class="year-section" id="year-{{ $year }}">
             <h2 class="year-heading">{{ $year }}</h2>
             {{ range . }}
-              {{ $type := .Params.pub_type | default "" }}
-              {{ $format := index site.Data.publication_formats.aliases $type | default $type }}
-              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}" data-format="{{ $format | urlize }}"{{ if or .Params.award .Params.award_name }} data-paper-award{{ end }}>
+              {{ $formats := slice }}
+              {{ range partial "publication-formats.html" . }}
+                {{ $formats = $formats | append (. | urlize) }}
+              {{ end }}
+              <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}" data-formats="{{ delimit $formats " " }}"{{ if or .Params.award .Params.award_name }} data-paper-award{{ end }}>
                 <div class="pub-thumb">
                   {{ with .Params.thumbnail }}
                   <img src="{{ . }}" alt="{{ $.Title }}">
@@ -85,10 +89,9 @@
                     {{ end }}
                   </h3>
                   <div class="pub-authors">
-                    {{ $members := site.Data.labmembers.names }}
-                    {{ range $i, $author := .Params.authors }}{{ if $i }}, {{ end }}{{ $person := site.GetPage (printf "/people/%s" ($author | urlize)) }}{{ if not $person }}{{ range where site.RegularPages "Section" "people" }}{{ if in .Params.alt_names $author }}{{ $person = . }}{{ end }}{{ end }}{{ end }}{{ if $person }}<a href="{{ $person.RelPermalink }}"><strong>{{ $author }}</strong></a>{{ else if in $members $author }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}
+                    {{ partial "publication-authors.html" . }}
                   </div>
-                  <div class="pub-venue">{{ .Params.venue }}</div>
+                  <div class="pub-venue">{{ .Params.venue }}{{ with .Params.publication_status }} · <strong>{{ . }}</strong>{{ end }}</div>
                   {{ partial "publication-format.html" . }}
                   {{ partial "publication-tags.html" . }}
                   <div class="pub-links">
@@ -111,5 +114,5 @@
     </div>
   </div>
 
-  <script src="{{ "js/publications.js" | relURL }}?v=2" defer></script>
+  <script src="{{ "js/publications.js" | relURL }}?v=3" defer></script>
 {{ end }}

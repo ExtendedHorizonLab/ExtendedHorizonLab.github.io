@@ -1,0 +1,10 @@
+{{- $type := .Params.pub_type | default "" -}}
+{{- $format := index site.Data.publication_formats.aliases $type | default $type -}}
+{{- $formats := slice -}}
+{{- if $format -}}
+  {{- $formats = slice $format -}}
+  {{- with index site.Data.publication_formats.additional_formats $format -}}
+    {{- $formats = $formats | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $formats -}}

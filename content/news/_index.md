@@ -2,4 +2,4 @@
 title: "News"
 ---
 
-Press coverage and selected milestones from the Extended Horizon Lab.
+Lab updates, press coverage, and research milestones from the Extended Horizon Lab.
