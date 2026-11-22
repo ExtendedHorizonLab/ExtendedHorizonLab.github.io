@@ -9,6 +9,6 @@ award: true
 award_name: "Best Toio Award"
 thumbnail: "/images/projects/momobot.png"
 website: "https://uist.acm.org/uist2021/"
-video: "https://www.youtube.com/watch?v=kiQx0QhpLgU"
+video: "https://www.youtube.com/watch?v=krDZdN6PNz0"
 summary: "MoMoBot uses the toio robotic platform to share social cues and help friends and family stay connected across distances."
 ---

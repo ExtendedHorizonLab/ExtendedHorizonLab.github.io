@@ -39,7 +39,7 @@ Two projects from the Fall 2025 course were presented as posters at IEEE VR 2026
 
 <div class="teaching-video">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/frAKrSYphHQ"
+    src="https://www.youtube-nocookie.com/embed/kKp7BlGM_Kg"
     title="CSC 591 Fall 2025 final project video"
     loading="lazy"
     referrerpolicy="strict-origin-when-cross-origin"
@@ -47,6 +47,6 @@ Two projects from the Fall 2025 course were presented as posters at IEEE VR 2026
     allowfullscreen></iframe>
 </div>
 
-[Watch on YouTube](https://youtu.be/frAKrSYphHQ)
+[Watch on YouTube](https://www.youtube.com/watch?v=kKp7BlGM_Kg)
 
 </section>
