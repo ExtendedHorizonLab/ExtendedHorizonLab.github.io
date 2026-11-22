@@ -10,6 +10,10 @@ also_covered_by:
     url: "https://phys.org/news/2026-04-teachers-tend-kids-ai-powered.html"
   - name: "Core Learning Exchange (commentary)"
     url: "https://www.corelearningexchange.com/blog/ai-tutoring-attention-gap-2026.html"
+  - name: "Carnegie Mellon HCII (related research)"
+    url: "https://www.hcii.cmu.edu/news/whats-next-ai-and-education"
+  - name: "EurekAlert!"
+    url: "https://www.eurekalert.org/news-releases/1123113"
 ---
 
 The team studied how middle-school math teachers decided which students needed help while the class used AI tutoring tools, and found that teachers often returned to the same students.

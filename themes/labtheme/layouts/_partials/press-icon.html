@@ -1,0 +1,4 @@
+{{- $host := strings.TrimPrefix "www." (urls.Parse .).Hostname -}}
+{{- with index site.Data.press_icons $host -}}
+  <img src="{{ printf "images/press/%s" . | relURL }}" alt="" width="16" height="16" loading="lazy">
+{{- end -}}

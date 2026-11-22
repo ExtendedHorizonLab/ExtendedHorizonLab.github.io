@@ -39,10 +39,8 @@
                   <button type="button" class="paper-filter" data-filter-format="{{ $format | urlize }}"{{ with $aliases }} data-format-aliases="{{ delimit . " " }}"{{ end }} aria-pressed="false">{{ $label }}</button>
                 {{ end }}
               {{ end }}
+              <button type="button" class="paper-filter" data-filter-awards aria-pressed="false">With awards</button>
             </div>
-          </div>
-          <div class="paper-filter-group">
-            <button type="button" class="paper-filter" data-filter-awards aria-pressed="false">With awards</button>
           </div>
           <div class="paper-filter-group">
             <h2 id="publication-topic-label">Topic</h2>

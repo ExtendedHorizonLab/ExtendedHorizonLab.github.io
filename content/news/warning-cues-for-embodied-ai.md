@@ -11,6 +11,12 @@ also_covered_by:
     url: "https://techxplore.com/news/2026-09-ways-users-ai-hallucinations-embodied.html"
   - name: "Scienmag"
     url: "https://scienmag.com/three-warning-signals-could-help-vr-users-spot-ai-hallucinations/"
+  - name: "EurekAlert!"
+    url: "https://www.eurekalert.org/news-releases/1146081"
+  - name: "AlphaGalileo"
+    url: "https://www.alphagalileo.org/en-gb/Item-Display/ItemId/278721"
+  - name: "BrightSurf"
+    url: "https://www.brightsurf.com/news/LQ4Y9ON8/researchers-offer-three-ways-to-alert-users-to-ai-hallucinations-with-embodied-agents.html"
 ---
 
 The team tested gestures, icons, and caption cues to see how each helped people recognize potentially unreliable claims from embodied AI agents in VR.

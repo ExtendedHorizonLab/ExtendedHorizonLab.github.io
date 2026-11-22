@@ -13,6 +13,16 @@ also_covered_by:
     url: "https://scienmag.com/vr-direction-passwords-outperform-numeric-codes-in-memorability/"
   - name: "The Charlotte Tribune"
     url: "https://thecharlottetribune.com/new-directional-password-technique-enhances-memorability-efficiency-security/"
+  - name: "The National Tribune"
+    url: "https://www.nationaltribune.com.au/new-directional-password-technique-addresses-memorability-efficiency-security/"
+  - name: "Mirage News"
+    url: "https://www.miragenews.com/new-directional-password-technique-boosts-1774163/"
+  - name: "BrightSurf"
+    url: "https://www.brightsurf.com/news/8OMXW221/new-directional-password-technique-addresses-memorability-efficiency-security.html"
+  - name: "AlphaGalileo (English)"
+    url: "https://www.alphagalileo.org/en-gb/Item-Display/ItemId/280398"
+  - name: "AlphaGalileo (中文)"
+    url: "https://www.alphagalileo.org/en-gb/Item-Display/ItemId/280399"
 ---
 
 The team compared direction-based passwords with numeric PINs in virtual reality and examined the trade-offs between recall and entry time.

@@ -2088,6 +2088,26 @@ a.pub-format {
   font-weight: 600;
 }
 
+.teaching-course + .teaching-course {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.teaching-course h2 {
+  margin: 0 0 0.25rem;
+}
+
+.teaching-course .teaching-terms {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.teaching-course > :last-child {
+  margin-bottom: 0;
+}
+
 .teaching-video {
   margin: 1.25rem 0 0.75rem;
 }

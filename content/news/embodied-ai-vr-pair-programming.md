@@ -12,6 +12,10 @@ also_covered_by:
     url: "https://ispr.info/2025/10/02/study-embodied-ai-peers-in-vr-improve-confidence-motivation-learning-of-computer-programming-students/"
   - name: "XR Association newsletter"
     url: "https://multibriefs.com/briefs/xra/XRA100725.php"
+  - name: "AlphaGalileo"
+    url: "https://www.alphagalileo.org/en-gb/Item-Display/ItemId/263638"
+  - name: "NC State Computer Science (award)"
+    url: "https://csc.ncsu.edu/2025/11/qiao-jin-and-ph-d-students-xiaoran-yang-and-yang-zhan-receive-best-short-paper-honorable-mention-at-vl-hcc/"
 ---
 
 NC State News covered the team’s study of how giving an AI programming partner a body in VR affected students’ confidence and engagement.

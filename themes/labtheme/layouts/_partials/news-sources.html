@@ -1,17 +1,17 @@
 {{ if .Params.source_url }}
   <p class="lab-news-links">
-    <a class="lab-news-primary-source" href="{{ .Params.source_url }}">Read at {{ .Params.source_name }}</a>
+    <a class="lab-news-outlet lab-news-primary-source" href="{{ .Params.source_url }}">
+      {{ partial "press-icon.html" .Params.source_url }}
+      Read at {{ .Params.source_name }}
+    </a>
   </p>
 {{ end }}
 {{ with .Params.also_covered_by }}
   <p class="lab-news-links">
     <span class="lab-news-related-label">Related coverage</span>
     {{ range . }}
-      {{ $host := (urls.Parse .url).Hostname }}
       <a class="lab-news-outlet" href="{{ .url }}">
-        {{ with index site.Data.press_icons $host }}
-          <img src="{{ printf "images/press/%s" . | relURL }}" alt="" width="16" height="16" loading="lazy">
-        {{ end }}
+        {{ partial "press-icon.html" .url }}
         {{ .name }}
       </a>
     {{ end }}

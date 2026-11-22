@@ -9,8 +9,12 @@ source_url: "https://news.ncsu.edu/2025/11/parents-kids-ai-images/"
 also_covered_by:
   - name: "Phys.org"
     url: "https://phys.org/news/2025-11-parents-kids-ai-generated-images.html"
-  - name: "Newsmoco"
-    url: "https://newsmoco.com/education/parents-express-mixed-feelings-on-ai-images-in-childrens-books/"
+  - name: "The National Tribune"
+    url: "https://www.nationaltribune.com.au/how-parents-and-kids-really-feel-about-ai-generated-images-in-children-s-books/"
+  - name: "EurekAlert!"
+    url: "https://sciencesources.eurekalert.org/news-releases/1105923"
+  - name: "AlphaGalileo"
+    url: "https://www.alphagalileo.org/en-gb/Item-Display/ItemId/265400"
 ---
 
 NC State News covered Qiao Jin and Irene Ye Yuan’s study of what parents and children value in AI-generated story illustrations, including accuracy, consistency, and safety.
