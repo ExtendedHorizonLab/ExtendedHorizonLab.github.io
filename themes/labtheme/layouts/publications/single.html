@@ -11,7 +11,7 @@
         <div class="single-meta">
           <span class="pub-venue" style="font-size: 1rem;">{{ .Params.venue }}</span>
           <span>{{ .Params.publication_year | default .Date.Year }}</span>
-          {{ with .Params.publication_status }}<span> · <strong>{{ . }}</strong></span>{{ end }}
+          {{ with .Params.publication_status }}<span> · {{ . }}</span>{{ end }}
           {{ partial "publication-format.html" . }}
         </div>
 

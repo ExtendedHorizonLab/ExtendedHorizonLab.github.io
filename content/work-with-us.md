@@ -35,7 +35,7 @@ We want PhD students to grow into independent researchers who can shape their ow
 
 ### What does a typical week in the lab look like?
 
-We have a one-hour lab meeting each week, with the option to join remotely. Members also meet in person with their project mentor for about 30 minutes each week. PhD students take part in a hybrid journal club every other week. Between meetings, your time depends on your project. You might read papers, prototype an interface, prepare a study, or work through data with a collaborator. There are also weekly office hours for questions and informal check-ins. The [EH Lab Student Guide for Onboarding](https://docs.google.com/document/d/1LP4L_kMLXbFan7jz7vB5MZGY4kxt579xiW56WWfQiHg/edit) covers the practical details once you join.
+We have a one-hour lab meeting each week, with the option to join remotely. Members also meet with their project mentor for about 30 minutes each week, either in person or remotely, depending on what works for both. PhD students take part in a hybrid journal club every other week. Between meetings, your time depends on your project. You might read papers, prototype an interface, prepare a study, or work through data with a collaborator. There are also weekly [office hours](https://docs.google.com/document/d/1u6UzEdOKroNpxC03jGY-geZnqlXEtNjnPvJS-K0gv-s/edit?tab=t.0#heading=h.uj0bad2z1uw1) for questions and informal check-ins. The [EH Lab Student Guide for Onboarding](https://docs.google.com/document/d/1LP4L_kMLXbFan7jz7vB5MZGY4kxt579xiW56WWfQiHg/edit) covers the practical details once you join.
 
 ### How are PhD students funded?
 

@@ -3,7 +3,11 @@
   {{ $years := slice }}
   {{ range .Pages.ByDate.Reverse }}
     {{ $year := .Params.publication_year | default .Date.Year | string }}
-    {{ $papersByYear.Add $year (slice .) }}
+    {{ $group := $year }}
+    {{ if .Params.list_last }}
+      {{ $group = printf "%s-last" $year }}
+    {{ end }}
+    {{ $papersByYear.Add $group (slice .) }}
     {{ $years = $years | append $year }}
   {{ end }}
   {{ $years = sort ($years | uniq) "value" "desc" }}
@@ -64,7 +68,7 @@
         <p class="paper-empty-state" hidden>No publications match these filters. Try changing your selections.</p>
 
         {{ range $year := $years }}
-          {{ $yearPubs := $papersByYear.Get $year }}
+          {{ $yearPubs := ($papersByYear.Get $year | default (slice)) | append ($papersByYear.Get (printf "%s-last" $year) | default (slice)) }}
           {{ with $yearPubs }}
           <div class="year-section" id="year-{{ $year }}">
             <h2 class="year-heading">{{ $year }}</h2>
@@ -75,10 +79,12 @@
               {{ end }}
               <div class="pub-item" data-paper-tags="{{ delimit .Params.paper_tags " " }}" data-formats="{{ delimit $formats " " }}"{{ if or .Params.award .Params.award_name }} data-paper-award{{ end }}>
                 <div class="pub-thumb">
-                  {{ with .Params.thumbnail }}
-                  <img src="{{ . }}" alt="{{ $.Title }}">
+                  {{ if .Params.thumbnail }}
+                  <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                  {{ else if eq .Params.publication_status "To appear" }}
+                  <img class="pub-thumb-placeholder pub-thumb-forthcoming" src="{{ "images/publications/to-appear.png" | relURL }}" alt="" width="448" height="448" loading="lazy">
                   {{ else }}
-                  <div class="pub-thumb-placeholder"></div>
+                  <img class="pub-thumb-placeholder" src="{{ "images/mascot-laptop-hd.png" | relURL }}" alt="" width="495" height="668" loading="lazy">
                   {{ end }}
                 </div>
                 <div class="pub-info">
@@ -91,7 +97,7 @@
                   <div class="pub-authors">
                     {{ partial "publication-authors.html" . }}
                   </div>
-                  <div class="pub-venue">{{ .Params.venue }}{{ with .Params.publication_status }} · <strong>{{ . }}</strong>{{ end }}</div>
+                  <div class="pub-venue">{{ .Params.venue }}{{ with .Params.publication_status }} · {{ . }}{{ end }}</div>
                   {{ partial "publication-format.html" . }}
                   {{ partial "publication-tags.html" . }}
                   <div class="pub-links">
