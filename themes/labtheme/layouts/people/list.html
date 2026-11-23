@@ -6,8 +6,8 @@
     {{ $current := where .Pages "Params.status" "!=" "alumni" }}
     {{ $current = where $current "Params.status" "!=" "graduated" }}
 
-    {{/* NCSU members */}}
-    {{ $ncsu := where $current "Params.affiliation" "NCSU CS" }}
+    {{/* NCSU members (any department: "NCSU CS", "NCSU Education", ...) */}}
+    {{ $ncsu := where $current "Params.affiliation" "like" "^NCSU" }}
     {{ $ncsuFaculty := where $ncsu "Params.role" "faculty" }}
     {{ $ncsuPostdoc := where $ncsu "Params.role" "postdoc" }}
     {{ $ncsuStaff := where $ncsu "Params.role" "staff" }}
@@ -17,7 +17,7 @@
     {{ $ncsuUndergrad := where $ncsu "Params.role" "undergrad" }}
 
     {{/* External members (non-NCSU) */}}
-    {{ $ext := where $current "Params.affiliation" "!=" "NCSU CS" }}
+    {{ $ext := complement $ncsu $current }}
     {{ $ext = where $ext "Params.affiliation" "!=" nil }}
     {{ $extPhd := where $ext "Params.role" "phd" }}
     {{ $extMasters := where $ext "Params.role" "masters" }}
