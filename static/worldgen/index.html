@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorldGen Replay</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='%232a78d6' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='3.5' fill='%232a78d6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=1795436969">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+    <div>
+      <h1>WorldGen</h1>
+      <p id="subtitle">Dashboard</p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="live" class="on">Live</button>
+    <button data-tab="runs">Runs</button>
+    <button data-tab="library">Library</button>
+    <button data-tab="data">Data</button>
+    <button data-tab="system">System</button>
+  </nav>
+  <div class="top-right">
+    <span class="conn" id="conn"></span>
+    <button class="icon-btn" id="theme" title="Light or dark" aria-label="Light or dark">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- ============================== LIVE ============================== -->
+  <section class="tab" id="tab-live">
+    <div class="card banner" id="banner" hidden></div>
+    <div class="services" id="services"></div>
+    <div class="tiles" id="tiles"></div>
+
+    <div class="stage">
+      <div class="card panel">
+        <div class="panel-head">
+          <h3 id="map-title">The scene from above</h3>
+          <div class="right">
+            <button class="btn" id="map-people" title="Frame the characters">People</button>
+            <button class="btn" id="map-site" title="Frame the whole site">Whole site</button>
+            <button class="btn" id="map-out" aria-label="Zoom out">−</button>
+            <button class="btn" id="map-in" aria-label="Zoom in">+</button>
+          </div>
+        </div>
+        <div class="map" id="map"></div>
+      </div>
+      <div class="card panel">
+        <div class="panel-head">
+          <h3>What is happening</h3>
+          <div class="right">
+            <select class="btn" id="feed-who" aria-label="Whose events"><option value="">Everyone</option></select>
+          </div>
+        </div>
+        <div class="panel-head" style="padding-top:8px;padding-bottom:8px">
+          <div class="chips" id="feed-kinds"></div>
+        </div>
+        <div class="feed" id="feed"></div>
+      </div>
+    </div>
+
+    <div class="section-head"><h2>Characters</h2><span class="muted" id="people-note"></span></div>
+    <div class="people" id="people"></div>
+
+    <div class="section-head">
+      <h2>Performance</h2>
+      <span class="muted">one point every two seconds</span>
+      <div class="right" id="range"></div>
+    </div>
+    <div class="charts" id="charts"></div>
+  </section>
+
+  <!-- ============================== RUNS ============================== -->
+  <section class="tab" id="tab-runs" hidden>
+    <div id="runs-list" class="tab"></div>
+    <div id="run-detail" class="tab" hidden></div>
+  </section>
+
+  <!-- ============================== LIBRARY ============================== -->
+  <section class="tab" id="tab-library" hidden></section>
+
+  <!-- ============================== DATA ============================== -->
+  <section class="tab" id="tab-data" hidden></section>
+
+  <!-- ============================== SYSTEM ============================== -->
+  <section class="tab" id="tab-system" hidden></section>
+</main>
+
+<aside class="drawer" id="drawer" hidden></aside>
+<div id="tooltip" hidden></div>
+<script src="replay.js?v=1795436969"></script>
+<script src="app.js?v=1795436969"></script>
+</body>
+</html>
