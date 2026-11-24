@@ -1759,14 +1759,14 @@ footer::after {
 
 /* ===== DARK MODE OVERRIDES ===== */
 
-/* Light frosted header in dark mode */
+/* Dark frosted header */
 [data-theme="dark"] header {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.72) 0%,
-    rgba(255, 255, 255, 0.58) 40%,
-    rgba(255, 255, 255, 0.64) 70%,
-    rgba(255, 255, 255, 0.7) 100%
+    rgba(30, 30, 30, 0.65) 0%,
+    rgba(39, 39, 39, 0.4) 40%,
+    rgba(30, 30, 30, 0.5) 70%,
+    rgba(35, 35, 35, 0.6) 100%
   );
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -1803,15 +1803,6 @@ footer::after {
   -webkit-backdrop-filter: blur(12px) saturate(160%) brightness(1.05);
   backdrop-filter: blur(12px) saturate(160%) brightness(1.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="dark"] header nav ul li a {
-  color: #17202b;
-}
-
-[data-theme="dark"] header nav ul li a:hover,
-[data-theme="dark"] header nav ul li a.active {
-  background: rgba(255, 255, 255, 0.28);
 }
 
 /* Dark pub-link glass pills */
@@ -1989,9 +1980,13 @@ footer::after {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-/* Dark logos */
-[data-theme="dark"] .footer-logo-img {
-  filter: brightness(1.8);
+.wordmark-dark,
+[data-theme="dark"] .wordmark-light {
+  display: none;
+}
+
+[data-theme="dark"] .wordmark-dark {
+  display: inline-block;
 }
 
 /* Dark sponsor logos */
