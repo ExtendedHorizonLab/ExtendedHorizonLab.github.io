@@ -10,7 +10,7 @@ ignoreFiles = ['/content/projects/']
   university = "North Carolina State University"
   department = "Department of Computer Science"
   director = "Qiao (Georgie) Jin"
-  labWorkspaceURL = "https://extendedhorizon.com/app/"
+  labWorkspaceURL = "/app/"
 
 [menu]
   [[menu.main]]
